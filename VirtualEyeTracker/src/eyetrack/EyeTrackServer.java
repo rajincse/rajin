@@ -13,19 +13,19 @@ public class EyeTrackServer implements Runnable{
 	public static final int PORT = 9876;
 	EyeTrackerDataReceiver fgv;
 	
-    private BufferedReader mIn;
-    private String message;
-    private String decoded = null;
-	
+        private BufferedReader mIn;
+        private String message;
+        private String decoded = null;
+	private Thread eyetrackDataThread;
 	Socket socket;
 	private ServerSocket serverSocket;
-	public EyeTrackServer(EyeTrackerDataReceiver fgv)
+	public EyeTrackServer(int port,EyeTrackerDataReceiver fgv)
 	{
 		this.fgv = fgv;		
 		
 		this.serverSocket = null;
 		    try {
-		       serverSocket = new ServerSocket(EyeTrackServer.PORT);
+		       serverSocket = new ServerSocket(port);
 		       }
 		    catch (IOException se) 
 		    {
@@ -34,10 +34,14 @@ public class EyeTrackServer implements Runnable{
 		       System.exit(-1);
 		    }
 		    
-		    Thread t = new Thread(this);
-		    t.start();
+		    eyetrackDataThread = new Thread(this);
+		    
 	}
-	
+	public void start()
+        {
+            eyetrackDataThread.start();            
+        }
+        
 	@Override
 	public void run() {
 
