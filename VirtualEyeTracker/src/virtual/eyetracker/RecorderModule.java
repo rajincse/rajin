@@ -11,6 +11,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.ServerSocket;
 
 /**
  *
@@ -31,6 +32,11 @@ public class RecorderModule implements EyeTrackerDataReceiver{
     {
         this.eyeTrackerServer.start();
     }
+    public StringBuffer getResultText()
+    {
+        return this.resultText;
+    }
+    
     public void saveToFile(String fileName)
     {
         try {
@@ -62,5 +68,17 @@ public class RecorderModule implements EyeTrackerDataReceiver{
         resultText.append(String.format("%.2f", pupilDiameter));
         resultText.append("\r\n");
         
+    }
+    public static boolean isPortOpen(int port)
+    {
+        boolean success = false;
+        try {
+            ServerSocket socket = new ServerSocket(port);
+            success = true;
+            socket.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return success;
     }
 }

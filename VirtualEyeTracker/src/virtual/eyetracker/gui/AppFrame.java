@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import virtual.eyetracker.RecorderModule;
@@ -45,7 +46,6 @@ public class AppFrame extends javax.swing.JFrame {
                 e1.printStackTrace();
         }
         this.txtPort.setText(eyetrack.EyeTrackServer.PORT+"");
-//        this.recordModule = new RecorderModule(EyeTrackServer.PORT);
         this.simulationModule = new SimulationModule(EyeTrackServer.PORT);
     }
     /**
@@ -213,14 +213,43 @@ public class AppFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
-        this.recordModule.start();
+        if(this.recordModule == null)
+        {
+           int val = JOptionPane.showConfirmDialog(this, "Are you sure to start the recorder?", "Confirmation", JOptionPane.YES_NO_OPTION);
+           if(val == JOptionPane.YES_OPTION)
+           {
+               if(RecorderModule.isPortOpen(EyeTrackServer.PORT))
+               {
+                   this.recordModule = new RecorderModule(EyeTrackServer.PORT);
+                   this.recordModule.start();
+               }
+               else
+               {
+                   JOptionPane.showMessageDialog(this, "Port "+EyeTrackServer.PORT+" is occupied");
+               }
+               
+           }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Already recording!");
+        }
+        
+        
     }//GEN-LAST:event_btnRecordActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-       String fileName = this.showSaveFileDialog();
-       if(fileName!=null)
+       if(this.recordModule!= null && this.recordModule.getResultText().length() > 0)
+       {   
+        String fileName = this.showSaveFileDialog();
+        if(fileName!=null)
+        {
+            this.recordModule.saveToFile(fileName);
+        }
+       }
+       else
        {
-           this.recordModule.saveToFile(fileName);
+           JOptionPane.showMessageDialog(this, "No data");
        }
        
     }//GEN-LAST:event_btnSaveActionPerformed
