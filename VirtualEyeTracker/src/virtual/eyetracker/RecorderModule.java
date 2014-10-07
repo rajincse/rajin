@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.ServerSocket;
+import virtual.eyetracker.gui.ConsoleContainer;
 
 /**
  *
@@ -21,9 +22,11 @@ public class RecorderModule implements EyeTrackerDataReceiver{
     private EyeTrackServer eyeTrackerServer;
     private StringBuffer resultText;
     private int port;
-    public RecorderModule(int port)
+    private ConsoleContainer console;
+    public RecorderModule(int port, ConsoleContainer console)
     {
         this.port = port;
+        this.console = console;
         this.resultText = new StringBuffer();
         this.eyeTrackerServer = new EyeTrackServer(port,this);
                 
@@ -31,6 +34,7 @@ public class RecorderModule implements EyeTrackerDataReceiver{
     public void start()
     {
         this.eyeTrackerServer.start();
+        console.printToConsole("Recorder started");
     }
     public StringBuffer getResultText()
     {
@@ -51,10 +55,11 @@ public class RecorderModule implements EyeTrackerDataReceiver{
                 synchronized (this) {
                         resultText.setLength(0);
                 }
-
+                console.printToConsole("Saved to :"+fileName);
 
         } catch (IOException e) {
                 e.printStackTrace();
+                console.printToConsole(e.getMessage());
         }
     }
     @Override

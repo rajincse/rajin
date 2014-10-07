@@ -20,6 +20,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.text.DefaultCaret;
 import virtual.eyetracker.RecorderModule;
 import virtual.eyetracker.SimulationModule;
 
@@ -27,7 +28,7 @@ import virtual.eyetracker.SimulationModule;
  *
  * @author rajin
  */
-public class AppFrame extends javax.swing.JFrame {
+public class AppFrame extends javax.swing.JFrame implements ConsoleContainer{
 
     /**
      * Creates new form AppFrame
@@ -46,7 +47,9 @@ public class AppFrame extends javax.swing.JFrame {
                 e1.printStackTrace();
         }
         this.txtPort.setText(eyetrack.EyeTrackServer.PORT+"");
-        this.simulationModule = new SimulationModule(EyeTrackServer.PORT);
+        DefaultCaret caret = (DefaultCaret)this.txtConsole.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+        this.simulationModule = new SimulationModule(EyeTrackServer.PORT, this);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -220,7 +223,7 @@ public class AppFrame extends javax.swing.JFrame {
            {
                if(RecorderModule.isPortOpen(EyeTrackServer.PORT))
                {
-                   this.recordModule = new RecorderModule(EyeTrackServer.PORT);
+                   this.recordModule = new RecorderModule(EyeTrackServer.PORT, this);
                    this.recordModule.start();
                }
                else
@@ -382,6 +385,11 @@ public class AppFrame extends javax.swing.JFrame {
     private javax.swing.JTextArea txtConsole;
     private javax.swing.JTextField txtPort;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void printToConsole(String message) {        
+        this.txtConsole.append(message+"\r\n");
+    }
 
     
         

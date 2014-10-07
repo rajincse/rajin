@@ -9,13 +9,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import virtual.eyetracker.gui.ConsoleContainer;
 
 /**
  *
@@ -30,9 +28,11 @@ public class SimulationModule implements Runnable{
     private Thread thread;
     private boolean running;
     private Socket socket;
-    public SimulationModule(int port)
+    private ConsoleContainer console;
+    public SimulationModule(int port, ConsoleContainer console)
     {
         this.port = port;
+        this.console = console;
         this.gazeDataLines = new ArrayList<String>();
         this.delayList = new ArrayList<Long>();
         this.thread = null  ;          
@@ -50,8 +50,10 @@ public class SimulationModule implements Runnable{
                     socket = new Socket("127.0.0.1", this.port);
                 } catch (UnknownHostException ex) {
                     ex.printStackTrace();
+                    console.printToConsole(ex.getMessage());
                 } catch (IOException ex) {
                     ex.printStackTrace();
+                    console.printToConsole(ex.getMessage());
                 }
                 running = true;             
                 this.thread = new Thread(this);
@@ -106,11 +108,14 @@ public class SimulationModule implements Runnable{
                 }
                 line = reader.readLine();
             }
+            console.printToConsole("Loaded: "+fileName+"\r\nTotal lines:"+gazeDataLines.size());
         } catch (FileNotFoundException ex) {
+           console.printToConsole(ex.getMessage());
            ex.printStackTrace();
         } catch(IOException ex)
         {
-            ex.printStackTrace();
+           console.printToConsole(ex.getMessage());
+           ex.printStackTrace();
         }
         
         
@@ -142,11 +147,12 @@ public class SimulationModule implements Runnable{
 
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
+                    console.printToConsole(ex.getMessage());
                 }
                 catch(IOException ex)
                 {
-                    System.out.println("Error sending data");
                     ex.printStackTrace();
+                    console.printToConsole(ex.getMessage());
                 }
           }
     }
@@ -158,7 +164,7 @@ public class SimulationModule implements Runnable{
             PrintWriter out = new PrintWriter(socket.getOutputStream());
             out.println(line);
             out.flush();
-//            out.close();
+            console.printToConsole("Sent :"+line);
         }
         
                 
