@@ -20,7 +20,7 @@ import virtual.eyetracker.gui.ConsoleContainer;
  * @author rajin
  */
 public class SimulationModule implements Runnable{
-    
+    public static final long MAX_DELAY =1000;
     private ArrayList<Long> delayList;
     
     private ArrayList<String> gazeDataLines;
@@ -136,9 +136,9 @@ public class SimulationModule implements Runnable{
                                     wait();
                             }
                         }
-                        long delay = this.delayList.get(i);
-
-                            Thread.sleep(delay);
+                        long delay = Math.min(MAX_DELAY, this.delayList.get(i));
+                        
+                        Thread.sleep(delay);
 
                         String line = this.gazeDataLines.get(i);
                         transmitData(line);
