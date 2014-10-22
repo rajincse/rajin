@@ -72,7 +72,7 @@ public class RecorderModule implements EyeTrackerDataReceiver{
         resultText.append("\t");
         resultText.append(String.format("%.2f", pupilDiameter));
         resultText.append("\r\n");
-        
+         console.printToConsole("Got  :"+gazePoint);
     }
     public static boolean isPortOpen(int port)
     {
