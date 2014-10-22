@@ -164,6 +164,7 @@
             this.Controls.Add(this.pnlTobii);
             this.Controls.Add(this.lblDeviceSelection);
             this.Controls.Add(this.cbxDeviceSelection);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "VizLab EyeTracker";
             this.pnlTobii.ResumeLayout(false);
