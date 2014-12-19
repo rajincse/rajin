@@ -8,6 +8,7 @@ import java.util.Date;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -57,7 +58,7 @@ public class PListWidget extends PropertyWidget {
 				if (e.getValueIsAdjusting() == false)
 				{
 					PList l = ((PList)th.getProperty().getValue()).copy();
-					l.selectedIndeces = control.getSelectedIndices();
+					l.selectedIndeces = control.getSelectedIndices();				
 			    	th.updateProperty(l);		   
 				}					
 			}
@@ -120,8 +121,11 @@ public class PListWidget extends PropertyWidget {
 
 	@Override
 	public <T extends PropertyType> void propertyValueUpdated(T newvalue) {
+		int[] index = ((PList)newvalue).selectedIndeces;
 		control.setListData(((PList)newvalue).items);
-		control.setSelectedIndices(((PList)newvalue).selectedIndeces);			
+		if (index.length != 0)
+			control.setSelectedIndices(index);		
+		
 	}
 
 	@Override

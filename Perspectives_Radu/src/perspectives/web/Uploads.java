@@ -84,6 +84,8 @@ public class Uploads extends HttpServlet {
         out = response.getWriter();
 
         String thepage = request.getParameter("page");
+        
+ 
 
         HttpSession session = request.getSession();
 

@@ -59,8 +59,18 @@ public class ViewerContainer{
 	
 	//used to implement double buffering for 2d and 3d viewers
 	private BufferedImage viewerImage = null;
+	
+	private BufferedImage[] renderBuffers;
+	private int whichBuffer = 0;
+	
 	private BufferedImage image = null;
+
 	private BufferedImage lastImage = null;
+	private int lastImageId = -1;
+	private BufferedImage sendImage = null; 
+	private int sendImageId = -1;
+	
+	private int imageIdGenerator = 0;
 	
 	Object o1 = new Object();
 	Object o2 = new Object();
@@ -162,12 +172,33 @@ public class ViewerContainer{
 	}
 	
 	
+	public BufferedImage getRenderBuffer()
+	{
+		if (renderBuffers == null)
+			renderBuffers = new BufferedImage[2];
+		
+		if (renderBuffers[whichBuffer] == null || renderBuffers[whichBuffer].getWidth() != this.getWidth() || renderBuffers[whichBuffer].getHeight() != this.getHeight())
+		{
+			renderBuffers[whichBuffer] = new BufferedImage(this.getWidth(), this.getHeight(),BufferedImage.TYPE_INT_ARGB);
+			renderBuffers[whichBuffer].createGraphics();
+		}
+		
+		BufferedImage ret = renderBuffers[whichBuffer];
+		
+		whichBuffer++; if (whichBuffer > 1) whichBuffer = 0;
+		
+		return ret;		
+	}
+	
+	
 	public BufferedImage getImage()
 	{
 		return image;
 	}
 	
 	
+	private BufferedImage setVBuf = null; 
+	private Graphics2D setVBufG = null;
 	public void setViewerImage(BufferedImage im)
 	{	
 		this.viewerImage = im;
@@ -179,8 +210,14 @@ public class ViewerContainer{
 		
 	    if (tooltipOn && prevTooltip.equals(viewer.getToolTipText()))
 	     {
-	        		BufferedImage imm = new BufferedImage(viewerImage.getWidth(), viewerImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
-					Graphics2D gc = (Graphics2D)imm.getGraphics();
+	    			if (setVBuf == null || setVBuf.getWidth() != viewerImage.getWidth() || setVBuf.getHeight() != viewerImage.getHeight())
+	    			{
+	    				setVBuf = new BufferedImage(viewerImage.getWidth(), viewerImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
+	    				setVBufG = setVBuf.createGraphics();
+	    				System.out.println("new buffered image: setviewrimage");
+	    			}
+	    			BufferedImage imm = setVBuf;	        		
+					Graphics2D gc = setVBufG;
 					
 					gc.drawImage(viewerImage, 0, 0, null);					
 					viewer.renderTooltip(gc);
@@ -199,9 +236,6 @@ public class ViewerContainer{
 	    	this.window.redraw();
 	}
 	
-
-	
-
 	
 	protected void keyPressed(String keyText, String modifiersText)
 	{
@@ -216,7 +250,6 @@ public class ViewerContainer{
 		getViewer().em.scheduleEvent(new PEvent()
 		{
 			public void process() {
-				System.out.println("processing key press");
 				vcf.keyPressed(s1,s2);	
 			}
 		});
@@ -362,8 +395,6 @@ public class ViewerContainer{
 		for (int i=0; i<ps.length; i++)
 			ps[i].setDisabled(blocked);
 		
-		//lastImage = image;
-		
 		if (blocked)
 		{
 			if (image == null)
@@ -382,6 +413,8 @@ public class ViewerContainer{
 		
 	}
 	
+	private BufferedImage renderTooltipBuf = null;
+	private Graphics2D renderTooltipBufG = null;
 	public void renderTooltip()
 	{
 		long delta = new Date().getTime()- lastMouseMove;	
@@ -396,8 +429,14 @@ public class ViewerContainer{
 			
 	     if (tooltipOn)
 	     {
-	        		BufferedImage im = new BufferedImage(viewerImage.getWidth(), viewerImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
-					Graphics2D gc = (Graphics2D)im.getGraphics();
+	    	 if (renderTooltipBuf == null || renderTooltipBuf.getWidth() != viewerImage.getWidth() || renderTooltipBuf.getHeight() != viewerImage.getHeight())
+	    	 {
+	    		 renderTooltipBuf = new BufferedImage(viewerImage.getWidth(), viewerImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
+	    		 renderTooltipBufG = renderTooltipBuf.createGraphics();
+	    	 }
+	    	
+	        BufferedImage im = renderTooltipBuf;
+       		Graphics2D gc = renderTooltipBufG;
 					
 					gc.drawImage(viewerImage, 0, 0, null);					
 					viewer.renderTooltip(gc);
@@ -436,6 +475,8 @@ public class ViewerContainer{
 		synchronized(o2)
 		{
 			image = newimage;
+			sendImageId = this.imageIdGenerator++;
+			if (this.imageIdGenerator > 1000) this.imageIdGenerator=1;
 		}
 
 	}
@@ -487,7 +528,7 @@ public class ViewerContainer{
 		return allBytesSent;
 	}
 	
-	private void tileTasks(BufferedImage image)
+	private void tileTasks(BufferedImage image, int imageId)
 	{		
 		if (image == null)
 			return;
@@ -528,7 +569,8 @@ public class ViewerContainer{
 				synchronized(o6)
 				{
 					working = false;
-					lastImage = image;
+					lastImage = copyImage(image,lastImage);
+					lastImageId = imageId;
 					return;
 				}
 			}
@@ -538,8 +580,9 @@ public class ViewerContainer{
 				synchronized(o6)
 				{
 					changeSequenceTest = true;	
-					lastImageSaved = lastImage;
-					lastImage = image;
+					lastImageSaved = copyImage(lastImage, lastImageSaved);
+					lastImage = copyImage(image, lastImage);
+					lastImageId = imageId;
 					working = false;
 					return;
 				}
@@ -565,7 +608,8 @@ public class ViewerContainer{
 			synchronized(o6)
 			{
 				working = false;
-				lastImage = image;
+				lastImage = copyImage(image, lastImage);
+				lastImageId = imageId;
 				return;
 			}
 		}
@@ -582,7 +626,8 @@ public class ViewerContainer{
 			tileCase = 3;
 			BufferedImage halfIm = resizeImage(image, 0.25);
 			tiles = this.tileImage(halfIm, tilesX, tilesY, false);
-			lastImage = image;
+			lastImage = copyImage(image, lastImage);
+			lastImageId = imageId;
 			difsSent = 0;
 			
 			lastScaledImageTime = new Date().getTime();
@@ -591,7 +636,8 @@ public class ViewerContainer{
 		{
 			tileCase = 4;
 			tiles = this.tileImage(image, tilesX, tilesY, true);
-			lastImage = image;
+			lastImage = copyImage(image, lastImage);
+			lastImageId = imageId;
 			difsSent = 0;
 			lastScaledImageTime = -1;
 		}
@@ -600,7 +646,8 @@ public class ViewerContainer{
 			tileCase = 5;
 			tiles = this.tileImage(image, tilesX, tilesY, true);
 			difsSent=0;
-			lastImage = image;
+			lastImage = copyImage(image, lastImage);
+			lastImageId = imageId;
 			lastScaledImageTime = -1;
 		}
 		else if (history == 0 && diffcount<=MAXDIFF && difsSent <= this.keyFrameRate)
@@ -608,7 +655,8 @@ public class ViewerContainer{
 			tileCase = 6;
 			tiles = this.tileImage(difImage, tilesX, tilesY, false);
 			difsSent++;
-			lastImage = image;
+			lastImage = copyImage(image, lastImage);
+			lastImageId = imageId;
 			lastScaledImageTime = -1;
 		}		
 
@@ -622,7 +670,7 @@ public class ViewerContainer{
 		}
 
 
-		System.out.println("tilecase: " + tileCase);
+	
 		for (int i=0; i<tilesX; i++)
 			for (int j=0; j<tilesY; j++)	{
 				
@@ -719,15 +767,18 @@ public class ViewerContainer{
 	{
 		synchronized(o2)
 		{
-			if (image != lastImage || history > 0 || resetting || this.changeSequenceTest)
+			if (sendImageId != lastImageId || history > 0 || resetting || this.changeSequenceTest)
 			{	
 				if (resetting)
 					history = 0;
 				
-				final BufferedImage im = image;				
+				sendImage = copyImage(image,sendImage);
+				
+				final BufferedImage sendImagef = sendImage;
+				final int sendImageIdf = sendImageId;
 				Task t = new Task("t")
 				{	public void task()
-					{	tileTasks(im);	}};				
+					{	tileTasks(sendImagef, sendImageIdf);	}};				
 				t.start();
 			}
 		}
@@ -748,7 +799,8 @@ public class ViewerContainer{
 			outTiles.clear();
 			sendTiles = null;
 			round = 0;
-			lastImage = null;			
+			lastImage = null;	
+			lastImageId = -1;
 			createTiles(true);
 		}		
 	}
@@ -780,7 +832,7 @@ public class ViewerContainer{
 		{
 			if (x < 0 || y < 0)
 			{				
-				lastImage = null;
+				lastImageId = -1;
 				round = 0;
 				return noImage();
 			}
@@ -823,6 +875,7 @@ public class ViewerContainer{
 		if (noImage == null)
 		{
 			BufferedImage im = new BufferedImage(1,1,BufferedImage.TYPE_INT_ARGB);
+			System.out.println("new bufferedimage : noImage");
 			Graphics2D g = (Graphics2D)im.createGraphics();
 			g.setColor(new Color(0,0,0,0));
 			g.fillRect(0, 0, 1, 1);
@@ -839,6 +892,7 @@ public class ViewerContainer{
 	Object o12 = new Object();
 	
 	
+	private BufferedImage diffImageBuf = null;
 	private BufferedImage diffImage(BufferedImage image, BufferedImage lastImage, int[] quaddiff)
 	{
 			long ttt = new Date().getTime();
@@ -848,7 +902,13 @@ public class ViewerContainer{
 		
 			diffcount = 0;			
 		
-	        BufferedImage dif = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);      
+			BufferedImage dif;
+			if (diffImageBuf == null || diffImageBuf.getWidth() != image.getWidth() || diffImageBuf.getHeight() != image.getHeight())
+			{
+				diffImageBuf = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);  
+				System.out.println("new bufferedimage : diff");
+			}
+			dif = diffImageBuf;
 	        
 	        dif.createGraphics().drawImage(image, 0,0,null);	  
 	       
@@ -924,26 +984,54 @@ public class ViewerContainer{
 	}
 	
 	
+	private BufferedImage resizeImageBuf = null;
+	private Graphics resizeImageBufG = null;
 	private BufferedImage resizeImage(BufferedImage im, double f)
 	{
-		BufferedImage res = new BufferedImage((int)(im.getWidth()*f), (int)(im.getHeight()*f), BufferedImage.TYPE_INT_ARGB);
-		res.createGraphics().drawImage(im, 0, 0, res.getWidth()-1, res.getHeight()-1, 0, 0, im.getWidth()-1, im.getHeight()-1, null);
+		int wf = (int)(im.getWidth()*f);
+		int hf = (int)(im.getHeight()*f);
+		if (resizeImageBuf == null || wf != resizeImageBuf.getWidth() || hf != resizeImageBuf.getHeight())
+		{
+			resizeImageBuf = new BufferedImage(wf, hf, BufferedImage.TYPE_INT_ARGB);
+			resizeImageBufG = resizeImageBuf.createGraphics();
+			System.out.println("new bufferedimage : resize");
+		}
+		
+		BufferedImage res = resizeImageBuf;
+		
+		resizeImageBufG.drawImage(im, 0, 0, res.getWidth()-1, res.getHeight()-1, 0, 0, im.getWidth()-1, im.getHeight()-1, null);
 		return res;
 	}
 	
 	
+	private BufferedImage[][] tileImageBuf = null;
 	private BufferedImage[][] tileImage(BufferedImage image, int tileX, int tileY, boolean extraWidth)
 	{
-		BufferedImage[][] tiles = new BufferedImage[tileX][];
+		if (tileImageBuf == null || tileImageBuf.length != tileX || tileImageBuf[0].length != tileY)
+		{
+			tileImageBuf = new BufferedImage[tileX][];
+			for (int i=0; i<tileX; i++)
+			{
+				tileImageBuf[i] = new BufferedImage[tileY];
+				for (int j=0; j<tileY; j++)
+					tileImageBuf[i][j] = null;
+			}
+		}
+		
+		BufferedImage[][] tiles = tileImageBuf;
+		
 		int tileWidth = image.getWidth()/tileX;
 		int tileHeight = image.getHeight()/tileY;
 		if (extraWidth) tileWidth += 1;
 		for (int i=0; i<tileX; i++)
-		{
-			tiles[i] = new BufferedImage[tileY];
+		{		
 			for (int j=0; j<tileY; j++)
 			{
-				tiles[i][j] = new BufferedImage(tileWidth, tileHeight, BufferedImage.TYPE_INT_ARGB);
+				if (tiles[i][j] == null || tiles[i][j].getWidth() != tileWidth || tiles[i][j].getHeight() != tileHeight)
+				{
+					tiles[i][j] = new BufferedImage(tileWidth, tileHeight, BufferedImage.TYPE_INT_ARGB);					
+					System.out.println("new bufferedimage : tile");
+				}
 				tiles[i][j].createGraphics().drawImage(image, 0, 0, tileWidth, tileHeight,  i*tileWidth, j*tileHeight, (i+1)*tileWidth, (j+1)*tileHeight, null);
 			}
 		}		
@@ -974,6 +1062,20 @@ public class ViewerContainer{
 	public void propertyBarHiddenChanged() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	private BufferedImage copyImage(BufferedImage source, BufferedImage dest)
+	{
+		if (source == null) return null;
+		if (dest == null || dest.getWidth() != source.getWidth() || dest.getHeight() != source.getHeight())
+		{
+			dest = new BufferedImage(source.getWidth(), source.getHeight(), BufferedImage.TYPE_INT_ARGB);
+			System.out.println("new bufferedimage : copy");
+			dest.createGraphics();
+		}
+		
+		((Graphics2D)dest.getGraphics()).drawImage(source, 0,0,null);
+		return dest;
 	}
 
 }

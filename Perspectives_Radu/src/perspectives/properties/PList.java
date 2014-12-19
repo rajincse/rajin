@@ -28,7 +28,7 @@ public class PList extends PropertyType
 		l.selectedIndeces = selectedIndeces.clone();
 		l.items = new String[items.length];
 		for (int i=0; i<items.length; i++)
-			l.items[i] = new String(items[i]);
+			l.items[i] = new String(items[i]);	
 		return l;
 	}
 	

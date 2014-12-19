@@ -1,5 +1,7 @@
 package perspectives.util;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.geom.Line2D;
@@ -37,6 +39,22 @@ public class BubbleSets {
 	
 	private boolean[] pointsIn = null;
 	
+	public void debugRender(Graphics2D g)
+	{
+		for (int i=0; i<grid.length; i++)
+		{
+			System.out.println();
+			for (int j=0; j<grid[i].length; j++)
+			{ System.out.print(grid[i][j] + " ");
+			if (grid[i][j] > 1) g.setColor(Color.green);
+			else if (grid[i][j] < 0)				
+				g.setColor(new Color(255-(int)(Math.abs(grid[i][j])*255), 255-(int)(Math.abs(grid[i][j]*255)), 255));	
+			else	g.setColor(new Color(255, 255-(int)(grid[i][j]*255), 255-(int)(grid[i][j]*255)));
+				g.fillRect((int)minX+i*5, (int)minY+j*5, 5, 5);
+			}
+		}
+	}
+	
 	
 	
 	//works for rectangular shapes; so input is rectangles
@@ -49,21 +67,63 @@ public class BubbleSets {
 	public Path2D[] computeAll(double cellSize, int R1, int R0, double contThresh)
 	{
 		Path2D[] result = new Path2D[sets.length];
-		for (int i=0; i<sets.length; i++)
-		{
-			System.out.println("compute " + i);
+		
+		//Path2D[] result = new Path2D[1];
+		for (int i=0; i<result.length; i++)
+		{		
 			result[i] = computeOne(i, cellSize, R1, R0, contThresh);
 		}
 		return result;
 	}
 	
 	public Path2D computeOne(int set, double cellSize, int R1, int R0, double contThresh)
-	{		
+	{
+		this.R1 = R1;
+		this.R0 = R0;
 		computeContour(cellSize, R1, R0, set);
 		
 		Point2D.Double[][] lin = Util.marchingSquares(grid, cellSize, new Point2D.Double(minX, minY), contThresh);
 		
-	   Path2D.Double path = new Path2D.Double();
+		Point2D.Double[][] curveLin = new Point2D.Double[lin.length][];
+		for (int i=0; i<lin.length; i++)
+		{
+			
+			double[] control = new double[((lin[i].length-1)/3+1) * 3 + 3];
+			for (int j=0; j<lin[i].length; j+=3)
+			{
+				control[j/3*3] = lin[i][j].x;
+				control[j/3*3+1] = lin[i][j].y;
+				control[j/3*3+2] = 0;	
+			}
+			
+			control[control.length-3] = control[0];
+			control[control.length-2] = control[1];
+			control[control.length-1] = 0;
+			
+		//	System.out.println("---" + i + " " + control.length + " " + lin[i].length);
+			
+			double[] spline = SplineFactory.createCatmullRom(control, 3);
+			//spline = control;
+			ArrayList<Point2D.Double> l = new ArrayList<Point2D.Double>();
+			for (int j=0; j<spline.length-3; j+=3)
+			{
+				if (spline[j] == 0 && spline[j+1]==0)
+				{
+					//System.out.println("skip " + j + " of " + spline.length);
+					continue;
+				}
+				
+				//System.out.println(spline[j] + " " +  spline[j+1]);
+				l.add(new Point2D.Double(spline[j], spline[j+1]));
+			}
+			curveLin[i] = new Point2D.Double[l.size()];
+			for (int j=0; j<l.size(); j++)
+				curveLin[i][j] = l.get(j);
+
+		}
+		lin = curveLin;
+		
+	   Path2D.Double path = new Path2D.Double(Path2D.WIND_EVEN_ODD);
 	   for(int i=0;i<lin.length;i++)
 	   {	
 		   if (lin[i].length > 0) path.moveTo((int)lin[i][0].x,(int)lin[i][0].y); 
@@ -102,7 +162,12 @@ public class BubbleSets {
 			{	
 				int p = sortedSet[i];
 				
-				addPointEnergy(p, 1.);				
+				addPointEnergy(p, 1.);
+				
+			//	for (int k=0; k<grid.length; k++)
+				//	for (int l=0; l<grid[k].length;l++)
+				//		if (grid[k][l] > 1)
+					//		System.out.println("----------------- " + grid[k][l]);
 				
 				int[][] path = connect(set,sortedSet, i);
 				
@@ -124,8 +189,17 @@ public class BubbleSets {
 						{
 							dmin *= cellSize;
 							if (R1-dmin <= 0) continue;
-							double en = 1.2*((R1 - dmin)*(R1-dmin))/((R1-R0)*(R1-R0));
+							double en = 1.05*Math.min(1., ((R1 - dmin)*(R1-dmin))/((R1-R0)*(R1-R0)));
+							double gxy = grid[x][y];
+							
+						//	if (en > 1) en = 1;
+							
 							grid[x][y] = Math.max(grid[x][y],en);
+							
+							
+							
+							if (en > 1)
+								System.out.println("en:" + en);
 						}
 					}
 			}
@@ -166,6 +240,9 @@ public class BubbleSets {
 							grid[x][y] = Math.max(grid[x][y], w);
 					else
 							gridMinus[x][y] = Math.min(gridMinus[x][y], w);
+					
+					if (grid[x][y] > 1)
+						System.out.println("1..");
 					
 				}
 		
@@ -212,13 +289,17 @@ public class BubbleSets {
 						
 						if (delta > 0)
 						{						
-						double en = w*(delta*delta)/((R1-R0)*(R1-R0));
+						double en = w*Math.min(1.,(delta*delta)/((R1-R0)*(R1-R0)));
+					
 						if (Math.abs(en) > maxEn) maxEn = Math.abs(en);
 						
 						if (w > 0)
 							grid[x][y] = Math.max(grid[x][y], en);
-					else
+						else
 							gridMinus[x][y] = Math.min(gridMinus[x][y], en);
+						
+						if (grid[x][y] > 1)
+							System.out.println("2.. " + en);
 						}
 					}
 				}
@@ -270,10 +351,11 @@ public class BubbleSets {
 			if (points[i].getY()+points[i].getHeight() > maxY) maxY = points[i].getY()+points[i].getHeight();				
 		}
 		
-		minX = minX - 2*R1;
-		minY = minY - 2*R1;
-		maxX = maxX + 2*R1;
-		maxY = maxY + 2*R1;			
+	
+		minX = minX - 1*R1;
+		minY = minY - 1*R1;
+		maxX = maxX + 1*R1;
+		maxY = maxY + 1*R1;
 		
 		int gridWidth = (int)Math.ceil((maxX-minX)/cellSize);
 		maxX = minX + cellSize*gridWidth;

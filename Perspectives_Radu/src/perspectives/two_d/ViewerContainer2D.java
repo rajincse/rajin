@@ -81,26 +81,24 @@ public class ViewerContainer2D extends ViewerContainer{
 	
 	}
 	
+	
 	public void render()
 	{
-		BufferedImage image = new BufferedImage(this.getWidth(), this.getHeight(),BufferedImage.TYPE_INT_ARGB);
-
-		Graphics2D gc = image.createGraphics();
+		BufferedImage image = getRenderBuffer();
+		Graphics2D gc = (Graphics2D)image.getGraphics();		
+	
 
 		gc.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
 
 		gc.setColor(((JavaAwtRenderer)viewer).getBackgroundColor());
 		gc.fillRect(0, 0, this.getWidth(), this.getHeight()); // fill in background
+           		
+		gc.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+				RenderingHints.VALUE_ANTIALIAS_ON);
 
-		//if (!antialiasingSet)
-		//{	            		
-				gc.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-						RenderingHints.VALUE_ANTIALIAS_ON);
+		gc.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+				RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
-				gc.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-						RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-				//antialiasingSet = true;
-		//}
 
 		zoomOriginX = this.getWidth()/2;
 		zoomOriginY = this.getHeight()/2;

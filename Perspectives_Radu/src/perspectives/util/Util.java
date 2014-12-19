@@ -415,4 +415,31 @@ public class Util {
        }
 
 
+
+
+public static Color getColorFromRange(Color[] range, double p){
+	
+	
+	if (p > 0 && p < 0.3)
+		p = 1*p;
+	else if ( p > 0.35 && p < 0.6)
+		p = 1*p;
+	else p = 1*p;
+	
+	Color c1 = null, c2 = null;
+	double intervalSize = 1./(range.length-1);
+	//find the two colors
+	for (int i=0; i<range.length; i++){
+		if (p >= i* intervalSize && p<=(i+1)*intervalSize){
+			c1 = range[i];
+			c2 = range[i+1];
+			p = (p - i*intervalSize) / intervalSize;
+			break;
+		}
+	}
+	
+	Color c = new Color(c1.getRed() + (int)(p*(c2.getRed()-c1.getRed())), c1.getGreen() + (int)(p*(c2.getGreen()-c1.getGreen())),  c1.getBlue() + (int)(p*(c2.getBlue()-c1.getBlue())));
+	return c;
+
+}
 }

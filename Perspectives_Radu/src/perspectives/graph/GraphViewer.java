@@ -186,12 +186,13 @@ public class GraphViewer extends Viewer implements JavaAwtRenderer {
 
 						@Override
 						protected boolean updating(PString newvalue) {
-							ArrayList<String> nodes = graph.getNodes();
 							
+							ArrayList<String> nodes = graph.getNodes();							
 							String[] split = newvalue.stringValue().split("\t");
 							for (int i=0; i<split.length; i++)
 							{
 								int index = nodes.indexOf(split[i]);
+								if (index  < 0) continue;
 								ovalInteraction.getItem(index).selected = true;
 							}
 							return true;
@@ -215,11 +216,11 @@ public class GraphViewer extends Viewer implements JavaAwtRenderer {
                     @Override
                     protected void mouseIn(int obj) {
                         gv.setToolTipText(graph.getNodes().get(obj));
-                       // System.out.println(" ----- scheduling node animation");
+                     
                         final int o = obj;
                         gv.createAnimation(new Animation.IntegerAnimation(22, 30, 500) {
                             public void step(int v) {
-                            //	System.out.println(" ----- node animation step + " + v);
+                          
                                 Rectangle l = ((RectangleItem) ovalInteraction.getItem(o)).r;
                                 l.w = v;
                                 l.h = v;
@@ -243,16 +244,56 @@ public class GraphViewer extends Viewer implements JavaAwtRenderer {
                     protected void itemDragged(int item, Point2D delta) {
                         gv.drawer.setX(item, gv.drawer.getX(item) + (int) delta.getX());
                         gv.drawer.setY(item, gv.drawer.getY(item) + (int) delta.getY());
+                        
+                        ArrayList<Integer> e1 = new ArrayList<Integer>();
+                        ArrayList<Integer> e2 = new ArrayList<Integer>();
+                        graph.getEdgesAsIndeces(e1, e2);
+                        double x1 = gv.drawer.getX(e1.get(0));
+                        double y1 = gv.drawer.getY(e1.get(0));
+                        double x2 = gv.drawer.getX(e2.get(0));
+                        double y2 = gv.drawer.getY(e2.get(0));
+                        
+                        double x3 = gv.drawer.getX(e1.get(1));
+                        double y3 = gv.drawer.getY(e1.get(1));
+                        double x4 = gv.drawer.getX(e2.get(1));
+                        double y4 = gv.drawer.getY(e2.get(1));
+                     
+                        double a2 = Math.acos( ((x4-x3)*(x2-x1) + (y4-y3)*(y2-y1)) /
+                        		(Math.sqrt((x4-x3)*(x4-x3) + (y4-y3)*(y4-y3)) * Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1))));
+                        
+                        		
+                        double angle = Math.atan2(y4-y3,x4-x3) - Math.atan2(y2-y1,x2-x1);
+                        if (angle < 0) angle = Math.PI * 2 + angle;
+                        System.out.println((int)(angle/Math.PI * 180) + " " +  (int)(a2/Math.PI *180));
+                        
+                     
+                        
                         gv.requestRender();
                     }
 
                     @Override
                     protected void itemsSelected(int[] obj) {
+                    	String s = "";
+                    	ArrayList<String> nodes = graph.getNodes();
+                    	for (int i=0; i<getNumberOfItems(); i++)
+                    		if (getItem(i).selected && i != getNumberOfItems()-1)
+                    			s = s + nodes.get(i) + "\t";
+                    		else if (getItem(i).selected)
+                    			s = s + nodes.get(i);
+                    	getProperty("Selected").setValue(new PString(s));
                         gv.requestRender();
                     }
 
                     @Override
                     protected void itemsDeselected(int[] obj) {
+                    	String s = "";
+                    	ArrayList<String> nodes = graph.getNodes();
+                    	for (int i=0; i<getNumberOfItems(); i++)
+                    		if (getItem(i).selected && i != getNumberOfItems()-1)
+                    			s = s + nodes.get(i) + "\t";
+                    		else if (getItem(i).selected)
+                    			s = s + nodes.get(i);
+                    	getProperty("Selected").setValue(new PString(s));
                         gv.requestRender();
                     }
                 };
@@ -420,8 +461,6 @@ public class GraphViewer extends Viewer implements JavaAwtRenderer {
         } else {
             g.setColor(new Color(150, 150, 150, 200));
         }
-
-       // g.setColor(new Color(150, 150, 150, 200));
 
         g.setStroke(new BasicStroke(2));
 
