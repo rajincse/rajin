@@ -216,7 +216,7 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
                         
                         this.render();
-            addResult(EVENT_ANCHOR_MOUSE_PRESSED, x, y, button);
+            addResult(EVENT_ANCHOR_MOUSE_PRESSED, ex, ey, button);
 		}
 		catch(Exception ee)
 		{
@@ -241,7 +241,7 @@ public class ViewerContainer2D extends ViewerContainer{
                         }
 				
                         this.render();
-            addResult(EVENT_ANCHOR_MOUSE_RELEASED, x, y, button);
+            addResult(EVENT_ANCHOR_MOUSE_RELEASED, ex, ey, button);
 		}
 		catch(Exception ee)
 		{
@@ -348,14 +348,12 @@ public class ViewerContainer2D extends ViewerContainer{
 	public void setZoom(double z)
 	{
 		zoom = z;
-		addResult(EVENT_ANCHOR_ZOOM, z);
 	}
 	
 	public void setTranslation(double x, double y)
 	{
 		this.translatex = x;
 		this.translatey = y;
-		addResult(EVENT_ANCHOR_TRANSLATION, x,y);
 	}
 	
 	public Point2D getTranslation()
@@ -364,26 +362,38 @@ public class ViewerContainer2D extends ViewerContainer{
 	}
 	
 
-	//-----------REPLAY FEATURE---------------
+	//-----------REPLAY FEATURE START---------------
+	// The cosntant string used
+	
+	//file path of the recording
 	public static final String INTERACTION_FILE_PATH ="C:\\work\\interaction.txt";
+	
+	// The anchor text to identify the event 
 	public static final String EVENT_ANCHOR_MOUSE_MOVED ="MouseMoved";
 	public static final String EVENT_ANCHOR_MOUSE_DRAGGED ="MouseDragged";
 	public static final String EVENT_ANCHOR_MOUSE_PRESSED ="MousePressed";
 	public static final String EVENT_ANCHOR_MOUSE_RELEASED ="MouseReleased";
 	public static final String EVENT_ANCHOR_KEY_PRESSED ="KeyPressed";
 	public static final String EVENT_ANCHOR_KEY_RELEASED ="KeyReleased";
-	public static final String EVENT_ANCHOR_ZOOM ="Zoom";
-	public static final String EVENT_ANCHOR_TRANSLATION ="Translation";
-	public static final String EVENT_ANCHOR_GAZE ="Gaze";
 	
+	// Yet to implement
+//	public static final String EVENT_ANCHOR_GAZE ="Gaze";
+	
+	//The switches to control the recording
 	protected boolean recordingOn = false;
 	protected boolean replayingOn = false;
 	
 
-	//-----RECORDING-----//
+	//-----RECORDING START-----//
+	
+	//The string buffer to store all the instruction strings to record. 
 	protected StringBuffer resultText = new StringBuffer();
+	// timer to save the results
 	protected Timer eventTimer = new Timer("InteractionTimer");
 	
+	/**
+	 * Every 2 sec the timer will trigger to save the recorded instructions to the file
+	 */
 	protected void startTimer()
 	{
 		this.eventTimer.schedule(new TimerTask() {
@@ -403,19 +413,31 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
 		}, 0, 2000);		
 	}
+	/**
+	 * Invokes to stop the timer
+	 */
 	protected void stopTimer()
 	{
 		this.eventTimer.cancel();
 		this.eventTimer = new Timer("InteractionTimer");
 	}
+	
+	/**
+	 * Getter for Recording Switch
+	 * @return
+	 */
 	public boolean isRecordingOn() {
 		return recordingOn;
 	}
 
-
+	/**
+	 * Setter for recording switch
+	 * @param recordingOn
+	 */
 	public void setRecordingOn(boolean recordingOn) {
 		this.recordingOn = recordingOn;
 		
+		// Only starts the recording when the switch is on
 		if(recordingOn)
 		{
 			startTimer();
@@ -428,10 +450,15 @@ public class ViewerContainer2D extends ViewerContainer{
 	
 	
 
-
+	/**
+	 * Adding results for 2 param methods: Mouse Moved, Mouse Dragged 
+	 * @param anchor
+	 * @param x
+	 * @param y
+	 */
 	protected void addResult(String anchor, int x, int y)
 	{
-		if(recordingOn && !replayingOn)
+		if(recordingOn && !replayingOn) // only record when recording is on and replaying is not
 		{
 			long time = System.currentTimeMillis();
 			String data = anchor+"\t"+time+"\t"+x+"\t"+y+"\r\n";
@@ -440,6 +467,13 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
 		}
 	}
+	/**
+	 * Adding results for 3 param methods: Mouse Press, Mouse Released 
+	 * @param anchor
+	 * @param x
+	 * @param y
+	 * @param button
+	 */
 	protected void addResult(String anchor, int x, int y, int button)
 	{
 		if(recordingOn && !replayingOn)
@@ -451,6 +485,12 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
 		}
 	}
+	/**
+	 * Adding result for Key Press and Release methods
+	 * @param anchor
+	 * @param code
+	 * @param modifiers
+	 */
 	protected void addResult(String anchor, String code, String modifiers)
 	{
 		if(recordingOn && !replayingOn)
@@ -462,6 +502,11 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
 		}		
 	}
+	/**
+	 * Adding result for Zoom value
+	 * @param anchor
+	 * @param value
+	 */
 	protected void addResult(String anchor, double value)
 	{
 		if(recordingOn && !replayingOn)
@@ -473,6 +518,12 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
 		}
 	}
+	/**
+	 * Adding result for translation 
+	 * @param anchor
+	 * @param x
+	 * @param y
+	 */
 	protected void addResult(String anchor, double x, double y)
 	{
 		if(recordingOn && !replayingOn)
@@ -484,6 +535,9 @@ public class ViewerContainer2D extends ViewerContainer{
 			}		
 		}
 	}
+	/**
+	 * Save the events to the file and empties the buffer
+	 */
 	protected void saveResultToFile()
 	{
 		try {
@@ -504,9 +558,14 @@ public class ViewerContainer2D extends ViewerContainer{
 			e.printStackTrace();
 		}
 	}
-	//-----REPLAYING -----
+	//-----RECORDING END-----//
+	//-----REPLAYING START -----//
+	
+	// Used to indicate the first instruction
 	public static final int INVALID =-1;
+	// Saves the last instruction time
 	protected long lastInstructionTime = INVALID;
+	//Thread to perform the replay
 	protected Thread replayThread = new Thread(new Runnable() {
 		
 		@Override
@@ -517,64 +576,81 @@ public class ViewerContainer2D extends ViewerContainer{
 	}, "ReplayThread");
 	
 	
-	
+	/**
+	 * Getter for replay switch
+	 * @return
+	 */
 	public boolean isReplayingOn() {
 		return replayingOn;
 	}
 
-
+	/**
+	 * Setter for replay switch
+	 * @param replayingOn
+	 */
 	public void setReplayingOn(boolean replayingOn) {
 		this.replayingOn = replayingOn;
-		if(replayingOn)
+		if(replayingOn) // records only if replay switch is on
 		{
 			setRecordingOn(false);
-			replay();
+			startReplay();
 		}
 	}
 	
+	/**
+	 * Starts the thread
+	 */
 	protected void startReplay()
 	{
 		this.replayThread.start();
 	}
-	
+	/**
+	 * Stops the thread
+	 */
 	protected void stopReplay()
 	{
 		try {
 			this.replayThread.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
+	/**
+	 * Performs replaying
+	 */
 	protected void replay()
 	{
-		ArrayList<String> instructionList = getInstructionList(INTERACTION_FILE_PATH);
+		ArrayList<String> instructionList = getInstructionList(INTERACTION_FILE_PATH); // Reads all the instructions
 		
 		for(String instruction: instructionList)
 		{
-			performInstruction(instruction);
+			performInstruction(instruction); // performs the instructions one by one
 		}
-		lastInstructionTime = INVALID;
+		lastInstructionTime = INVALID; // makes the process replayable
 	}
 	
+	/**
+	 * Peform a single instruction. 
+	 * @param instruction
+	 */
 	protected void performInstruction(String instruction)
 	{
-		System.out.println("instruct:\t"+instruction);
 		String[] split = instruction.split("\t");
 		if(split.length > 2)
 		{
-			String anchor = split[0];
-			long time = Long.parseLong(split[1]);
+			String anchor = split[0]; // Anchor at the first column
+			long time = Long.parseLong(split[1]); // time at second
 			
 			if(lastInstructionTime== INVALID)
 			{
-				lastInstructionTime = time;
+				lastInstructionTime = time; // only for the first the instruction
 			}
-			long timelapse = time - lastInstructionTime;
+			long timelapse = time - lastInstructionTime; // the timelapse required
 			
 			lastInstructionTime = time;
 			
+			//sleep for the timelapse
 			try {
 				Thread.sleep(timelapse);
 			} catch (InterruptedException e) {
@@ -622,22 +698,15 @@ public class ViewerContainer2D extends ViewerContainer{
 				int button = Integer.parseInt(split[4]);
 				this.mouseReleased(x, y, button);
 			}
-//			else if(anchor.equals(EVENT_ANCHOR_TRANSLATION))
-//			{
-//				double x = Double.parseDouble(split[2]);
-//				double y = Double.parseDouble(split[3]);
-//				this.setTranslation(x, y);
-//			}
-//			else if(anchor.equals(EVENT_ANCHOR_ZOOM))
-//			{
-//				double zoom= Double.parseDouble(split[2]);
-//				this.setZoom(zoom);
-//			}
-			
 			
 		}
 	}
 	
+	/**
+	 * Reading the instruction from the file
+	 * @param filePath
+	 * @return
+	 */
 	protected ArrayList<String> getInstructionList(String filePath)
 	{
 		ArrayList<String> instructionList = new ArrayList<String>();
@@ -666,7 +735,7 @@ public class ViewerContainer2D extends ViewerContainer{
 		}
 		return instructionList;
 	}
+	//-----REPLAYING END -----//
 	
-	
-	//-----------REPLAY FEATURE---------------
+	//-----------REPLAY FEATURE END---------------
 }
