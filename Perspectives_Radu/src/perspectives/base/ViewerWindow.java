@@ -251,6 +251,12 @@ public class ViewerWindow extends JInternalFrame  {
 				viewerContainer.resize(ff.getWidth(), ff.getHeight());				
 				
 			}
+			
+			@Override
+			public void componentMoved(ComponentEvent e) {
+				// TODO Auto-generated method stub
+				viewerContainer.resize(ff.getWidth(), ff.getHeight());
+			}
 		});
 		
 	}

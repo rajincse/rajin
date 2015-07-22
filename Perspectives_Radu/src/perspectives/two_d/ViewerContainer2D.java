@@ -368,6 +368,14 @@ public class ViewerContainer2D extends ViewerContainer{
 	
 
 	//-----------REPLAY FEATURE START---------------
+	//-----RESIZE---
+	@Override
+	public void resize(int w, int h) {
+		super.resize(w, h);
+		this.addResult(EVENT_ANCHOR_SCREEN_SIZE,this.window.getLocation().x, this.window.getLocation().y, this.getWidth(), this.getHeight());
+	}
+	
+	//----RESIZE---
 	//-----------PROPERTY RECORDINGS START-----------------
 
 	PropertyManagerChangeListener propertyManagerChangeListener = new PropertyManagerChangeListener() {
@@ -435,6 +443,7 @@ public class ViewerContainer2D extends ViewerContainer{
 	public static final String EVENT_ANCHOR_PROPERTY_VALUE_CHANGED ="PropertyValueChanged"; 
 	public static final String EVENT_ANCHOR_PROPERTY_VISIBILITY_CHANGED ="PropertyVisibilityChanged";
 	public static final String EVENT_ANCHOR_PROPERTY_DISABILITY_CHANGED ="PropertyDisabilityChanged";
+	public static final String EVENT_ANCHOR_SCREEN_SIZE ="ScreenSize";
 	
 	// Yet to implement
 //	public static final String EVENT_ANCHOR_GAZE ="Gaze";
@@ -531,7 +540,17 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
 		}
 	}
-
+	protected void addResult(String anchor, int x, int y, int width, int height)
+	{
+		if(recordingOn && !replayingOn) // only record when recording is on and replaying is not
+		{
+			long time = System.currentTimeMillis();
+			String data = anchor+"\t"+time+"\t"+x+"\t"+y+"\t"+width+"\t"+height+"\r\n";
+			synchronized (this) {
+				this.resultText.append(data);
+			}
+		}
+	}
 	/**
 	 * Adding results for 2 param methods: Mouse Moved, Mouse Dragged 
 	 * @param anchor
@@ -808,6 +827,16 @@ public class ViewerContainer2D extends ViewerContainer{
 				String propertyTypeName = split[3];
 				boolean isVisible = Boolean.parseBoolean(split[4]);
 				p.setVisible(isVisible);
+			}
+			else if(anchor.equals(EVENT_ANCHOR_SCREEN_SIZE))				
+			{
+				int x  = Integer.parseInt(split[2]);
+				int y = Integer.parseInt(split[3]);
+				int width = Integer.parseInt(split[4]);
+				int height = Integer.parseInt(split[5]);
+				
+				this.window.setBounds(x, y, width, height);
+				
 			}
 			
 		}
