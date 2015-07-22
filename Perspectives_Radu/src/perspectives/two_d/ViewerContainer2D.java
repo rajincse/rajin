@@ -50,6 +50,10 @@ import javax.swing.event.InternalFrameListener;
 
 import perspectives.base.Environment;
 import perspectives.base.PEvent;
+import perspectives.base.Property;
+import perspectives.base.PropertyManager;
+import perspectives.base.PropertyManagerChangeListener;
+import perspectives.base.PropertyType;
 import perspectives.base.Viewer;
 import perspectives.base.ViewerContainer;
 
@@ -86,6 +90,7 @@ public class ViewerContainer2D extends ViewerContainer{
 	public ViewerContainer2D(Viewer v, Environment env, int width, int height)
 	{
 		super(v,env,width,height);
+		v.addChangeListener(propertyManagerChangeListener);
 			
 		zoom = 1;
 		v.requestRender();
@@ -363,6 +368,58 @@ public class ViewerContainer2D extends ViewerContainer{
 	
 
 	//-----------REPLAY FEATURE START---------------
+	//-----------PROPERTY RECORDINGS START-----------------
+
+	PropertyManagerChangeListener propertyManagerChangeListener = new PropertyManagerChangeListener() {
+		
+		@Override
+		public void propertyVisibleChanges(PropertyManager pm, Property p,
+				boolean newVisible) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void propertyValueChanges(PropertyManager pm, Property p,
+				PropertyType newValue) {
+			// TODO Auto-generated method stub
+			addResult(EVENT_ANCHOR_PROPERTY_VALUE_CHANGED, p.getName(),  p.getValue().typeName(), newValue.serialize());
+		}
+		
+		@Override
+		public void propertyRemoved(PropertyManager pm, Property p) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void propertyReadonlyChanges(PropertyManager pm, Property p,
+				boolean newReadOnly) {
+			// TODO Auto-generated method stub
+			addResult(EVENT_ANCHOR_PROPERTY_VALUE_CHANGED, p.getName(),  p.getValue().typeName(), newReadOnly);
+		}
+		
+		@Override
+		public void propertyPublicChanges(PropertyManager pm, Property p,
+				boolean newPublic) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void propertyDisabledChanges(PropertyManager pm, Property p,
+				boolean enabled) {
+			// TODO Auto-generated method stub
+			addResult(EVENT_ANCHOR_PROPERTY_VALUE_CHANGED, p.getName(), p.getValue().typeName(), enabled);
+		}
+		
+		@Override
+		public void propertyAdded(PropertyManager pm, Property p) {
+			// TODO Auto-generated method stub
+			
+		}
+	};
+	//-----------PROPERTY RECORDINGS END-----------------
 	// The cosntant string used
 	
 	//file path of the recording
@@ -375,6 +432,9 @@ public class ViewerContainer2D extends ViewerContainer{
 	public static final String EVENT_ANCHOR_MOUSE_RELEASED ="MouseReleased";
 	public static final String EVENT_ANCHOR_KEY_PRESSED ="KeyPressed";
 	public static final String EVENT_ANCHOR_KEY_RELEASED ="KeyReleased";
+	public static final String EVENT_ANCHOR_PROPERTY_VALUE_CHANGED ="PropertyValueChanged"; 
+	public static final String EVENT_ANCHOR_PROPERTY_VISIBILITY_CHANGED ="PropertyVisibilityChanged";
+	public static final String EVENT_ANCHOR_PROPERTY_DISABILITY_CHANGED ="PropertyDisabilityChanged";
 	
 	// Yet to implement
 //	public static final String EVENT_ANCHOR_GAZE ="Gaze";
@@ -448,7 +508,29 @@ public class ViewerContainer2D extends ViewerContainer{
 		}
 	}
 	
+	protected void addResult(String anchor, String propertyName, String propertyTypeName, String propertyNewValue)
+	{
+		if(recordingOn && !replayingOn) // only record when recording is on and replaying is not
+		{
+			long time = System.currentTimeMillis();
+			String data = anchor+"\t"+time+"\t"+propertyName+"\t"+propertyTypeName+"\t"+propertyNewValue+"\r\n";
+			synchronized (this) {
+				this.resultText.append(data);
+			}
+		}
+	}
 	
+	protected void addResult(String anchor, String propertyName, String propertyTypeName, boolean value)
+	{
+		if(recordingOn && !replayingOn) // only record when recording is on and replaying is not
+		{
+			long time = System.currentTimeMillis();
+			String data = anchor+"\t"+time+"\t"+propertyName+"\t"+propertyTypeName+"\t"+value+"\r\n";
+			synchronized (this) {
+				this.resultText.append(data);
+			}
+		}
+	}
 
 	/**
 	 * Adding results for 2 param methods: Mouse Moved, Mouse Dragged 
@@ -697,6 +779,35 @@ public class ViewerContainer2D extends ViewerContainer{
 				int y = Integer.parseInt(split[3]);
 				int button = Integer.parseInt(split[4]);
 				this.mouseReleased(x, y, button);
+			}
+			else if(anchor.equals(EVENT_ANCHOR_PROPERTY_VALUE_CHANGED))
+			{
+				String propertyName = split[2];
+				Property p = this.viewer.getProperty(propertyName);
+				String propertyTypeName = split[3];
+				String serializedPropertyType = "";
+				if(split.length> 4)
+				{
+					serializedPropertyType =split[4];
+				}
+				PropertyType newvalue = p.getValue().deserialize(serializedPropertyType);
+				p.setValue(newvalue);
+			}
+			else if(anchor.equals(EVENT_ANCHOR_PROPERTY_DISABILITY_CHANGED))				
+			{
+				String propertyName = split[2];
+				Property p = this.viewer.getProperty(propertyName);
+				String propertyTypeName = split[3];
+				boolean isDisabled = Boolean.parseBoolean(split[4]);
+				p.setDisabled(isDisabled);
+			}
+			else if(anchor.equals(EVENT_ANCHOR_PROPERTY_VISIBILITY_CHANGED))				
+			{
+				String propertyName = split[2];
+				Property p = this.viewer.getProperty(propertyName);
+				String propertyTypeName = split[3];
+				boolean isVisible = Boolean.parseBoolean(split[4]);
+				p.setVisible(isVisible);
 			}
 			
 		}
