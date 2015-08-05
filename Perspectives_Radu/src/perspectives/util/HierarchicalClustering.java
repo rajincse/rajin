@@ -60,24 +60,29 @@ public class HierarchicalClustering
 				g.addEdge(id, rrs);
 			}
 			
-			Property<PBoolean> p = new Property<PBoolean>("root",new PBoolean(true));
-			g.addNodeProperty("-" + (d.getCount()-1), p);
-			
-			tree = new Tree(g);				
-			
 			for (int i=0; i<d.getCount()-1; i++)
 			{
-				Property<PDouble> pr = new Property<PDouble>("Height",new PDouble(r[i].distance));
-				tree.treeNode("-"+(i+1)).addProperty(pr);
+				Property<PDouble> pr = new Property<PDouble>("Height",new PDouble(100*r[i].distance));
+				g.addNodeProperty("-"+(i+1), pr);
 				
 			}
 			
 			for (int i=0; i<d.getCount(); i++)
 			{
 				Property<PDouble> pr = new Property<PDouble>("Height",new PDouble(0));
-				tree.treeNode(d.getPointId(i)).addProperty(pr);
+				g.addNodeProperty(d.getPointId(i),pr);
+				
+				Property<PString> pr2 = new Property<PString>("Id",new PString(d.getPointId(i)));
+				g.addNodeProperty(d.getPointId(i),pr2);
 				
 			}
+			
+			Property<PBoolean> p = new Property<PBoolean>("root",new PBoolean(true));
+			g.addNodeProperty("-" + (d.getCount()-1), p);
+			
+			tree = new Tree(g);				
+			
+
 			
 			return tree;
 				    

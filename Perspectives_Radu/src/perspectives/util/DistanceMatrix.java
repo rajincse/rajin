@@ -23,7 +23,7 @@ public class DistanceMatrix implements DistancedPoints
 		d = new float[nrElem][];
 		
 		for (int i=0; i<nrElem; i++)
-			d[i] = new float[i+1];
+			d[i] = new float[nrElem];
 		
 		for (int i=0; i<d.length; i++)
 			for (int j=0; j<d[i].length; j++)
@@ -45,11 +45,7 @@ public class DistanceMatrix implements DistancedPoints
 	public void set(int i, int j, float val)
 	{
 		if (i == j) return;
-		
-		if (i < j)
-			d[j][i] = val;
-		else
-			d[i][j] = val;
+		d[i][j] = val;
 	}
 	
 	public void set(String elem1, String elem2, float val)
@@ -60,13 +56,11 @@ public class DistanceMatrix implements DistancedPoints
 		if (i2 == null) return;
 		
 		set(i1.intValue(), i2.intValue(), val);
+		set(i2.intValue(), i1.intValue(), val);
 	}
 	
 	public float get(int i, int j)
 	{
-		if (i<j)
-			return d[j][i];
-		else
 			return d[i][j];	
 	}
 	

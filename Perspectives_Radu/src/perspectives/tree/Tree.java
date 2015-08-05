@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 
 import perspectives.base.Property;
 import perspectives.properties.PBoolean;
@@ -122,7 +123,7 @@ public class Tree implements TreeNodeChangeListener
 	{
 		ArrayList<String> nodes = g.getNodes();
 		
-		TreeNode root = null;
+		root = null;
 		int rootIndex = -1;
 		for (int i=0; i<nodes.size(); i++)
 		{
@@ -147,6 +148,9 @@ public class Tree implements TreeNodeChangeListener
 		indexStack.add(nodes.get(rootIndex));
 		nodeStack.add(root);
 		
+		Hashtable<String, boolean[]> visited = new Hashtable<String, boolean[]>();
+		visited.put(nodes.get(rootIndex), new boolean[]{true});
+		
 		while (indexStack.size() > 0)
 		{
 			String index = indexStack.get(0);
@@ -157,11 +161,13 @@ public class Tree implements TreeNodeChangeListener
 			ArrayList<String> c = g.neighbors(index);
 			for (int i=0; i<c.size(); i++)
 			{
+				if (visited.get(c.get(i)) != null) continue;
+				visited.put(c.get(i), new boolean[]{true});
 				TreeNode n2 = new TreeNode();	
 				//copy graph node properties
 				ArrayList<Property> ps = g.getNodeProperties(c.get(i));
-				for (int j=0; j<ps.size(); j++)
-					root.addProperty(new Property(ps.get(j).getName(), ps.get(j).getValue().copy()));
+				for (int j=0; ps != null && j<ps.size(); j++)
+					n2.addProperty(new Property(ps.get(j).getName(), ps.get(j).getValue().copy()));
 				
 				node.addChild(n2);
 								
@@ -186,4 +192,5 @@ public class Tree implements TreeNodeChangeListener
 		for (int i=0; i<listeners.size(); i++)
 			listeners.get(i).treeStructureChanged();
 	}
+
 }
