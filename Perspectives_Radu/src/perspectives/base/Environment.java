@@ -43,6 +43,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JList;
@@ -151,6 +152,12 @@ public class Environment extends PropertyManagerGroup implements Serializable{
     
     
 
+    private ActivityRecorder recorder;
+    private ActivityPlayer player;
+    
+    public static int NORMAL = 0;
+    public static int RECORDING = 1;
+    public static int PLAYING = 2;
 	
 	
 	// -----------------------------    Managing and drawing links -----------------------------
@@ -160,7 +167,7 @@ public class Environment extends PropertyManagerGroup implements Serializable{
 	private Vector<Viewer> links2 = new Vector<Viewer>();
 	private Vector<Boolean> linksDouble = new Vector<Boolean>();
 		
-	public Environment(boolean offline)
+	public Environment(boolean offline, int mode)
 	{
 		this.offline = offline;
 				
@@ -295,6 +302,8 @@ public class Environment extends PropertyManagerGroup implements Serializable{
 		if (offline)
 			return;
 		
+		
+		
 		 frame = new JFrame("Perspectives");
 		 
 		 //maximize the window
@@ -303,7 +312,17 @@ public class Environment extends PropertyManagerGroup implements Serializable{
 	     frame.setBounds(50, 20, 800, 600);	  
 	     frame.setExtendedState(frame.getExtendedState()|JFrame.MAXIMIZED_BOTH );
 	     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	     frame.setVisible(true);	    
+	     frame.setVisible(true);	
+	     
+	     
+	     if (mode == this.RECORDING){
+				recorder = new ActivityRecorder(frame, this);
+				recorder.setVisible(true);
+		 }
+	     else if (mode == this.PLAYING){
+	    	 player = new ActivityPlayer(frame, this);
+	    	 player.setVisible(true);
+	     }
 	        
 		 
 		 Toolkit tool = Toolkit.getDefaultToolkit();		 
@@ -527,22 +546,17 @@ public class Environment extends PropertyManagerGroup implements Serializable{
 		
 		viewers.add(v);
 		viewerContainers.add(vc);	
-		
-		if (!offline)
-		{
-			ViewerWindow vw = new ViewerWindow(vc);
-			vw.setFrameIcon(viewerIcon);
-			viewerArea.add(vw);
-			int offsetx = 250+viewers.size()*10;
-			int offsety = 100+viewers.size()*10;
-			
-			vw.setBounds(offsetx,offsety,700,500);	
 
-			viewerWindows.add(vw);
-			setFocusedViewer(viewers.size()-1);	
-		}
-
+		ViewerWindow vw = new ViewerWindow(vc);
+		vw.setFrameIcon(viewerIcon);
+		viewerArea.add(vw);
+		int offsetx = 250+viewers.size()*10;
+		int offsety = 100+viewers.size()*10;
 			
+		vw.setBounds(offsetx,offsety,700,500);	
+
+		viewerWindows.add(vw);
+		setFocusedViewer(viewers.size()-1);				
 	}
 	
 	/**

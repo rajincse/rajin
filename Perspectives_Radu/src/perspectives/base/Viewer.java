@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -31,6 +32,9 @@ public abstract class Viewer extends PropertyManager
 	
 	private ViewerContainer container;
 	
+	public DrawingArea renderedDrawingArea = null;
+	public DrawingArea interactionDrawingArea = null;
+	
 	private boolean tooltip;
 	private String tooltipText;
 	private int tooltipX = 0;
@@ -39,6 +43,27 @@ public abstract class Viewer extends PropertyManager
 	
 	private boolean visibleProperties = true;
 	private boolean propertyBarVisible = true;
+	
+	ArrayList<DrawingArea> drawAreas = new ArrayList<DrawingArea>();
+	public DrawingArea[] getDrawingAreas(){
+		DrawingArea[] rs = new DrawingArea[drawAreas.size()];
+		for (int i=0; i<drawAreas.size(); i++)
+			rs[i] = drawAreas.get(i);
+		return rs;
+	}
+	public void addDrawingArea(DrawingArea r){
+		drawAreas.add(r);
+		r.listener = container;
+		if (container != null)
+			container.viewerDrawingAreasAdded(r);
+	}
+	
+	public DrawingArea getRenderedDrawingArea(){
+		return renderedDrawingArea;
+	}
+	public DrawingArea getInteractionDrawingArea(){
+		return interactionDrawingArea;
+	}
 	
 	
 	public void simulate()
@@ -92,6 +117,10 @@ public abstract class Viewer extends PropertyManager
 	{
 		super(name);
 		
+		//addDrawingArea(new Rectangle(0,0,Integer.MAX_VALUE, Integer.MAX_VALUE));
+		
+		addDrawingArea(new DrawingArea("default", 0,0,Integer.MAX_VALUE, Integer.MAX_VALUE));
+		
 		tooltip = true;
 		tooltipText = "";
 		
@@ -134,16 +163,22 @@ public abstract class Viewer extends PropertyManager
 		container = c;
 	}
 	
-	public void requestRender()
-	{
+	public void requestRender()	{
+		DrawingArea[] das = this.getDrawingAreas();
+		for (int i=0; i<das.length; i++)
+			requestRender(das[i]);
+	}
+	
+	public void requestRender(DrawingArea da)	{
+		final DrawingArea daa = da;
 		if (container != null)
 		{
 			em.replaceEvent(new PEvent()
 			{
 				public void process() {
-					container.render();					
+					container.render(daa);					
 				}
-			},"render");
+			},"render"+da.getName());
 		}
 	}
 	
