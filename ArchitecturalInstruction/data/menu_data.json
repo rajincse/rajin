@@ -5,8 +5,46 @@
                         {
                             "name": "Building Form",
                             "unSelectedLogo": "images/building_form_logo.jpg",
-                            "selectedLogo": "",
-                            "subCategory": []
+                            "selectedLogo": "images/building_form_activated.jpg",
+							"welcomeMessageImage":"images/building_form_message.jpg",
+                            "subCategory": {
+								"Plan Geometry":
+								{
+									"name":"Plan Geometry",
+									"unSelectedLogo": "images/plan_geometry_logo.jpg",
+                                    "selectedLogo": "images/plan_geometry_activated.jpg"
+								},
+								"Building Orientation":
+								{
+									"name":"Building Orientation",
+									"unSelectedLogo": "images/building_orientation_logo.jpg",
+                                    "selectedLogo": "images/building_orientation_activated.jpg"
+								},
+								"Surface to Volume Ratio":
+								{
+									"name":"Surface to Volume Ratio",
+									"unSelectedLogo": "images/surface_to_volume_ratio_logo.jpg",
+                                    "selectedLogo": "images/surface_to_volume_ratio_activated.jpg"
+								},
+								"Natural Lighting":
+								{
+									"name":"Natural Lighting",
+									"unSelectedLogo": "images/natural_lighting_logo.jpg",
+                                    "selectedLogo": "images/natural_lighting_activated.jpg"
+								},
+								"Mass and Service Core":
+								{
+									"name":"Mass and Service Core",
+									"unSelectedLogo": "images/mass_and_service_core_logo.jpg",
+                                    "selectedLogo": "images/mass_and_service_core_activated.jpg"
+								},
+								"Natural Ventilation":
+								{
+									"name":"Natural Ventilation",
+									"unSelectedLogo": "images/natural_ventilation_logo.jpg",
+                                    "selectedLogo": "images/natural_ventilation_activated.jpg"
+								}
+							}
                         },
                 "Building Envelopes":
                         {
@@ -18,12 +56,12 @@
                                 "Envelope Concepts": {
                                     "name": "Envelope Concepts",
                                     "unSelectedLogo": "images/envelope_concepts.jpg",
-                                    "selectedLogo": ""
+                                    "selectedLogo": "images/envelope_concepts_activated.jpg"
                                 },
                                 "Wall Systems": {
                                     "name": "Wall Systems",
                                     "unSelectedLogo": "images/wall_systems.jpg",
-                                    "selectedLogo": ""
+                                    "selectedLogo": "images/wall_systems_activated.jpg"
                                 },
                                 "Climate Responsive Faccades": {
                                     "name": "Climate Responsive Faccades",
@@ -38,8 +76,31 @@
                         {
                             "name": "Structure",
                             "unSelectedLogo": "images/structure_logo.jpg",
-                            "selectedLogo": "",
-                            "subCategory": []
+                            "selectedLogo": "images/structure_activated.jpg",
+                            "welcomeMessageImage":"images/structure_message.jpg",
+                            "subCategory": {
+								"Structural Material": {
+                                    "name": "Structural Material",
+                                    "unSelectedLogo": "images/structural_material_logo.jpg",
+                                    "selectedLogo": "images/structural_material_activated.jpg"
+                                },
+								"Horizontal Spanning Systems": {
+                                    "name": "Horizontal Spanning Systems",
+                                    "unSelectedLogo": "images/horizontal_spanning_systems_logo.jpg",
+                                    "selectedLogo": "images/horizontal_spanning_systems_activated.jpg"
+                                },
+								"Vertical Spanning Systems": {
+                                    "name": "Vertical Spanning Systems",
+                                    "unSelectedLogo": "images/vertical_spanning_systems.jpg",
+                                    "selectedLogo": "images/vertical_spanning_systems_activated.jpg",
+									"dataFile":"data/vertical_spanning_systems.json"
+                                },
+								"Structural Frames": {
+                                    "name": "Structural Frames",
+                                    "unSelectedLogo": "images/structural_frames_logo.jpg",
+                                    "selectedLogo": "images/structural_frames_activated.jpg"
+                                }
+							}
                         },
                 "Climate Control":
                         {

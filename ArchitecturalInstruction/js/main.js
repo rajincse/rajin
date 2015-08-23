@@ -93,6 +93,8 @@ function AppController($scope, $http)
                     && $scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[$scope.menuControllerData.selectedSubCategoryName].dataFile
                     )
             {
+                $scope.controllerData.submoduleIndex = -1;
+                $scope.controllerData.mediaIndex = 0;
                 var dataFile = $scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[$scope.menuControllerData.selectedSubCategoryName].dataFile;                
                 $http({method: 'GET', url: dataFile}).
                         success(function (data, status) {
