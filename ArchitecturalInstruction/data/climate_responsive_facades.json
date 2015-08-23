@@ -1,0 +1,75 @@
+{
+    "moduleName": "Climate Responsive Facades",
+    "submodule":
+            [
+                {
+                    "subModuleName": "Double Skin Facades",
+                    "thumbnail": "data/media/thumbnail_double_skin_facades.jpg",
+                    "description": "Double skin facades are generally composed of two layers of glazing separated by air that performs as insulation against extreme temperatures. The exterior layer is usually composed of hardened single glazing that mediates climatic conditions to reduce the building's overall energy consumption."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_double_skin_facades.jpg"
+                            ,
+                            "mediaImage": "data/media/media_double_skin_facades.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_air_extract_system.jpg"
+                            ,
+                            "mediaImage": "data/media/media_air_extract_system.jpg"
+                        },
+						{
+                            "mediaThumbnail": "data/media/media_thumbnail_buffer_system.jpg"
+                            ,
+                            "mediaImage": "data/media/media_buffer_system.jpg"
+                        },
+						{
+                            "mediaThumbnail": "data/media/media_thumbnail_twin_face_system.jpg"
+                            ,
+                            "mediaImage": "data/media/media_twin_face_system.jpg"
+                        },
+						{
+                            "mediaThumbnail": "data/media/media_thumbnail_hybrid_system.jpg"
+                            ,
+                            "mediaImage": "data/media/media_hybrid_system.jpg"
+                        }
+                    ]
+                }, 
+				{
+                    "subModuleName": "Shading Devices",
+                    "thumbnail": "data/media/thumbnail_shading_devices.jpg",
+                    "description": "Shading Devices are passive method to control solar heatgain."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_horizontal_shading_device.jpg"
+                            ,
+                            "mediaImage": "data/media/media_horizontal_shading_device.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_vertical_shading_device.jpg"
+                            ,
+                            "mediaImage": "data/media/media_vertical_shading_device.jpg"
+                        }
+                    ]
+                }, 
+				{
+                    "subModuleName": "Photovoltaice Facades",
+                    "thumbnail": "data/media/thumbnail_photovoltaic_facades.jpg",
+                    "description": "Photovoltaic (PV) systems can be integrated into building's facade to generate electricity and reduce reliance on fossil fuels."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_building_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_photovoltaic_building_wall.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_shading_device.jpg"
+                            ,
+                            "mediaImage": "data/media/media_photovoltaic_shading_device.jpg"
+                        }
+                    ]
+                }
+            ]
+}

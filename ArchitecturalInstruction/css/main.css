@@ -82,3 +82,50 @@ body
     
     margin-right: 5px;
 }
+.submodule-title
+{
+    background-color: #358FA9;
+    color: #CCFFFF;
+    font-size: 18px;
+}
+.submodule-description
+{
+    font-size: 12px;
+    border: 1px solid #E2DBDB;
+    margin-bottom: 10px;
+}
+
+
+.media-image-big
+{
+    width: 50%;
+}
+.media-image-thumbnail
+{
+    margin-right: 10px;
+    
+}
+.image-unselected
+{
+    border: 1px solid #B8BEBF;
+}
+
+
+.media-list-summary
+{
+    width: 30%;
+}
+.submodule-list
+{
+    width: 15%;
+    margin-left: 10px;
+}
+
+.selected-cell{
+    background-color: #4C0808;
+}
+.module-welcome-message
+{
+ text-align: center;   
+ width: 75%;
+}

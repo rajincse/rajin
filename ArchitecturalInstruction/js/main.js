@@ -21,6 +21,8 @@ var climateResponsiveFaccades = angular.module('climateResponsiveFaccades', []);
 climateResponsiveFaccades.controller('MenuBar', MenuBar);
 
     
+
+    
 function MenuBar($scope)
 {
     $scope.data = {message:""};
@@ -43,3 +45,52 @@ function MenuBar($scope)
     };
     
 }
+climateResponsiveFaccades.directive("submodule", function ()
+{
+    return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.bind('click', function()
+      {
+           scope.$apply(attrs.submodule);
+      });
+          
+    },
+  };
+});
+
+climateResponsiveFaccades.directive("media", function ()
+{
+    return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.bind('click', function()
+      {     
+          scope.$apply(attrs.media);
+            
+      });
+          
+    },
+  };
+});
+    
+climateResponsiveFaccades.controller('contentController', function ($scope, $http)
+{
+    $scope.controllerData={submoduleIndex:-1,mediaIndex:0} ;
+    $scope.setSubModuleIndex = function(submoduleIndex)
+    {
+        $scope.controllerData.submoduleIndex = submoduleIndex;
+    }
+    $scope.setMediaIndex = function(mediaIndex)
+    {
+        $scope.controllerData.mediaIndex = mediaIndex;
+    }
+    $http({method: 'GET', url: "data/climate_responsive_facades.json"}).
+            success(function (data, status) {
+                $scope.contentData = data;
+            }).
+            error(function (data, status) {
+                console.log('Error');
+                console.log(data || "Request failed");
+            }); 
+});

@@ -35,8 +35,27 @@
                 </div>
             </div>
             <div class="container">
-                <div class="welcome-message">
-                    <img src="images/climate_responsive_faccades_message.jpg" alt=""/>
+                <div class="" ng-controller="contentController" >
+                    <div class="cell media-image-big" ng-show="controllerData.mediaIndex >=0">
+                        <img ng-Src="{{contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].mediaImage}}" />                        
+                    </div>
+                    <div class="cell media-list-summary" ng-show="controllerData.submoduleIndex >=0">
+                        <div class="row submodule-title">{{contentData.moduleName | uppercase}}</div>
+                        <div class="row submodule-description">{{contentData.submodule[controllerData.submoduleIndex].description }}</div>                        
+                        <div class="row">
+                            <div class="cell media-image-thumbnail"  ng-repeat="media in contentData.submodule[controllerData.submoduleIndex].mediaList" media="setMediaIndex({{$index}})">
+                                <img ng-Src="{{media.mediaThumbnail}}" class="image-unselected"/> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell module-welcome-message" ng-show="controllerData.submoduleIndex <0">
+                        <img src="images/climate_responsive_facades_message.jpg"/>
+                    </div>
+                    <div class="cell submodule-list">
+                        <div class="row"  ng-repeat="subModule in contentData.submodule" submodule="setSubModuleIndex({{$index}})">
+                            <img ng-Src="{{subModule.thumbnail}}" />  
+                        </div>
+                    </div>
                 </div>
                 
             </div>
