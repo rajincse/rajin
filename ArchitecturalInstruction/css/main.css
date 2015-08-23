@@ -82,11 +82,18 @@ body
     
     margin-right: 5px;
 }
-.submodule-title
+.module-title
 {
     background-color: #358FA9;
     color: #CCFFFF;
     font-size: 18px;
+}
+.submodule-title
+{
+    font-size: 12px;
+    text-align: right;
+    font-weight: bold;
+    border: 1px solid #E2DBDB;
 }
 .submodule-description
 {

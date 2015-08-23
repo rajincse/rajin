@@ -1,0 +1,73 @@
+{
+    "categories":
+            {
+                "Building Form":
+                        {
+                            "name": "Building Form",
+                            "unSelectedLogo": "images/building_form_logo.jpg",
+                            "selectedLogo": "",
+                            "subCategory": []
+                        },
+                "Building Envelopes":
+                        {
+                            "name": "Building Envelopes",
+                            "unSelectedLogo": "images/building_envelopes_logo.jpg",
+                            "selectedLogo": "images/building_envelope_activated.jpg",
+                            "welcomeMessageImage":"images/building_envelopes_message.jpg",
+                            "subCategory": {
+                                "Envelope Concepts": {
+                                    "name": "Envelope Concepts",
+                                    "unSelectedLogo": "images/envelope_concepts.jpg",
+                                    "selectedLogo": ""
+                                },
+                                "Wall Systems": {
+                                    "name": "Wall Systems",
+                                    "unSelectedLogo": "images/wall_systems.jpg",
+                                    "selectedLogo": ""
+                                },
+                                "Climate Responsive Faccades": {
+                                    "name": "Climate Responsive Faccades",
+                                    "unSelectedLogo": "images/climate_responsive_faccades.jpg",
+                                    "selectedLogo": "images/climate_responsive_faccades_activated.jpg",
+                                    "dataFile":"data/climate_responsive_facades.json"
+                                }
+                            }
+
+                        },
+                "Structure":
+                        {
+                            "name": "Structure",
+                            "unSelectedLogo": "images/structure_logo.jpg",
+                            "selectedLogo": "",
+                            "subCategory": []
+                        },
+                "Climate Control":
+                        {
+                            "name": "Climate Control",
+                            "unSelectedLogo": "images/climate_control_logo.jpg",
+                            "selectedLogo": "",
+                            "subCategory": []
+                        },
+                "Renewable Energy":
+                        {
+                            "name": "Renewable Energy",
+                            "unSelectedLogo": "images/renewable_energy_logo.jpg",
+                            "selectedLogo": "",
+                            "subCategory": []
+                        },
+                "Lighting":
+                        {
+                            "name": "Lighting",
+                            "unSelectedLogo": "images/lighting_logo.jpg",
+                            "selectedLogo": "",
+                            "subCategory": []
+                        },
+                "Landscape":
+                        {
+                            "name": "Landscape",
+                            "unSelectedLogo": "images/landscape_logo.jpg",
+                            "selectedLogo": "",
+                            "subCategory": []
+                        }
+            }
+}

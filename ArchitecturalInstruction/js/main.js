@@ -3,49 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var currentButton='';
 
-var mainButtonNames =['Building Form', 'Building Envelopes',
-             'Structure', 'Climate Control','Renewable Energy', 'Lighting', 'Landscape' 
-         ];
-var smallButtonNames =
-{
-    'Building Envelopes':['Envelope Concepts', 'Wall Systems', 'Climate Responsive Faccades']
-            
-};
 var homeApp = angular.module('homeApp', []);
-homeApp.controller('MenuBar', MenuBar);
-var buildingEnvelopesApp = angular.module('buildingEnvelopes', []);
-buildingEnvelopesApp.controller('MenuBar', MenuBar);
-var climateResponsiveFaccades = angular.module('climateResponsiveFaccades', []);
-climateResponsiveFaccades.controller('MenuBar', MenuBar);
-
+homeApp.controller('AppController', AppController);
     
-
-    
-function MenuBar($scope)
-{
-    $scope.data = {message:""};
-    $scope.hoverInMain = function(buttonIndex)
-    {
-        $scope.data = {message:mainButtonNames[buttonIndex]};
-    }
-    $scope.hoverOutMain = function()
-    {
-         $scope.data = {message:""};
-    };
-    
-    $scope.hoverInSmall = function(page, buttonIndex)
-    {
-        $scope.data2 = {message:smallButtonNames[page][buttonIndex]};
-    }
-    $scope.hoverOutSmall = function()
-    {
-         $scope.data2 = {message:""};
-    };
-    
-}
-climateResponsiveFaccades.directive("submodule", function ()
+homeApp.directive("submodule", function ()
 {
     return {
     restrict: 'A',
@@ -59,7 +21,7 @@ climateResponsiveFaccades.directive("submodule", function ()
   };
 });
 
-climateResponsiveFaccades.directive("media", function ()
+homeApp.directive("media", function ()
 {
     return {
     restrict: 'A',
@@ -70,27 +32,101 @@ climateResponsiveFaccades.directive("media", function ()
             
       });
           
-    },
+    }
   };
 });
     
-climateResponsiveFaccades.controller('contentController', function ($scope, $http)
+function AppController($scope, $http)
 {
-    $scope.controllerData={submoduleIndex:-1,mediaIndex:0} ;
-    $scope.setSubModuleIndex = function(submoduleIndex)
-    {
-        $scope.controllerData.submoduleIndex = submoduleIndex;
-    }
-    $scope.setMediaIndex = function(mediaIndex)
-    {
-        $scope.controllerData.mediaIndex = mediaIndex;
-    }
-    $http({method: 'GET', url: "data/climate_responsive_facades.json"}).
+    $scope.menuControllerData = {hoverCategoryName: "", hoverSubCategoryName: "",
+        selectedCategoryName: "", selectedSubCategoryName: ""};
+    $http({method: 'GET', url: "data/menu_data.json"}).
             success(function (data, status) {
-                $scope.contentData = data;
+                $scope.menuData = data;
             }).
             error(function (data, status) {
                 console.log('Error');
                 console.log(data || "Request failed");
             }); 
-});
+    $scope.data = {message:""};
+    $scope.hoverInCategory = function(categoryName)
+    {
+        $scope.menuControllerData.hoverCategoryName = categoryName;
+    };
+    $scope.hoverOutCategory = function()
+    {
+         $scope.menuControllerData.hoverCategoryName = "";
+    };
+    
+    $scope.selectCategory = function(categoryName)
+    {
+        $scope.menuControllerData.selectedCategoryName = categoryName;
+        $scope.loadContent();
+    };
+    $scope.hoverInSubCategory = function(subCategoryName)
+    {
+        $scope.menuControllerData.hoverSubCategoryName = subCategoryName;
+    };
+    $scope.hoverOutSubCategory = function()
+    {
+         $scope.menuControllerData.hoverSubCategoryName = "";
+    };
+    
+    $scope.selectSubCategory = function(subCategoryName)
+    {
+        $scope.menuControllerData.selectedSubCategoryName = subCategoryName;
+         $scope.loadContent();
+    };
+    
+    //Content
+     $scope.contentData={};
+     $scope.loadContent = function ()
+    {
+        if ($scope.menuControllerData.selectedCategoryName !== ""
+                && $scope.menuControllerData.selectedSubCategoryName !== ""
+                )
+        {
+            
+            if ($scope.menuData
+                    && $scope.menuData.categories[$scope.menuControllerData.selectedCategoryName]
+                    && $scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[$scope.menuControllerData.selectedSubCategoryName]
+                    && $scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[$scope.menuControllerData.selectedSubCategoryName].dataFile
+                    )
+            {
+                var dataFile = $scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[$scope.menuControllerData.selectedSubCategoryName].dataFile;                
+                $http({method: 'GET', url: dataFile}).
+                        success(function (data, status) {
+                            $scope.contentData = data;
+                        }).
+                        error(function (data, status) {
+                            console.log('Error');
+                            console.log(data || "Request failed");
+                        });
+            }
+            else
+            {
+                $scope.contentData={};
+            }
+        }
+        else
+        {
+           $scope.contentData={};
+        }
+    };
+    
+    
+    $scope.controllerData={
+        submoduleIndex:-1,
+        mediaIndex:0} ;
+    $scope.setSubModuleIndex = function(submoduleIndex)
+    {
+        $scope.controllerData.submoduleIndex = submoduleIndex;
+        $scope.controllerData.mediaIndex = 0;
+    }
+    $scope.setMediaIndex = function(mediaIndex)
+    {
+        $scope.controllerData.mediaIndex = mediaIndex;
+    }
+    
+    
+}

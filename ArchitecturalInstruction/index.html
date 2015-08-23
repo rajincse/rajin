@@ -7,8 +7,8 @@
                
                 <link rel="shortcut icon" href="images/shortcut_icon.ico">
 	</head>
-        <body >
-            <div class="menubar" ng-controller="MenuBar">
+        <body ng-controller="AppController">
+            <div class="menubar" >
                 <div class="home-logo cell ">
                     <div class="large-text row">WELCOME!</div>
                     <div class="row">
@@ -16,22 +16,51 @@
                     </div>
                     
                 </div>
-                <div class="button-label cell small-text">{{data.message}}</div>
+                <div class="button-label cell small-text">{{menuControllerData.hoverCategoryName}}</div>
                 <div class="button-list-main cell" >
-                    <a class="image-link" href="" ng-mouseover="hoverInMain(0)" ng-mouseleave="hoverOutMain()"><img src="images/building_form_logo.jpg" alt=""/></a>
-                    <a class="image-link" href="building_envelopes.html" ng-mouseover="hoverInMain(1)" ng-mouseleave="hoverOutMain()"><img src="images/building_envelopes_logo.jpg" alt=""/></a>
-                    <a class="image-link" href="" ng-mouseover="hoverInMain(2)" ng-mouseleave="hoverOutMain()"><img src="images/structure_logo.jpg" alt=""/></a>
-                    <a class="image-link" href="" ng-mouseover="hoverInMain(3)" ng-mouseleave="hoverOutMain()"><img src="images/climate_control_logo.jpg" alt=""/></a>
-                    <a class="image-link" href="" ng-mouseover="hoverInMain(4)" ng-mouseleave="hoverOutMain()"><img src="images/renewable_energy_logo.jpg" alt=""/></a>
-                    <a class="image-link" href="" ng-mouseover="hoverInMain(5)" ng-mouseleave="hoverOutMain()"><img src="images/lighting_logo.jpg" alt=""/></a>
-                    <a class="image-link" href="" ng-mouseover="hoverInMain(6)" ng-mouseleave="hoverOutMain()"><img src="images/landscape_logo.jpg" alt=""/></a>
+                    <a class="image-link" href="" ng-click="selectCategory(category.name)" ng-mouseover="hoverInCategory(category.name)" ng-mouseleave="hoverOutCategory()" ng-repeat="category in menuData.categories">
+                        <img ng-Src="{{category.name != menuControllerData.selectedCategoryName?category.unSelectedLogo:category.selectedLogo}}"  alt=""/>
+                    </a>
+                </div>
+                <div class="button-label cell small-text">{{menuControllerData.hoverSubCategoryName}}</div>
+                <div class="button-list-small cell" >
+                    <a class="image-link" href="" ng-click="selectSubCategory(subcategory.name)" ng-mouseover="hoverInSubCategory(subcategory.name)" ng-mouseleave="hoverOutSubCategory()" ng-repeat="subcategory in menuData.categories[menuControllerData.selectedCategoryName].subCategory">
+                        <img ng-Src="{{subcategory.name != menuControllerData.selectedSubCategoryName? subcategory.unSelectedLogo:subcategory.selectedLogo}}"alt=""/>
+                    </a>
                 </div>
             </div>
-            <div class="container">
+            <div class="container" ng-if="contentData.moduleName">
+                    <div class="cell media-image-big" ng-show="controllerData.mediaIndex >=0">
+                        <img ng-Src="{{contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].mediaImage}}" />                        
+                    </div>
+                    <div class="cell media-list-summary" ng-show="controllerData.submoduleIndex >=0">
+                        <div class="row module-title">{{contentData.moduleName | uppercase}}</div>
+                        <div class="row submodule-title">{{contentData.submodule[controllerData.submoduleIndex].subModuleName | uppercase}}</div>
+                        <div class="row submodule-description">{{contentData.submodule[controllerData.submoduleIndex].description }}</div>                        
+                        <div class="row">
+                            <div class="cell media-image-thumbnail"  ng-repeat="media in contentData.submodule[controllerData.submoduleIndex].mediaList" media="setMediaIndex({{$index}})">
+                                <img ng-Src="{{media.mediaThumbnail}}" class="image-unselected"/> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell module-welcome-message" ng-show="controllerData.submoduleIndex <0">
+                        <img ng-Src="{{contentData.welcomeMessageImage}}"/>
+                    </div>
+                    <div class="cell submodule-list">
+                        <div class="row"  ng-repeat="subModule in contentData.submodule" submodule="setSubModuleIndex({{$index}})">
+                            <img ng-Src="{{subModule.thumbnail}}" />  
+                        </div>
+                    </div>
+            </div>
+              <div class="container" ng-if="!contentData.moduleName && menuData.categories[menuControllerData.selectedCategoryName] && menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage">
+                <div class="welcome-message">
+                    <img ng-Src="{{menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage}}" alt=""/>
+                </div>
+            </div>
+            <div class="container" ng-if="!contentData.moduleName &&! menuData.categories[menuControllerData.selectedCategoryName] && !menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage">
                 <div class="welcome-message">
                     <img src="images/welcome_message.jpg" alt=""/>
                 </div>
-                
             </div>
 	</body>
 </html>
