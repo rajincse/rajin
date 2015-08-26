@@ -119,20 +119,20 @@ public class ActivityRecorder extends JDialog{
 	}
 
 	
-	public void mousePressed(Viewer v, int x, int y, int button){
-		addResult(EVENT_ANCHOR_MOUSE_PRESSED, x, y, button);
+	public void mousePressed(Viewer v, int drawingAreaIndex, int x, int y, int button){
+		addResult(EVENT_ANCHOR_MOUSE_PRESSED,drawingAreaIndex, x, y, button);
 	}
 	
-	public void mouseReleased(Viewer v, int x, int y, int button){
-		addResult(EVENT_ANCHOR_MOUSE_RELEASED, x, y, button);
+	public void mouseReleased(Viewer v, int drawingAreaIndex, int x, int y, int button){
+		addResult(EVENT_ANCHOR_MOUSE_RELEASED, drawingAreaIndex, x, y, button);
 	}
 	
-	public void mouseMoved(Viewer v, int x, int y){
-		addResult(EVENT_ANCHOR_MOUSE_MOVED, x, y);  
+	public void mouseMoved(Viewer v, int drawingAreaIndex, int x, int y){
+		addResult(EVENT_ANCHOR_MOUSE_MOVED, drawingAreaIndex, x, y);  
 	}
 	
-	public void mouseDragged(Viewer v, int x, int y){
-		addResult(EVENT_ANCHOR_MOUSE_DRAGGED, x, y);
+	public void mouseDragged(Viewer v, int drawingAreaIndex, int x, int y){
+		addResult(EVENT_ANCHOR_MOUSE_DRAGGED, drawingAreaIndex, x, y);
 	}
 	//-----------PROPERTY RECORDINGS START-----------------
 
@@ -277,12 +277,17 @@ public class ActivityRecorder extends JDialog{
 			}
 		}
 	}
-	protected void addResult(String anchor, int x, int y, int width, int height)
+	/**
+	 * Adding results for 3 param methods: Mouse Press, Mouse Released , viewerResize
+	 * @param anchor
+	 * @param value 1...4
+	 */
+	protected void addResult(String anchor,int value1, int value2, int value3, int value4)
 	{
 		if(recording) // only record when recording is on and replaying is not
 		{
 			long time = System.currentTimeMillis();
-			String data = anchor+"\t"+time+"\t"+x+"\t"+y+"\t"+width+"\t"+height+"\r\n";
+			String data = anchor+"\t"+time+"\t"+value1+"\t"+value2+"\t"+value3+"\t"+value4+"\r\n";
 			synchronized (this) {
 				this.resultText.append(data);
 			}
@@ -294,30 +299,12 @@ public class ActivityRecorder extends JDialog{
 	 * @param x
 	 * @param y
 	 */
-	protected void addResult(String anchor, int x, int y)
+	protected void addResult(String anchor,int drawingAreaIndex, int x, int y)
 	{
 		if(recording) // only record when recording is on and replaying is not
 		{
 			long time = System.currentTimeMillis();
-			String data = anchor+"\t"+time+"\t"+x+"\t"+y+"\r\n";
-			synchronized (this) {
-				this.resultText.append(data);
-			}
-		}
-	}
-	/**
-	 * Adding results for 3 param methods: Mouse Press, Mouse Released 
-	 * @param anchor
-	 * @param x
-	 * @param y
-	 * @param button
-	 */
-	protected void addResult(String anchor, int x, int y, int button)
-	{
-		if(recording) // only record when recording is on and replaying is not
-		{
-			long time = System.currentTimeMillis();
-			String data = anchor+"\t"+time+"\t"+x+"\t"+y+"\t"+button+"\r\n";
+			String data = anchor+"\t"+time+"\t"+drawingAreaIndex+"\t"+x+"\t"+y+"\r\n";
 			synchronized (this) {
 				this.resultText.append(data);
 			}

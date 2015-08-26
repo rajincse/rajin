@@ -113,20 +113,24 @@ public class ActivityPlayer extends JDialog{
 	}
 
 	
-	public void mousePressed(Viewer v, int x, int y, int button){
-		v.getContainer().mousePressed(x, y, button);
+	public void mousePressed(Viewer v, int drawingAreaIndex, int x, int y, int button){
+		DrawingArea drawingArea = v.getDrawingAreas()[drawingAreaIndex];
+		v.getContainer().mousePressed(drawingArea, x, y, button);
 	}
 	
-	public void mouseReleased(Viewer v, int x, int y, int button){
-		v.getContainer().mouseReleased(x, y, button);
+	public void mouseReleased(Viewer v, int drawingAreaIndex, int x, int y, int button){
+		DrawingArea drawingArea = v.getDrawingAreas()[drawingAreaIndex];
+		v.getContainer().mouseReleased(drawingArea,x, y, button);
 	}
 	
-	public void mouseMoved(Viewer v, int x, int y){
-		v.getContainer().mouseMoved(x, y);
+	public void mouseMoved(Viewer v, int drawingAreaIndex, int x, int y){
+		DrawingArea drawingArea = v.getDrawingAreas()[drawingAreaIndex];
+		v.getContainer().mouseMoved(drawingArea,x, y);
 	}
 	
-	public void mouseDragged(Viewer v, int x, int y){
-		v.getContainer().mouseDragged(x, y);
+	public void mouseDragged(Viewer v, int drawingAreaIndex, int x, int y){
+		DrawingArea drawingArea = v.getDrawingAreas()[drawingAreaIndex];
+		v.getContainer().mouseDragged(drawingArea,x, y);
 		
 	}
 	//-----REPLAYING START -----//
@@ -211,29 +215,33 @@ public class ActivityPlayer extends JDialog{
 				
 				if(anchor.equals(ActivityRecorder.EVENT_ANCHOR_MOUSE_DRAGGED))
 				{
-					int x = Integer.parseInt(split[2]);
-					int y = Integer.parseInt(split[3]);
-					this.mouseDragged(viewer, x, y);
+					int drawingAreaindex = Integer.parseInt(split[2]);
+					int x = Integer.parseInt(split[3]);
+					int y = Integer.parseInt(split[4]);
+					this.mouseDragged(viewer,drawingAreaindex, x, y);
 				}
 				else if(anchor.equals(ActivityRecorder.EVENT_ANCHOR_MOUSE_MOVED))
 				{
-					int x = Integer.parseInt(split[2]);
-					int y = Integer.parseInt(split[3]);
-					this.mouseMoved(viewer, x, y);
+					int drawingAreaindex = Integer.parseInt(split[2]);
+					int x = Integer.parseInt(split[3]);
+					int y = Integer.parseInt(split[4]);
+					this.mouseMoved(viewer,drawingAreaindex, x, y);
 				}
 				else if(anchor.equals(ActivityRecorder.EVENT_ANCHOR_MOUSE_PRESSED))
 				{
-					int x = Integer.parseInt(split[2]);
-					int y = Integer.parseInt(split[3]);
-					int button = Integer.parseInt(split[4]);
-					this.mousePressed(viewer, x, y, button);
+					int drawingAreaindex = Integer.parseInt(split[2]);
+					int x = Integer.parseInt(split[3]);
+					int y = Integer.parseInt(split[4]);
+					int button = Integer.parseInt(split[5]);
+					this.mousePressed(viewer,drawingAreaindex, x, y, button);
 				}
 				else if(anchor.equals(ActivityRecorder.EVENT_ANCHOR_MOUSE_RELEASED))
 				{
-					int x = Integer.parseInt(split[2]);
-					int y = Integer.parseInt(split[3]);
-					int button = Integer.parseInt(split[4]);
-					this.mouseReleased(viewer, x, y, button);
+					int drawingAreaindex = Integer.parseInt(split[2]);
+					int x = Integer.parseInt(split[3]);
+					int y = Integer.parseInt(split[4]);
+					int button = Integer.parseInt(split[5]);
+					this.mouseReleased(viewer,drawingAreaindex, x, y, button);
 				}
 				else if(anchor.equals(ActivityRecorder.EVENT_ANCHOR_PROPERTY_VALUE_CHANGED))
 				{

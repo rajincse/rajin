@@ -166,7 +166,11 @@ public class Environment extends PropertyManagerGroup implements Serializable{
 	private Vector<Viewer> links1 = new Vector<Viewer>();
 	private Vector<Viewer> links2 = new Vector<Viewer>();
 	private Vector<Boolean> linksDouble = new Vector<Boolean>();
-		
+
+	public Environment(boolean offline)
+	{
+		this(offline, NORMAL);
+	}
 	public Environment(boolean offline, int mode)
 	{
 		this.offline = offline;

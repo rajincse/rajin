@@ -235,9 +235,17 @@ public class ViewerContainer2D extends ViewerContainer{
 		
 		AffineTransform[] transform = null;
 		DrawingArea[] das = viewer.getDrawingAreas();
+		int drawingAreaIndex =0;
 		for (int i=0; i<das.length; i++)
+		{
 			if (das[i] == da)
+			{
 				transform = this.transform.get(i);
+				drawingAreaIndex = i;
+			}
+		}
+			
+				
 		
 		try{
 			Point2D.Double tp = new Point2D.Double();
@@ -262,7 +270,7 @@ public class ViewerContainer2D extends ViewerContainer{
                         this.render(da);
             if(getEnvironment().getRecorder() != null)
 			{
-            	getEnvironment().getRecorder().mousePressed(viewer,ex, ey, button);
+            	getEnvironment().getRecorder().mousePressed(viewer, drawingAreaIndex,ex, ey, button);
 			}
                         
 		}
@@ -278,9 +286,17 @@ public class ViewerContainer2D extends ViewerContainer{
 	{
 		AffineTransform[] transform = null;
 		DrawingArea[] das = viewer.getDrawingAreas();
+		int drawingAreaIndex =0;
 		for (int i=0; i<das.length; i++)
+		{
 			if (das[i] == da)
+			{
 				transform = this.transform.get(i);
+				drawingAreaIndex = i;
+			}
+				
+		}
+			
 		
 		try{
 			Point2D.Double tp = new Point2D.Double();
@@ -298,7 +314,7 @@ public class ViewerContainer2D extends ViewerContainer{
                         this.render(da);
 	        if(getEnvironment().getRecorder() != null)
 			{
-	        	getEnvironment().getRecorder().mouseReleased(viewer,ex, ey, button);
+	        	getEnvironment().getRecorder().mouseReleased(viewer,drawingAreaIndex ,ex, ey, button);
 			}
 		}
 		catch(Exception ee)
@@ -311,12 +327,14 @@ public class ViewerContainer2D extends ViewerContainer{
 	protected void mouseDragged(DrawingArea da, int ex, int ey) {
 		
 		DrawingArea[] das = viewer.getDrawingAreas();
+		int drawingAreaIndex =0;
 		double[] zoom = null;
 		double[] translatex = null;
 		double[] translatey = null;
 		AffineTransform[] transform = null;
 		for (int i=0; i<das.length; i++)
 			if (das[i] == da){
+				drawingAreaIndex = i;
 				zoom = this.zoom.get(i);
 				translatex = this.translatex.get(i);
 				translatey = this.translatey.get(i);
@@ -358,7 +376,7 @@ public class ViewerContainer2D extends ViewerContainer{
 			//this.render();
 			if(getEnvironment().getRecorder() != null)
 			{
-				getEnvironment().getRecorder().mouseDragged(viewer,ex, ey);
+				getEnvironment().getRecorder().mouseDragged(viewer, drawingAreaIndex,ex, ey);
 			}
 		}
                 
@@ -380,9 +398,15 @@ public class ViewerContainer2D extends ViewerContainer{
 	{
 		AffineTransform[] transform = null;
 		DrawingArea[] das = viewer.getDrawingAreas();
+		int drawingAreaIndex =0;
 		for (int i=0; i<das.length; i++)
+		{
 			if (das[i] == da)
+			{
 				transform = this.transform.get(i);
+				drawingAreaIndex =i;
+			}
+		}
 		
 		if (viewer == null)
 			return;
@@ -402,7 +426,7 @@ public class ViewerContainer2D extends ViewerContainer{
         // this.render();
 			if(getEnvironment().getRecorder() != null)
 			{
-				getEnvironment().getRecorder().mouseMoved(viewer,ex, ey);
+				getEnvironment().getRecorder().mouseMoved(viewer, drawingAreaIndex,ex, ey);
 			}
 			 
 		}
