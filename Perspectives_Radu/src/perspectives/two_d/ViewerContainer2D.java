@@ -260,6 +260,10 @@ public class ViewerContainer2D extends ViewerContainer{
 			}
                         
                         this.render(da);
+            if(getEnvironment().getRecorder() != null)
+			{
+            	getEnvironment().getRecorder().mousePressed(viewer,ex, ey, button);
+			}
                         
 		}
 		catch(Exception ee)
@@ -292,7 +296,10 @@ public class ViewerContainer2D extends ViewerContainer{
                         }
 				
                         this.render(da);
-
+	        if(getEnvironment().getRecorder() != null)
+			{
+	        	getEnvironment().getRecorder().mouseReleased(viewer,ex, ey, button);
+			}
 		}
 		catch(Exception ee)
 		{
@@ -349,6 +356,10 @@ public class ViewerContainer2D extends ViewerContainer{
 			
 			viewer.viewChanged();
 			//this.render();
+			if(getEnvironment().getRecorder() != null)
+			{
+				getEnvironment().getRecorder().mouseDragged(viewer,ex, ey);
+			}
 		}
                 
        this.render(da);
@@ -389,7 +400,11 @@ public class ViewerContainer2D extends ViewerContainer{
 		
 		//if (viewer.getToolTipText() != "")                
         // this.render();
-                
+			if(getEnvironment().getRecorder() != null)
+			{
+				getEnvironment().getRecorder().mouseMoved(viewer,ex, ey);
+			}
+			 
 		}
 		catch(Exception ee)
 		{
@@ -497,6 +512,16 @@ public class ViewerContainer2D extends ViewerContainer{
 	}
 	
 	
-	
+	@Override
+	public void resize(int w, int h) {
+		// TODO Auto-generated method stub
+		super.resize(w, h);
+		if(getEnvironment().getRecorder() != null)
+		{
+			getEnvironment().getRecorder().viewerResize(viewer);
+		}
+			
+		
+	}
 
 }

@@ -777,6 +777,15 @@ public class Environment extends PropertyManagerGroup implements Serializable{
 		
 		return result;
 	}
+
+	public ActivityRecorder getRecorder() {
+		return recorder;
+	}
+
+
+	public ActivityPlayer getPlayer() {
+		return player;
+	}
 	
 	
 	
