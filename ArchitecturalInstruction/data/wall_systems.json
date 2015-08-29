@@ -168,6 +168,78 @@
                             "additionalMedia": ["data/media/media_metal_veneer_wall_ribbon_window_barchart.jpg", "data/media/media_metal_veneer_wall_ribbon_window_table.jpg"]
                         }
                     ]
+                },
+                {
+                    "subModuleName": "Precast Concrete Wall",
+                    "thumbnail": "data/media/thumbnail_precast_concrete_wall.jpg",
+                    "description": "Precast concrete cladding for large scale building is typically a nonload-bearing curtain wall that is supported by the structural frame of the building."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_precast_concrete_wall.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_precast_concrete_wall_barchart.jpg", "data/media/media_precast_concrete_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_section.jpg"
+                            ,
+                            "mediaImage": "data/media/media_precast_concrete_wall_section.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_precast_concrete_wall_barchart.jpg", "data/media/media_precast_concrete_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_punched_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_precast_concrete_wall_punched_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_precast_concrete_wall_punched_window_barchart.jpg", "data/media/media_precast_concrete_wall_punched_window_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_ribbon_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_precast_concrete_wall_ribbon_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_precast_concrete_wall_ribbon_window_barchart.jpg", "data/media/media_precast_concrete_wall_ribbon_window_table.jpg"]
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Stone Panel Wall",
+                    "thumbnail": "data/media/thumbnail_stone_panel_wall.jpg",
+                    "description": "Stone cladding for large-scale buildings is typically a nonload-bearing curtain wall that is supported by the structural frame of the building."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_stone_panel_wall.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_stone_panel_wall_barchart.jpg", "data/media/media_stone_panel_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_section.jpg"
+                            ,
+                            "mediaImage": "data/media/media_stone_panel_wall_section.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_stone_panel_wall_barchart.jpg", "data/media/media_stone_panel_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_punched_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_stone_panel_wall_punched_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_stone_panel_wall_punched_window_barchart.jpg", "data/media/media_stone_panel_wall_punched_window_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thmbnail_stone_panel_wall_ribbon_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_stone_panel_wall_ribbon_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_stone_panel_wall_ribbon_window_barchart.jpg", "data/media/media_stone_panel_wall_ribbon_window_table.jpg"]
+                        }
+                    ]
                 }
             ]
 }
