@@ -136,3 +136,6 @@ body
  text-align: center;   
  width: 75%;
 }
+.bottom-margin{
+    margin-bottom: 10px;
+}

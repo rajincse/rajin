@@ -96,13 +96,14 @@ function AppController($scope, $http)
                 $scope.controllerData.submoduleIndex = -1;
                 $scope.controllerData.mediaIndex = 0;
                 var dataFile = $scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[$scope.menuControllerData.selectedSubCategoryName].dataFile;                
+                console.log(dataFile);
                 $http({method: 'GET', url: dataFile}).
                         success(function (data, status) {
                             $scope.contentData = data;
                         }).
                         error(function (data, status) {
-                            console.log('Error');
-                            console.log(data || "Request failed");
+                            console.log('Error '+status );
+                            console.log(data+" "+status || "Request failed");
                         });
             }
             else

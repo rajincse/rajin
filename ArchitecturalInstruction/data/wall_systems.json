@@ -1,0 +1,173 @@
+{
+    "moduleName": "Wall Systems",
+    "welcomeMessageImage": "images/wall_systems_message.jpg",
+    "submodule":
+            [
+                {
+                    "subModuleName": "Cavity Wall",
+                    "thumbnail": "data/media/thumbnail_cavity_wall.jpg",
+                    "description": "A cavity wall consists of two unbounded wythes of masonry separated by an air space."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_cavity_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_cavity_wall.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_cavity_wall_barchart.jpg", "data/media/media_cavity_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_wall_section.jpg"
+                            ,
+                            "mediaImage": "data/media/media_wall_section.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_cavity_wall_barchart.jpg", "data/media/media_cavity_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_punched_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_punched_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_punched_window_barchart.jpg", "data/media/media_punched_window_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_ribbon_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_ribbon_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_ribbon_window_barchart.jpg", "data/media/media_ribbon_window_table.jpg"]
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Glass Curtain Wall",
+                    "thumbnail": "data/media/thumbnail_glass_curtain_wall.jpg",
+                    "description": "A glass curtain wall is a non-load bearing external wall that is supported by the structural frame of the building."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_glass_curtain_wall.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.jpg", "data/media/media_glass_curtain_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall_section.jpg"
+                            ,
+                            "mediaImage": "data/media/media_glass_curtain_wall_section.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.jpg", "data/media/media_glass_curtain_wall_table.jpg"]
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Concrete Masonry Unit Wall",
+                    "thumbnail": "data/media/thumbnail_cmu_wall.jpg",
+                    "description": "The concrete masonry unit (CMU) wall is a prevalent building component that is both simple to construct and durable over time."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_cmu_wall.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_cmu_wall_barchart.jpg", "data/media/media_cmu_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_section.jpg"
+                            ,
+                            "mediaImage": "data/media/media_cmu_wall_section.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_cmu_wall_barchart.jpg", "data/media/media_cmu_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_punched_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_cmu_wall_punched_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_cmu_wall_punched_window_barchart.jpg", "data/media/media_cmu_wall_punched_window_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_ribbon_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_cmu_wall_ribbon_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_cmu_wall_ribbon_window_barchart.jpg", "data/media/media_cmu_wall_ribbon_window_table.jpg"]
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Concrete Wall",
+                    "thumbnail": "data/media/thumbnail_concrete_wall.jpg",
+                    "description": "Concrete has been used since the times of the Romans and continues to be a major building material."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_concrete_wall.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_concrete_wall_barchart.jpg", "data/media/media_concrete_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_section.jpg"
+                            ,
+                            "mediaImage": "data/media/media_concrete_wall_section.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_concrete_wall_barchart.jpg", "data/media/media_concrete_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_punched_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_concrete_wall_punched_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_concrete_wall_punched_window_barchart.jpg", "data/media/media_concrete_wall_punched_window_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_ribbon_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_concrete_wall_ribbon_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_concrete_wall_ribbon_window_barchart.jpg", "data/media/media_concrete_wall_ribbon_window_table.jpg"]
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Metal Veneer Wall",
+                    "thumbnail": "data/media/thumbnail_metal_veneer_wall.jpg",
+                    "description": "A metal veneer wall is a nonload-bearing curtain wall that is supported by the building's primary structure."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall.jpg"
+                            ,
+                            "mediaImage": "data/media/media_metal_veneer_wall.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_metal_veneer_wall_barchart.jpg", "data/media/media_metal_veneer_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_section.jpg"
+                            ,
+                            "mediaImage": "data/media/media_metal_veneer_wall_section.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_metal_veneer_wall_barchart.jpg", "data/media/media_metal_veneer_wall_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_punched_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_metal_veneer_wall_punched_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_metal_veneer_wall_punched_window_barchart.jpg", "data/media/media_metal_veneer_wall_punched_window_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_ribbon_window.jpg"
+                            ,
+                            "mediaImage": "data/media/media_metal_veneer_wall_ribbon_window.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_metal_veneer_wall_ribbon_window_barchart.jpg", "data/media/media_metal_veneer_wall_ribbon_window_table.jpg"]
+                        }
+                    ]
+                }
+            ]
+}

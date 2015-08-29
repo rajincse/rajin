@@ -1,0 +1,146 @@
+{
+    "moduleName": "Envelope Concepts",
+    "welcomeMessageImage": "images/envelope_concepts_message.jpg",
+    "submodule":
+            [
+                {
+                    "subModuleName": "Environmental Impact",
+                    "thumbnail": "data/media/thumbnail_environmental_impact.jpg",
+                    "description": "The use of materials for building construction causes major impacts on the environment, including significant water consumption and resource and energy usage as well as greenhouse gas emissions."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_embodied_energy.jpg"
+                            ,
+                            "mediaImage": "data/media/media_embodied_energy.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_embodied_energy_table.jpg"]
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_embodied_water.jpg"
+                            ,
+                            "mediaImage": "data/media/media_embodied_water.jpg"
+                            ,
+                            "additionalMedia": ["data/media/media_embodied_energy_table.jpg"]
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Material Thermal Properties",
+                    "thumbnail": "data/media/thumbnail_material_thermal_properties.jpg",
+                    "description": "Designing efficient building envelopes requires an understanding of the thermal performances of utilized materials."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_solar_heat_gain.jpg"
+                            ,
+                            "mediaImage": "data/media/media_solar_heat_gain.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_low_e_glass.jpg"
+                            ,
+                            "mediaImage": "data/media/media_low_e_glass.jpg"
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Enclosure Materials",
+                    "thumbnail": "data/media/thumbnail_photovoltaic_facades.jpg",
+                    "description": "Building enclosures serve a multitude of critical functions by providing thermal comfort, natural lighting , air movement, humidity and moisture control, views, sound insulation, pollution and fire resistance."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_wood_enclosure_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_wood_enclosure_materials.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_masonry_enclosure_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_masonry_enclosure_materials.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_enclosure_material.jpg"
+                            ,
+                            "mediaImage": "data/media/media_concrete_enclosure_material.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_metals_enclosure_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_metals_enclosure_materials.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_glass_enclosure_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_glass_enclosure_materials.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_glass_enclosure_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_glass_enclosure_materials2.jpg"
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Insulation Materials",
+                    "thumbnail": "data/media/thumbnail_insulation_materials.jpg",
+                    "description": "The insulation of a building envelope consists of many layers of materials that are critical in meeting thermal, accoustical and fire-resistant requirements."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_rigid_insulation_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_rigid_insulation_materials.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_structural_insulated_panels.jpg"
+                            ,
+                            "mediaImage": "data/media/media_structural_insulated_panels.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_vacuum_insulated_panels.jpg"
+                            ,
+                            "mediaImage": "data/media/media_vacuum_insulated_panels.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_sound_insulation.jpg"
+                            ,
+                            "mediaImage": "data/media/media_sound_insulation.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_other_insulation_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_organic_insulation_materials.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_other_insulation_materials.jpg"
+                            ,
+                            "mediaImage": "data/media/media_inorganic_insulation_materials.jpg"
+                        }
+                    ]
+                },
+                {
+                    "subModuleName": "Thermal Materials",
+                    "thumbnail": "data/media/thumbnail_thermal_materials.jpg",
+                    "description": "Building materials with significant mass such as concrete can act as a thermal storage areas in climates where there is a significant difference between the day and night temperatures."
+                    ,
+                    "mediaList": [
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_thermal_mass.jpg"
+                            ,
+                            "mediaImage": "data/media/media_thermal_mass.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_phase_change_material.jpg"
+                            ,
+                            "mediaImage": "data/media/media_phase_change_material.jpg"
+                        },
+                        {
+                            "mediaThumbnail": "data/media/media_thumbnail_transparent_thermal_insulation.jpg"
+                            ,
+                            "mediaImage": "data/media/media_transparent_thermal_insulation.jpg"
+                        }
+                    ]
+                }
+            ]
+}

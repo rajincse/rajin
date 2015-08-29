@@ -30,24 +30,27 @@
                 </div>
             </div>
             <div class="container" ng-if="contentData.moduleName">
-                    <div class="cell media-image-big" ng-show="controllerData.mediaIndex >=0">
+                    <div class="cell media-image-big" ng-show="controllerData.submoduleIndex>=0 && controllerData.mediaIndex >=0">
                         <img ng-Src="{{contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].mediaImage}}" />                        
                     </div>
                     <div class="cell media-list-summary" ng-show="controllerData.submoduleIndex >=0">
                         <div class="row module-title">{{contentData.moduleName | uppercase}}</div>
                         <div class="row submodule-title">{{contentData.submodule[controllerData.submoduleIndex].subModuleName | uppercase}}</div>
                         <div class="row submodule-description">{{contentData.submodule[controllerData.submoduleIndex].description }}</div>                        
-                        <div class="row">
+                        <div class="row bottom-margin">
                             <div class="cell media-image-thumbnail"  ng-repeat="media in contentData.submodule[controllerData.submoduleIndex].mediaList" media="setMediaIndex({{$index}})">
                                 <img ng-Src="{{media.mediaThumbnail}}" class="image-unselected"/> 
                             </div>
+                        </div>
+                        <div class="row bottom-margin" ng-repeat="additionalMedia in contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].additionalMedia">
+                            <img ng-Src="{{additionalMedia}}" class="image-unselected"/> 
                         </div>
                     </div>
                     <div class="cell module-welcome-message" ng-show="controllerData.submoduleIndex <0">
                         <img ng-Src="{{contentData.welcomeMessageImage}}"/>
                     </div>
                     <div class="cell submodule-list">
-                        <div class="row"  ng-repeat="subModule in contentData.submodule" submodule="setSubModuleIndex({{$index}})">
+                        <div class="row bottom-margin"  ng-repeat="subModule in contentData.submodule" submodule="setSubModuleIndex({{$index}})">
                             <img ng-Src="{{subModule.thumbnail}}" />  
                         </div>
                     </div>

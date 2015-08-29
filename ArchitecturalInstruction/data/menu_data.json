@@ -56,12 +56,14 @@
                                 "Envelope Concepts": {
                                     "name": "Envelope Concepts",
                                     "unSelectedLogo": "images/envelope_concepts.jpg",
-                                    "selectedLogo": "images/envelope_concepts_activated.jpg"
+                                    "selectedLogo": "images/envelope_concepts_activated.jpg",
+                                    "dataFile":"data/envelope_concepts.json"
                                 },
                                 "Wall Systems": {
                                     "name": "Wall Systems",
                                     "unSelectedLogo": "images/wall_systems.jpg",
-                                    "selectedLogo": "images/wall_systems_activated.jpg"
+                                    "selectedLogo": "images/wall_systems_activated.jpg",
+                                    "dataFile":"data/wall_systems.json"
                                 },
                                 "Climate Responsive Faccades": {
                                     "name": "Climate Responsive Faccades",
