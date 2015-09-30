@@ -65,8 +65,8 @@
                                     "selectedLogo": "images/wall_systems_activated.jpg",
                                     "dataFile":"data/wall_systems.json"
                                 },
-                                "Climate Responsive Faccades": {
-                                    "name": "Climate Responsive Faccades",
+                                "Climate Responsive Facades": {
+                                    "name": "Climate Responsive Facades",
                                     "unSelectedLogo": "images/climate_responsive_faccades.jpg",
                                     "selectedLogo": "images/climate_responsive_faccades_activated.jpg",
                                     "dataFile":"data/climate_responsive_facades.json"

@@ -5,40 +5,40 @@
             [
                 {
                     "subModuleName": "Double Skin Facades",
-                    "thumbnail": "data/media/thumbnail_double_skin_facades.jpg",
-                    "description": "Double skin facades are generally composed of two layers of glazing separated by air that performs as insulation against extreme temperatures. The exterior layer is usually composed of hardened single glazing that mediates climatic conditions to reduce the building's overall energy consumption."
+                    "thumbnail": "data/media/thumbnail_double_skin_facades.png",
+                    "description": "Double-skin facades are generally composed of two layers of glazing separated by an air cavity that performs as insulation against extreme temperatures. The exterior layer is usually composed of hardened single glazing that mediates climatic conditions to reduce the building's overall energy consumption. The interior layer is usually a double-glazed window that seals and insulates the building. The air cavity between the two layers of glazing can be totally natural, fan supported or mechanically ventilated. A double-skin facade can incorporate integrated sunshading devices, natural ventilation systems, and thermal, acoustical, and fire safety insulation materials. In general, there are three types of double-skin facades: the extract-air system, the buffer system, and the twin-face system. There are also hybrid double facades that include opaque, translucent or screen elements as an alternative to single glazing on the outer skin to control solar heat gains, glare, and daylighting levels."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_double_skin_facades.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_double_skin_facades.png"
                             ,
-                            "mediaImage": "data/media/media_double_skin_facades.jpg"
+                            "mediaImage": "data/media/media_double_skin_facades.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_air_extract_system.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_air_extract_system.png"
                             ,
-                            "mediaImage": "data/media/media_air_extract_system.jpg"
+                            "mediaImage": "data/media/media_air_extract_system.png"
                         },
 						{
-                            "mediaThumbnail": "data/media/media_thumbnail_buffer_system.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_buffer_system.png"
                             ,
-                            "mediaImage": "data/media/media_buffer_system.jpg"
+                            "mediaImage": "data/media/media_buffer_system.png"
                         },
 						{
-                            "mediaThumbnail": "data/media/media_thumbnail_twin_face_system.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_twin_face_system.png"
                             ,
-                            "mediaImage": "data/media/media_twin_face_system.jpg"
+                            "mediaImage": "data/media/media_twin_face_system.png"
                         },
 						{
-                            "mediaThumbnail": "data/media/media_thumbnail_hybrid_system.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_hybrid_system.png"
                             ,
-                            "mediaImage": "data/media/media_hybrid_system.jpg"
+                            "mediaImage": "data/media/media_hybrid_system.png"
                         }
                     ]
                 }, 
 				{
                     "subModuleName": "Shading Devices",
-                    "thumbnail": "data/media/thumbnail_shading_devices.jpg",
+                    "thumbnail": "data/media/thumbnail_shading_devices.png",
                     "description": "Shading Devices are passive method to control solar heatgain."
                     ,
                     "mediaList": [
@@ -56,7 +56,7 @@
                 }, 
 				{
                     "subModuleName": "Photovoltaice Facades",
-                    "thumbnail": "data/media/thumbnail_photovoltaic_facades.jpg",
+                    "thumbnail": "data/media/thumbnail_photovoltaic_facades.png",
                     "description": "Photovoltaic (PV) systems can be integrated into building's facade to generate electricity and reduce reliance on fossil fuels."
                     ,
                     "mediaList": [

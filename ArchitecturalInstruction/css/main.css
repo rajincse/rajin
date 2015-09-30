@@ -107,10 +107,13 @@ body
 {
     width: 50%;
 }
+.media-image-big img{
+    width: 100%;
+}
 .media-image-thumbnail
 {
-    margin-right: 10px;
-    
+    margin-right: 5px;
+    width: 18%;
 }
 .image-unselected
 {
@@ -125,6 +128,12 @@ body
 .submodule-list
 {
     width: 15%;
+    margin-left: 10px;
+}
+
+.submodule-list div img
+{
+    width: 75%;
     margin-left: 10px;
 }
 
