@@ -39,36 +39,36 @@
 				{
                     "subModuleName": "Shading Devices",
                     "thumbnail": "data/media/thumbnail_shading_devices.png",
-                    "description": "Shading Devices are passive method to control solar heatgain."
+                    "description": "Shading systems are a passive method to control solar heat gains and glare while providing ample daylight and views to the outside. Shading devices are often attached to the building's cladding frame or mounted directly to the building structure. They can be manually operated or automatically controlled by a building management system. External louvers generally consist of glass fins, perforated metal louvers, or wood slats utilized to control solar radiation and glare based on the facade orientation. Horizontal louvers are efficient in southern facades whereas vertical louvers respond effectively to the low summer sun striking the east and west facades, as well as sun in the higher latitudes on the northeast and northwest facades. When used in combination with double-skin facades, the shading devices can be incorporated into maintenance walkways attached or integrated in the facade cavity."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_horizontal_shading_device.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_horizontal_shading_device.png"
                             ,
-                            "mediaImage": "data/media/media_horizontal_shading_device.jpg"
+                            "mediaImage": "data/media/media_horizontal_shading_device.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_vertical_shading_device.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_vertical_shading_device.png"
                             ,
-                            "mediaImage": "data/media/media_vertical_shading_device.jpg"
+                            "mediaImage": "data/media/media_vertical_shading_device.png"
                         }
                     ]
                 }, 
 				{
                     "subModuleName": "Photovoltaice Facades",
                     "thumbnail": "data/media/thumbnail_photovoltaic_facades.png",
-                    "description": "Photovoltaic (PV) systems can be integrated into building's facade to generate electricity and reduce reliance on fossil fuels."
+                    "description": "Photovoltaic (PV) systems can be integrated into the building's facade to generate electricity and reduce reliance on fossil fuels, while minimizing green house gas emissions. PV systems may be utilized as the external wall finishing or as part of the facade to provide shading. The optimum orientation and correct tilt angle of the PV installation are fundamental in the solar access and the potential electrical output of the system. Photovoltaic facades on the northern hemisphere should be oriented south and tilted at an angle 15 degrees higher than the site latitude for maximum efficiency."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_building_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_building_wall.png"
                             ,
-                            "mediaImage": "data/media/media_photovoltaic_building_wall.jpg"
+                            "mediaImage": "data/media/media_photovoltaic_building_wall.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_shading_device.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_shading_device.png"
                             ,
-                            "mediaImage": "data/media/media_photovoltaic_shading_device.jpg"
+                            "mediaImage": "data/media/media_photovoltaic_shading_device.png"
                         }
                     ]
                 }
