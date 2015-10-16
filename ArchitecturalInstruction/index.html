@@ -2,6 +2,8 @@
 	<head>
                 <title>Architectural Instruction</title>
                 <link href="css/main.css" rel="stylesheet" type="text/css"/>                
+                <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+                <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>                
                <script src="js/instrument.js" type="text/javascript"></script>
                 <script src="js/main.js" type="text/javascript"></script>                
@@ -42,7 +44,7 @@
                                 <img ng-Src="{{media.mediaThumbnail}}" class="image-unselected"/> 
                             </div>
                         </div>
-                        <div class="row bottom-margin" ng-repeat="additionalMedia in contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].additionalMedia">
+                        <div class="row bottom-margin media-additional" ng-repeat="additionalMedia in contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].additionalMedia">
                             <img ng-Src="{{additionalMedia}}" class="image-unselected"/> 
                         </div>
                     </div>

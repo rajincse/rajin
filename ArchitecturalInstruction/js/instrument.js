@@ -29,10 +29,6 @@ var instrument =
             var xhttp = new XMLHttpRequest();
             xhttp.open('GET', s, true);
             xhttp.send();
-//            d3.tsv(s, function(error, data) {
-//               if (error) throw error;
-//                
-//            });
         }
         
 }
