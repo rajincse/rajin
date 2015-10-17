@@ -53,3 +53,9 @@ window.onblur = function(){
 window.onfocus = function(){
         instrument.sendCommands(["gainedfocus"]);
 }
+window.onscroll = function()
+{
+    var windowScroll = $(window);
+    
+    instrument.sendCommands(['translate_-'+windowScroll.scrollLeft()+'_-'+windowScroll.scrollTop()]);
+}

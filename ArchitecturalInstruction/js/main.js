@@ -139,27 +139,41 @@ function AppController($scope, $http)
         if(param)
         {
             console.log('init :'+param);
+             var command =['removeAllElem'];
+             var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
+             var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
+             command.push('addElem_homelogoText_'+getRectangleString(homeLogoText));
+             command.push('addElem_homelogo_'+getRectangleString(homeLogo));
+             
+             var categoryButtons = $('div.menubar div.button-list-main a img');
+             var keys = Object.keys($scope.menuData.categories);
+             for(var i=0;i<categoryButtons.length;i++)
+             {
+                 var rect = categoryButtons[i].getBoundingClientRect();
+                 command.push('addElem_'+$scope.menuData.categories[keys[i]].name+'_'+getRectangleString(rect));
+             }
+             
+             var subCategoryButtons = $('div.menubar div.button-list-small a img');
+             for(var i=0;i<subCategoryButtons.length;i++)
+             {
+                 var rect = subCategoryButtons[i].getBoundingClientRect();
+                 command.push('addElem_subcategory_'+getRectangleString(rect));
+             }
+           
             if($scope.contentData.moduleName)
             {
                 var currentSubModule = $scope.contentData.submodule[ $scope.controllerData.submoduleIndex];
                 var currentMedia = currentSubModule.mediaList[ $scope.controllerData.mediaIndex];
-                if(currentSubModule && currentSubModule && currentMedia.aoiData)
+                
+                //Submodule Images
+                var submodules = $('.container div.submodule-list div img'); 
+                for(var i=0;i<submodules.length;i++)
                 {
-                    var command =['removeAllElem'];
-                    //bigMediaImage
-                    var bigMediaImage = $('.container div.media-image-big img')[0].getBoundingClientRect();
-                    var rect={left:bigMediaImage.left|0, top:bigMediaImage.top|0, width:bigMediaImage.width|0, height:bigMediaImage.height|0}
-                    var scaleX = rect.width/ currentMedia.aoiData.width;
-                    var scaleY = rect.height / currentMedia.aoiData.height;
-                    var bigMediaName = currentMedia.aoiData.imageName.replace(new RegExp('_','g'),'');
-                    command.push('addElem_'+bigMediaName+'_'+getRectangleString(rect));
-                    for(var i=0;i<currentMedia.aoiData.aoiItemList.length;i++)
-                    {
-                        var aoi = currentMedia.aoiData.aoiItemList[i];
-                        command.push('addElem_'+bigMediaName+':'+aoi.name+'_'+((aoi.x * scaleX+bigMediaImage.left)|0)+'_'+((aoi.y*scaleY+bigMediaImage.top)|0)
-                                +'_'+((aoi.width*scaleX)|0)+'_'+((aoi.height*scaleY)|0));
-                    }
-                    
+                    var rect = submodules[i].getBoundingClientRect();
+                    command.push('addElem_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_'+getRectangleString(rect));
+                }
+                if(currentSubModule)
+                {
                     //Texts
                     var moduleTitle = $('.container div.media-list-summary div.module-title')[0].getBoundingClientRect();
                     var subModuleTitle = $('.container div.media-list-summary div.submodule-title')[0].getBoundingClientRect();
@@ -184,17 +198,28 @@ function AppController($scope, $http)
                         var rect = additionalMedia[i].getBoundingClientRect();
                         command.push('addElem_'+currentMedia.additionalMedia[i]+':additionalMedia_'+getRectangleString(rect));
                     }
-                    //Submodule Images
-                    var submodules = $('.container div.submodule-list div img'); 
-                    for(var i=0;i<submodules.length;i++)
+                }
+                if(currentSubModule  && currentMedia.aoiData)
+                {
+                   
+                    //bigMediaImage
+                    var bigMediaImage = $('.container div.media-image-big img')[0].getBoundingClientRect();
+                    var rect={left:bigMediaImage.left|0, top:bigMediaImage.top|0, width:bigMediaImage.width|0, height:bigMediaImage.height|0}
+                    var scaleX = rect.width/ currentMedia.aoiData.width;
+                    var scaleY = rect.height / currentMedia.aoiData.height;
+                    var bigMediaName = getUnderscoreFreeString(currentMedia.aoiData.imageName);
+                    command.push('addElem_'+bigMediaName+'_'+getRectangleString(rect));
+                    for(var i=0;i<currentMedia.aoiData.aoiItemList.length;i++)
                     {
-                        var rect = submodules[i].getBoundingClientRect();
-                        command.push('addElem_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_'+getRectangleString(rect));
+                        var aoi = currentMedia.aoiData.aoiItemList[i];
+                        command.push('addElem_'+bigMediaName+':'+aoi.name+'_'+((aoi.x * scaleX+bigMediaImage.left)|0)+'_'+((aoi.y*scaleY+bigMediaImage.top)|0)
+                                +'_'+((aoi.width*scaleX)|0)+'_'+((aoi.height*scaleY)|0));
                     }
-                    instrument.sendCommands(command);
+                    
                 }
                 
             }
+            instrument.sendCommands(command);
         }
         else
         {
