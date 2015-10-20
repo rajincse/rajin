@@ -71,11 +71,13 @@
                             "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_building_wall.png"
                             ,
                             "mediaImage": "data/media/media_photovoltaic_building_wall.png"
+							,"aoiData":{"imageName":"media_photovoltaic_building_wall.png","width":1269,"height":1341,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1269,"height":1341},{"name":"Title","x":29,"y":17,"width":724,"height":73},{"name":"Finished Floor Text","x":831,"y":315,"width":179,"height":45},{"name":"Reinforced Concrete Floor Text","x":835,"y":425,"width":333,"height":38},{"name":"Window Frame Text","x":820,"y":530,"width":195,"height":48},{"name":"Glazing Text","x":833,"y":675,"width":113,"height":37},{"name":"Embedded Photovoltaic Film Text","x":833,"y":802,"width":335,"height":24},{"name":"Finished Floor","x":313,"y":178,"width":362,"height":204},{"name":"Reinforced Concrete Floor","x":591,"y":400,"width":81,"height":62},{"name":"Window Frame Small","x":491,"y":491,"width":97,"height":89},{"name":"Window Frame Large","x":672,"y":871,"width":543,"height":440},{"name":"Glazing","x":204,"y":421,"width":305,"height":334},{"name":"Embedded Photovoltaic Film","x":154,"y":721,"width":371,"height":158}]}
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_photovoltaic_shading_device.png"
                             ,
                             "mediaImage": "data/media/media_photovoltaic_shading_device.png"
+							,"aoiData":{"imageName":"media_photovoltaic_shading_device.png","width":591,"height":623,"aoiItemList":[{"name":"full","x":0,"y":0,"width":591,"height":623},{"name":"Louver Text","x":17,"y":550,"width":84,"height":16},{"name":"Photovoltaic Laminate Text","x":20,"y":566,"width":176,"height":15},{"name":"Strut Anchor Text","x":13,"y":584,"width":122,"height":15},{"name":"Strut Arm Text","x":19,"y":600,"width":97,"height":18},{"name":"Louver","x":395,"y":232,"width":63,"height":97},{"name":"Photovoltaic Laminate","x":312,"y":290,"width":73,"height":75},{"name":"Strut Anchor","x":466,"y":323,"width":41,"height":54},{"name":"Strut Arm","x":342,"y":368,"width":100,"height":69}]}
                         }
                     ]
                 }

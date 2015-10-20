@@ -5,140 +5,130 @@
             [
                 {
                     "subModuleName": "Environmental Impact",
-                    "thumbnail": "data/media/thumbnail_environmental_impact.jpg",
-                    "description": "The use of materials for building construction causes major impacts on the environment, including significant water consumption and resource and energy usage as well as greenhouse gas emissions."
+                    "thumbnail": "data/media/thumbnail_environmental_impact.png",
+                    "description": "The use of materials for building construction causes major impacts on the environment, including significant water consumption and resource and energy usage as well as greenhouse gas emissions. These materials consume energy and water in their removal, manufacturing, transportation, maintenance and recycling and produce hazardous emissions during these processes. Approximate indicators of a material's environmental impact are embodied energy, embodied water and carbon footprint. Designing buildings with improved environmental performance should go beyond decreasing the operational energy and aim at reducing embodied energy, embodied water and carbon footprint during the life cycle of building materials."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_embodied_energy.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_embodied_energy.png"
                             ,
-                            "mediaImage": "data/media/media_embodied_energy.jpg"
+                            "mediaImage": "data/media/media_embodied_energy.png"
                             ,
-                            "additionalMedia": ["data/media/media_embodied_energy_table.jpg"]
+                            "additionalMedia": ["data/media/media_embodied_energy_table.png"]
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_embodied_water.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_embodied_water.png"
                             ,
-                            "mediaImage": "data/media/media_embodied_water.jpg"
+                            "mediaImage": "data/media/media_embodied_water.png"
                             ,
-                            "additionalMedia": ["data/media/media_embodied_energy_table.jpg"]
+                            "additionalMedia": ["data/media/media_embodied_energy_table.png"]
                         }
                     ]
                 },
                 {
                     "subModuleName": "Material Thermal Properties",
-                    "thumbnail": "data/media/thumbnail_material_thermal_properties.jpg",
-                    "description": "Designing efficient building envelopes requires an understanding of the thermal performances of utilized materials."
+                    "thumbnail": "data/media/thumbnail_material_thermal_properties.png",
+                    "description": "Designing efficient building envelopes requires an understanding of the thermal performance of utilized materials. Reducing the envelope energy loss is critical, particularly where significant heating or cooling is required to provide thermal comfort. In general, thermal transmittance and thermal resistance are the two most important properties for understanding the conductive performance of building materials."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_solar_heat_gain.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_solar_heat_gain.png"
                             ,
-                            "mediaImage": "data/media/media_solar_heat_gain.jpg"
+                            "mediaImage": "data/media/media_solar_heat_gain.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_low_e_glass.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_low_e_glass.png"
                             ,
-                            "mediaImage": "data/media/media_low_e_glass.jpg"
+                            "mediaImage": "data/media/media_low_e_glass.png"
                         }
                     ]
                 },
                 {
                     "subModuleName": "Enclosure Materials",
-                    "thumbnail": "data/media/thumbnail_photovoltaic_facades.jpg",
-                    "description": "Building enclosures serve a multitude of critical functions by providing thermal comfort, natural lighting , air movement, humidity and moisture control, views, sound insulation, pollution and fire resistance."
+                    "thumbnail": "data/media/thumbnail_enclosure_materials.png",
+                    "description": "Building enclosures serve a multitude of critical functions by providing thermal comfort, natural lighting, air movement, humidity and moisture control, views, sound insulation, pollution and fire resistance. In addition, building enclosures can function as loadbearing walls or roof systems that provide lateral resistance to wind and seismic loads. Selecting enclosure materials that can best integrate these functions is a substantial step to reducing resource and energy demand and the carbon footprint of buildings throughout their life cycle."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_wood_enclosure_materials.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_wood_enclosure_materials.png"
                             ,
-                            "mediaImage": "data/media/media_wood_enclosure_materials.jpg"
+                            "mediaImage": "data/media/media_wood_enclosure_materials.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_masonry_enclosure_materials.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_masonry_enclosure_materials.png"
                             ,
-                            "mediaImage": "data/media/media_masonry_enclosure_materials.jpg"
+                            "mediaImage": "data/media/media_masonry_enclosure_materials.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_concrete_enclosure_material.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_enclosure_material.png"
                             ,
-                            "mediaImage": "data/media/media_concrete_enclosure_material.jpg"
+                            "mediaImage": "data/media/media_concrete_enclosure_material.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_metals_enclosure_materials.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_metals_enclosure_materials.png"
                             ,
-                            "mediaImage": "data/media/media_metals_enclosure_materials.jpg"
+                            "mediaImage": "data/media/media_metals_enclosure_materials.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_glass_enclosure_materials.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_glass_enclosure_materials.png"
                             ,
-                            "mediaImage": "data/media/media_glass_enclosure_materials.jpg"
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thumbnail_glass_enclosure_materials.jpg"
-                            ,
-                            "mediaImage": "data/media/media_glass_enclosure_materials2.jpg"
+                            "mediaImage": "data/media/media_glass_enclosure_materials.png"
                         }
                     ]
                 },
                 {
                     "subModuleName": "Insulation Materials",
-                    "thumbnail": "data/media/thumbnail_insulation_materials.jpg",
-                    "description": "The insulation of a building envelope consists of many layers of materials that are critical in meeting thermal, accoustical and fire-resistant requirements."
+                    "thumbnail": "data/media/thumbnail_insulation_materials.png",
+                    "description": "The insulation of a building envelope consists of many layers of materials that are critical in meeting thermal, acoustical and fireresistant requirements. Insulation materials can be either organic, which refers to raw materials such as cork, mineral fiber, cotton, etc., or inorganic, which refers to synthetic materials such as polyurethane rigid foam or polystyrene. Thermal insulation is used to reduce the rate of heat transfer through the building enclosure and protects against moisturerelated damage. Thermal insulation plays a critical role in the energy efficiency of buildings because it mitigates energy exchange between the interior of the building and the exterior environment. The thermal energy transfer through a material is dependent on its thermal conductivity. A material with less conductivity will have smaller energy exchange with the external environment, therefore creating a better insulation. In addition, materials with less density have a better insulation quality because they have higher air content. Air and some inert gases such as xenon, krypton and argon are good insulators and are often used as insulation between glass panels."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_rigid_insulation_materials.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_rigid_insulation_materials.png"
                             ,
-                            "mediaImage": "data/media/media_rigid_insulation_materials.jpg"
+                            "mediaImage": "data/media/media_rigid_insulation_materials.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_structural_insulated_panels.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_structural_insulated_panels.png"
                             ,
-                            "mediaImage": "data/media/media_structural_insulated_panels.jpg"
+                            "mediaImage": "data/media/media_structural_insulated_panels.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_vacuum_insulated_panels.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_vacuum_insulated_panels.png"
                             ,
-                            "mediaImage": "data/media/media_vacuum_insulated_panels.jpg"
+                            "mediaImage": "data/media/media_vacuum_insulated_panels.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_sound_insulation.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_sound_insulation.png"
                             ,
-                            "mediaImage": "data/media/media_sound_insulation.jpg"
+                            "mediaImage": "data/media/media_sound_insulation.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_other_insulation_materials.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_other_insulation_materials.png"
                             ,
-                            "mediaImage": "data/media/media_organic_insulation_materials.jpg"
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thumbnail_other_insulation_materials.jpg"
-                            ,
-                            "mediaImage": "data/media/media_inorganic_insulation_materials.jpg"
+                            "mediaImage": "data/media/media_other_insulation_materials.png"
                         }
                     ]
                 },
                 {
                     "subModuleName": "Thermal Materials",
-                    "thumbnail": "data/media/thumbnail_thermal_materials.jpg",
-                    "description": "Building materials with significant mass such as concrete can act as a thermal storage areas in climates where there is a significant difference between the day and night temperatures."
+                    "thumbnail": "data/media/thumbnail_thermal_materials.png",
+                    "description": "Building materials with significant mass such as concrete can act as a thermal storage areas in climates where there is a significant difference between the day and nighttime temperatures. A number of newly developed materials can store energy without requiring a great mass. Because these materials are being further developed, tested and improved, their use in building construction is becoming more prevalent."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_thermal_mass.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_thermal_mass.png"
                             ,
-                            "mediaImage": "data/media/media_thermal_mass.jpg"
+                            "mediaImage": "data/media/media_thermal_mass.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_phase_change_material.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_phase_change_material.png"
                             ,
-                            "mediaImage": "data/media/media_phase_change_material.jpg"
+                            "mediaImage": "data/media/media_phase_change_material.png"
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_transparent_thermal_insulation.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_transparent_thermal_insulation.png"
                             ,
-                            "mediaImage": "data/media/media_transparent_thermal_insulation.jpg"
+                            "mediaImage": "data/media/media_transparent_thermal_insulation.png"
                         }
                     ]
                 }
