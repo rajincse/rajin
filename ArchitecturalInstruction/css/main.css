@@ -114,10 +114,15 @@ body
 {
     margin-right: 5px;
     width: 18%;
+    margin-left: 5px;
 }
 .image-unselected
 {
     border: 1px solid #B8BEBF;
+}
+.image-selected
+{
+    border: 3px solid #00B3DA;
 }
 .media-additional img
 {

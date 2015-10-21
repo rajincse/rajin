@@ -5,239 +5,185 @@
             [
                 {
                     "subModuleName": "Cavity Wall",
-                    "thumbnail": "data/media/thumbnail_cavity_wall.jpg",
-                    "description": "A cavity wall consists of two unbounded wythes of masonry separated by an air space."
+                    "thumbnail": "data/media/thumbnail_cavity_wall.png",
+                    "description": "A cavity wall consists of two unbonded wythes of masonry separated by an air space. The primary purpose of the cavity is to prevent water from reaching the inner wythe. Cavity walls can be load bearing or nonload-bearing. For load-bearing constructions, the floor and roof loads of the building are carried by the inner wythe. For nonload-bearing assemblies, another primary structure such as steel or concrete carries roofs and floors. The cavity wall carries only its own weight."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_cavity_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_cavity_wall.png"
                             ,
-                            "mediaImage": "data/media/media_cavity_wall.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_cavity_wall_barchart.jpg", "data/media/media_cavity_wall_table.jpg"]
+                            "mediaImage": "data/media/media_cavity_wall.png"
+                            
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_wall_section.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_wall_section.png"
                             ,
-                            "mediaImage": "data/media/media_wall_section.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_cavity_wall_barchart.jpg", "data/media/media_cavity_wall_table.jpg"]
+                            "mediaImage": "data/media/media_wall_section.png"
+                            
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_punched_window.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_punched_window.png"
                             ,
-                            "mediaImage": "data/media/media_punched_window.jpg"
+                            "mediaImage": "data/media/media_punched_window.png"
                             ,
-                            "additionalMedia": ["data/media/media_punched_window_barchart.jpg", "data/media/media_punched_window_table.jpg"]
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thumbnail_ribbon_window.jpg"
-                            ,
-                            "mediaImage": "data/media/media_ribbon_window.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_ribbon_window_barchart.jpg", "data/media/media_ribbon_window_table.jpg"]
+                            "additionalMedia": ["data/media/media_punched_window_barchart.png", "data/media/media_punched_window_table.png"]
                         }
                     ]
                 },
                 {
                     "subModuleName": "Glass Curtain Wall",
-                    "thumbnail": "data/media/thumbnail_glass_curtain_wall.jpg",
-                    "description": "A glass curtain wall is a non-load bearing external wall that is supported by the structural frame of the building."
+                    "thumbnail": "data/media/thumbnail_glass_curtain_wall.png",
+                    "description": "A glass curtain wall is a nonload-bearing external wall that is supported by the structural frame of the building. The most common association is with fully glazed building envelopes, but curtain walls may also be made of metal, stone, concrete or other materials. Standard glazed curtain wall systems typically use aluminum frames because they are lightweight and strong, can be easily formed into complex shapes by the process of extrusion, and readily accept a wide range of finishes. Glazed curtain wall systems are designed to be glazed either from the outside or the inside."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall.png"
                             ,
-                            "mediaImage": "data/media/media_glass_curtain_wall.jpg"
+                            "mediaImage": "data/media/media_glass_curtain_wall.png"
                             ,
-                            "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.jpg", "data/media/media_glass_curtain_wall_table.jpg"]
+                            "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.png", "data/media/media_glass_curtain_wall_table.png"]
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall_section.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall_section.png"
                             ,
-                            "mediaImage": "data/media/media_glass_curtain_wall_section.jpg"
+                            "mediaImage": "data/media/media_glass_curtain_wall_section.png"
                             ,
-                            "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.jpg", "data/media/media_glass_curtain_wall_table.jpg"]
+                            "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.png", "data/media/media_glass_curtain_wall_table.png"]
                         }
                     ]
                 },
                 {
                     "subModuleName": "Concrete Masonry Unit Wall",
-                    "thumbnail": "data/media/thumbnail_cmu_wall.jpg",
-                    "description": "The concrete masonry unit (CMU) wall is a prevalent building component that is both simple to construct and durable over time."
+                    "thumbnail": "data/media/thumbnail_cmu_wall.png",
+                    "description": "The concrete masonry unit (CMU) wall is a prevalent building component that is both simple to construct and durable over time. It is composed of hollow elements that allow for expediency and alterability during and after assembly. The voids of the CMUs serve as forms for cast-in-place reinforced concrete columns and beams and can accommodate other building systems such as insulation, plumbing and conduits."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall.png"
                             ,
-                            "mediaImage": "data/media/media_cmu_wall.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_cmu_wall_barchart.jpg", "data/media/media_cmu_wall_table.jpg"]
+                            "mediaImage": "data/media/media_cmu_wall.png"
+                            
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_section.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_section.png"
                             ,
-                            "mediaImage": "data/media/media_cmu_wall_section.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_cmu_wall_barchart.jpg", "data/media/media_cmu_wall_table.jpg"]
+                            "mediaImage": "data/media/media_cmu_wall_section.png"
+                            
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_punched_window.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_punched_window.png"
                             ,
-                            "mediaImage": "data/media/media_cmu_wall_punched_window.jpg"
+                            "mediaImage": "data/media/media_cmu_wall_punched_window.png"
                             ,
-                            "additionalMedia": ["data/media/media_cmu_wall_punched_window_barchart.jpg", "data/media/media_cmu_wall_punched_window_table.jpg"]
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_ribbon_window.jpg"
-                            ,
-                            "mediaImage": "data/media/media_cmu_wall_ribbon_window.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_cmu_wall_ribbon_window_barchart.jpg", "data/media/media_cmu_wall_ribbon_window_table.jpg"]
+                            "additionalMedia": ["data/media/media_cmu_wall_punched_window_barchart.png", "data/media/media_cmu_wall_punched_window_table.png"]
                         }
                     ]
                 },
                 {
                     "subModuleName": "Concrete Wall",
-                    "thumbnail": "data/media/thumbnail_concrete_wall.jpg",
-                    "description": "Concrete has been used since the times of the Romans and continues to be a major building material."
+                    "thumbnail": "data/media/thumbnail_concrete_wall.png",
+                    "description": "Concrete has been used since the times of the Romans and continues to be a major building material. Concrete is a durable enclosure material and once it has been properly installed, it lasts for many years. Its nature as a fluid that becomes a solid allows for limitless spatial possibilities, ranging from simple cubic forms to complex curves."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall.png"
                             ,
-                            "mediaImage": "data/media/media_concrete_wall.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_concrete_wall_barchart.jpg", "data/media/media_concrete_wall_table.jpg"]
+                            "mediaImage": "data/media/media_concrete_wall.png"
+                           
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_section.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_section.png"
                             ,
-                            "mediaImage": "data/media/media_concrete_wall_section.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_concrete_wall_barchart.jpg", "data/media/media_concrete_wall_table.jpg"]
+                            "mediaImage": "data/media/media_concrete_wall_section.png"
+                           
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_punched_window.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_punched_window.png"
                             ,
-                            "mediaImage": "data/media/media_concrete_wall_punched_window.jpg"
+                            "mediaImage": "data/media/media_concrete_wall_punched_window.png"
                             ,
-                            "additionalMedia": ["data/media/media_concrete_wall_punched_window_barchart.jpg", "data/media/media_concrete_wall_punched_window_table.jpg"]
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_ribbon_window.jpg"
-                            ,
-                            "mediaImage": "data/media/media_concrete_wall_ribbon_window.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_concrete_wall_ribbon_window_barchart.jpg", "data/media/media_concrete_wall_ribbon_window_table.jpg"]
+                            "additionalMedia": ["data/media/media_concrete_wall_punched_window_barchart.png", "data/media/media_concrete_wall_punched_window_table.png"]
                         }
                     ]
                 },
                 {
                     "subModuleName": "Metal Veneer Wall",
-                    "thumbnail": "data/media/thumbnail_metal_veneer_wall.jpg",
-                    "description": "A metal veneer wall is a nonload-bearing curtain wall that is supported by the building's primary structure."
+                    "thumbnail": "data/media/thumbnail_metal_veneer_wall.png",
+                    "description": "A metal veneer wall is a nonload-bearing curtain wall that is supported by the building's primary structure. Different metals used for cladding systems include aluminum, steel, lead, copper, leadcoated copper, bronze, stainless steel and titanium. As with all building systems, the evolution of metal cladding has focused on reducing the amount of metal in order to reduce the cost, not only of the cladding itself, but also of the supporting structure. The most common metal cladding assemblies are metal sheet panels and composite panels."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall.png"
                             ,
-                            "mediaImage": "data/media/media_metal_veneer_wall.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_metal_veneer_wall_barchart.jpg", "data/media/media_metal_veneer_wall_table.jpg"]
+                            "mediaImage": "data/media/media_metal_veneer_wall.png"
+                          
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_section.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_section.png"
                             ,
-                            "mediaImage": "data/media/media_metal_veneer_wall_section.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_metal_veneer_wall_barchart.jpg", "data/media/media_metal_veneer_wall_table.jpg"]
+                            "mediaImage": "data/media/media_metal_veneer_wall_section.png"
+                          
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_punched_window.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_punched_window.png"
                             ,
-                            "mediaImage": "data/media/media_metal_veneer_wall_punched_window.jpg"
+                            "mediaImage": "data/media/media_metal_veneer_wall_punched_window.png"
                             ,
-                            "additionalMedia": ["data/media/media_metal_veneer_wall_punched_window_barchart.jpg", "data/media/media_metal_veneer_wall_punched_window_table.jpg"]
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_ribbon_window.jpg"
-                            ,
-                            "mediaImage": "data/media/media_metal_veneer_wall_ribbon_window.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_metal_veneer_wall_ribbon_window_barchart.jpg", "data/media/media_metal_veneer_wall_ribbon_window_table.jpg"]
+                            "additionalMedia": ["data/media/media_metal_veneer_wall_punched_window_barchart.png", "data/media/media_metal_veneer_wall_punched_window_table.png"]
                         }
                     ]
                 },
                 {
                     "subModuleName": "Precast Concrete Wall",
-                    "thumbnail": "data/media/thumbnail_precast_concrete_wall.jpg",
-                    "description": "Precast concrete cladding for large scale building is typically a nonload-bearing curtain wall that is supported by the structural frame of the building."
+                    "thumbnail": "data/media/thumbnail_precast_concrete_wall.png",
+                    "description": "Precast concrete cladding for large scale buildings is typically a nonload-bearing curtain wall that is supported by the structural frame of the building. Precast concrete cladding panel sizes are governed by the 10-12 foot (3.0-3.6 m) width of typical factory casting beds and by the limited dimensions of road, rail or ship transportation from factory to site. Precast concrete cladding can achieve a variety of textures and colors by varying the concrete mix, particularly the aggregate. A wide range of finishes may also be developed through (a) manipulation of the formwork, (b) incorporation of other facing materials such as ceramic tiles, thin bricks or thin stone, either by incorporation in the formwork or application to the surface of the precast panel, and (c) manual manipulation of the surface either during or after the curing process."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall.png"
                             ,
-                            "mediaImage": "data/media/media_precast_concrete_wall.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_precast_concrete_wall_barchart.jpg", "data/media/media_precast_concrete_wall_table.jpg"]
+                            "mediaImage": "data/media/media_precast_concrete_wall.png"
+                          
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_section.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_section.png"
                             ,
-                            "mediaImage": "data/media/media_precast_concrete_wall_section.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_precast_concrete_wall_barchart.jpg", "data/media/media_precast_concrete_wall_table.jpg"]
+                            "mediaImage": "data/media/media_precast_concrete_wall_section.png"
+                            
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_punched_window.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_punched_window.png"
                             ,
-                            "mediaImage": "data/media/media_precast_concrete_wall_punched_window.jpg"
+                            "mediaImage": "data/media/media_precast_concrete_wall_punched_window.png"
                             ,
-                            "additionalMedia": ["data/media/media_precast_concrete_wall_punched_window_barchart.jpg", "data/media/media_precast_concrete_wall_punched_window_table.jpg"]
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_ribbon_window.jpg"
-                            ,
-                            "mediaImage": "data/media/media_precast_concrete_wall_ribbon_window.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_precast_concrete_wall_ribbon_window_barchart.jpg", "data/media/media_precast_concrete_wall_ribbon_window_table.jpg"]
+                            "additionalMedia": ["data/media/media_precast_concrete_wall_punched_window_barchart.png", "data/media/media_precast_concrete_wall_punched_window_table.png"]
                         }
                     ]
                 },
                 {
                     "subModuleName": "Stone Panel Wall",
-                    "thumbnail": "data/media/thumbnail_stone_panel_wall.jpg",
-                    "description": "Stone cladding for large-scale buildings is typically a nonload-bearing curtain wall that is supported by the structural frame of the building."
+                    "thumbnail": "data/media/thumbnail_stone_panel_wall.png",
+                    "description": "Stone cladding for large-scale buildings is typically a nonloadbearing curtain wall that is supported by the structural frame of the building. Because of their appearance, durability and weather resistance, granite, limestone and marble are the most widely used types of stone for external cladding."
                     ,
                     "mediaList": [
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall.png"
                             ,
-                            "mediaImage": "data/media/media_stone_panel_wall.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_stone_panel_wall_barchart.jpg", "data/media/media_stone_panel_wall_table.jpg"]
+                            "mediaImage": "data/media/media_stone_panel_wall.png"
+                            
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_section.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_section.png"
                             ,
-                            "mediaImage": "data/media/media_stone_panel_wall_section.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_stone_panel_wall_barchart.jpg", "data/media/media_stone_panel_wall_table.jpg"]
+                            "mediaImage": "data/media/media_stone_panel_wall_section.png"
+                           
                         },
                         {
-                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_punched_window.jpg"
+                            "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_punched_window.png"
                             ,
-                            "mediaImage": "data/media/media_stone_panel_wall_punched_window.jpg"
+                            "mediaImage": "data/media/media_stone_panel_wall_punched_window.png"
                             ,
-                            "additionalMedia": ["data/media/media_stone_panel_wall_punched_window_barchart.jpg", "data/media/media_stone_panel_wall_punched_window_table.jpg"]
-                        },
-                        {
-                            "mediaThumbnail": "data/media/media_thmbnail_stone_panel_wall_ribbon_window.jpg"
-                            ,
-                            "mediaImage": "data/media/media_stone_panel_wall_ribbon_window.jpg"
-                            ,
-                            "additionalMedia": ["data/media/media_stone_panel_wall_ribbon_window_barchart.jpg", "data/media/media_stone_panel_wall_ribbon_window_table.jpg"]
+                            "additionalMedia": ["data/media/media_stone_panel_wall_punched_window_barchart.png", "data/media/media_stone_panel_wall_punched_window_table.png"]
                         }
                     ]
                 }
