@@ -14,9 +14,12 @@
                 <div class="home-logo cell ">
                     <div class="large-text row">WELCOME!</div>
                     <div class="row">
-                        <a class="image-link" href=""><img src="images/home_logo.jpg" alt=""/></a>
+                        <a class="image-link" href="{{$location}}"><img src="images/home_logo.jpg" alt=""/></a>
                     </div>
                     
+                </div>
+                <div class="cell small-text">
+                    <input type="checkbox" ng-model="menuControllerData.instrumentationCheckChanged"  ng-change="instrumentationCheckChanged(menuControllerData.instrumentationCheckChanged)">Enable Instrumentation
                 </div>
                 <div class="button-label cell small-text">{{menuControllerData.hoverCategoryName}}</div>
                 <div class="button-list-main cell" >

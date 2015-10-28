@@ -3,6 +3,7 @@ var instrument =
 {
         visWidth: 0, 
         visHeight: 0,
+        enabled: false,
         url:"http://localhost:9999/apa/bla.txt?",
         init: function( visWidth, visHeight, url)
         {
@@ -21,14 +22,18 @@ var instrument =
         }, 
         sendCommands:function(c)
         {
-            var s = this.url;
+            if(this.enabled)
+            {
+                var s = this.url;
         
-            for (var i=0; i<c.length; i++)
-                    s+= "command=" + c[i];
-            console.log('Sending command:'+s);
-            var xhttp = new XMLHttpRequest();
-            xhttp.open('GET', s, true);
-            xhttp.send();
+                for (var i=0; i<c.length; i++)
+                        s+= "command=" + c[i];
+                console.log('Sending command:'+s);
+                var xhttp = new XMLHttpRequest();
+                xhttp.open('GET', s, true);
+                xhttp.send();
+            }
+            
         }
         
 }
@@ -43,7 +48,6 @@ window.onmousemove = function(e){
                 screenX = newscreenx; screenY = newscreeny;
                 instrument.windowReshaped();
         }
-        //sendCommands(["gaze_"+e.screenX + "_" + e.screenY]);
 }
 	
 window.onblur = function(){
