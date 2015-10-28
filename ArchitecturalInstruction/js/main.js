@@ -15,6 +15,7 @@ homeApp.directive("submodule", function ()
       element.bind('click', function()
       {
            scope.$apply(attrs.submodule);
+           scope.reInstrument('submodule index');
       });
           
     },
@@ -28,8 +29,8 @@ homeApp.directive("media", function ()
     link: function(scope, element, attrs) {
       element.bind('click', function()
       {     
-          scope.$apply(attrs.media);
-            
+          scope.$apply(attrs.media);          
+          scope.reInstrument('media');  
       });
           
     }
@@ -38,7 +39,7 @@ homeApp.directive("media", function ()
     
 function AppController($scope, $http)
 {
-    init();
+    
     $scope.menuControllerData = {hoverCategoryName: "", hoverSubCategoryName: "",
         selectedCategoryName: "", selectedSubCategoryName: "", instrumentationCheckChanged:false};
     $http({method: 'GET', url: "data/menu_data.json"}).
@@ -61,7 +62,7 @@ function AppController($scope, $http)
     
     $scope.selectCategory = function(categoryName)
     {
-         init('selectCategory');
+        $scope.reInstrument('selectCategory');
         $scope.menuControllerData.selectedCategoryName = categoryName;
         $scope.loadContent();
     };
@@ -127,52 +128,32 @@ function AppController($scope, $http)
     {
         $scope.controllerData.submoduleIndex = submoduleIndex;
         $scope.controllerData.mediaIndex = 0;
-        init('submodule index');
     }
     $scope.setMediaIndex = function(mediaIndex)
     {
         $scope.controllerData.mediaIndex = mediaIndex;
-        init('media');
     }
     $scope.instrumentationCheckChanged = function(val)
     {
         instrument.enabled =val;
     }
-    function init(param)
+    $scope.reInstrument = function(param)
     {
+        console.log('re-instrument :'+param);
         if(param)
         {
-            console.log('init :'+param);
-             var command =['removeAllElem'];
-             var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
-             var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
-             command.push('addElem_homelogoText_'+getRectangleString(homeLogoText));
-             command.push('addElem_homelogo_'+getRectangleString(homeLogo));
-             
-             var categoryButtons = $('div.menubar div.button-list-main a img');
-             var keys = Object.keys($scope.menuData.categories);
-             for(var i=0;i<categoryButtons.length;i++)
-             {
-                 var rect = categoryButtons[i].getBoundingClientRect();
-                 command.push('addElem_'+$scope.menuData.categories[keys[i]].name+'_'+getRectangleString(rect));
-             }
-             
-             var subCategoryButtons = $('div.menubar div.button-list-small a img');
-             for(var i=0;i<subCategoryButtons.length;i++)
-             {
-                 var rect = subCategoryButtons[i].getBoundingClientRect();
-                 command.push('addElem_subcategory_'+getRectangleString(rect));
-             }
-           
             if($scope.contentData.moduleName)
             {
-                console.log('init :'+param);
+               
                  var command =['removeAllElem'];
+                 
+                 //homelogo
                  var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
                  var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
                  command.push('addElem_homelogoText_'+getRectangleString(homeLogoText));
                  command.push('addElem_homelogo_'+getRectangleString(homeLogo));
 
+                 //categories
                  var categoryButtons = $('div.menubar div.button-list-main a img');
                  var keys = Object.keys($scope.menuData.categories);
                  for(var i=0;i<categoryButtons.length;i++)
@@ -180,7 +161,8 @@ function AppController($scope, $http)
                      var rect = categoryButtons[i].getBoundingClientRect();
                      command.push('addElem_'+$scope.menuData.categories[keys[i]].name+'_'+getRectangleString(rect));
                  }
-
+                 
+                 //subcategories
                  var subCategoryButtons = $('div.menubar div.button-list-small a img');
                  for(var i=0;i<subCategoryButtons.length;i++)
                  {
@@ -226,10 +208,7 @@ function AppController($scope, $http)
                             var rect = additionalMedia[i].getBoundingClientRect();
                             command.push('addElem_'+currentMedia.additionalMedia[i]+':additionalMedia_'+getRectangleString(rect));
                         }
-                    }
-                    if(currentSubModule )
-                    {
-
+                        
                         //bigMediaImage
                         var bigMediaImage = $('.container div.media-image-big img')[0].getBoundingClientRect();
                         var rect={left:bigMediaImage.left|0, top:bigMediaImage.top|0, width:bigMediaImage.width|0, height:bigMediaImage.height|0}
@@ -251,6 +230,7 @@ function AppController($scope, $http)
                             command.push('addElem_'+getUnderscoreFreeString(currentMedia.mediaImage)+'_'+getRectangleString(rect));
                         }
                     }
+                    
 
                 }
                 instrument.sendCommands(command);
@@ -261,10 +241,10 @@ function AppController($scope, $http)
         {
             var rect = document.getElementsByTagName('body')[0].getBoundingClientRect();
             instrument.init(rect.width, rect.height);
-            console.log('init');
         }
        
     }
+    $scope.reInstrument();
     function query(command)
     {
         return document.querySelector(command);

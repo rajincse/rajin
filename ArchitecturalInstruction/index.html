@@ -13,14 +13,13 @@
             <div class="menubar" >
                 <div class="home-logo cell ">
                     <div class="large-text row">WELCOME!</div>
-                    <div class="row">
+                    <div class="row small-text">
                         <a class="image-link" href="{{$location}}"><img src="images/home_logo.jpg" alt=""/></a>
+                        <input type="checkbox" ng-model="menuControllerData.instrumentationCheckChanged"  ng-change="instrumentationCheckChanged(menuControllerData.instrumentationCheckChanged)">Enable
+                        
                     </div>
-                    
                 </div>
-                <div class="cell small-text">
-                    <input type="checkbox" ng-model="menuControllerData.instrumentationCheckChanged"  ng-change="instrumentationCheckChanged(menuControllerData.instrumentationCheckChanged)">Enable Instrumentation
-                </div>
+               
                 <div class="button-label cell small-text">{{menuControllerData.hoverCategoryName}}</div>
                 <div class="button-list-main cell" >
                     <a class="image-link" href="" ng-click="selectCategory(category.name)" ng-mouseover="hoverInCategory(category.name)" ng-mouseleave="hoverOutCategory()" ng-repeat="category in menuData.categories">
