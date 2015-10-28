@@ -151,7 +151,9 @@ function AppController($scope, $http)
                  var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
                  var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
                  command.push('addElem_homelogoText_'+getRectangleString(homeLogoText));
+                 command.push('addProperty_homelogoText_type=text');
                  command.push('addElem_homelogo_'+getRectangleString(homeLogo));
+                 command.push('addProperty_homelogo_type=image');
 
                  //categories
                  var categoryButtons = $('div.menubar div.button-list-main a img');
@@ -160,14 +162,17 @@ function AppController($scope, $http)
                  {
                      var rect = categoryButtons[i].getBoundingClientRect();
                      command.push('addElem_'+$scope.menuData.categories[keys[i]].name+'_'+getRectangleString(rect));
+                     command.push('addProperty_'+$scope.menuData.categories[keys[i]].name+'_type=button');
                  }
                  
                  //subcategories
                  var subCategoryButtons = $('div.menubar div.button-list-small a img');
+                 var subCategoryKeys = Object.keys($scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory);
                  for(var i=0;i<subCategoryButtons.length;i++)
                  {
                      var rect = subCategoryButtons[i].getBoundingClientRect();
-                     command.push('addElem_subcategory_'+getRectangleString(rect));
+                     command.push('addElem_subcategory:'+subCategoryKeys[i]+'_'+getRectangleString(rect));
+                     command.push('addProperty_subcategory:'+subCategoryKeys[i]+'_type=button');
                  }
 
                 if($scope.contentData.moduleName)
@@ -181,6 +186,7 @@ function AppController($scope, $http)
                     {
                         var rect = submodules[i].getBoundingClientRect();
                         command.push('addElem_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_'+getRectangleString(rect));
+                        command.push('addProperty_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_type=button');
                     }
                     if(currentSubModule)
                     {
@@ -190,15 +196,18 @@ function AppController($scope, $http)
                         var subModuleDescription  = $('.container div.media-list-summary div.submodule-description')[0].getBoundingClientRect();
 
                         command.push('addElem_'+$scope.contentData.moduleName+'_'+getRectangleString(moduleTitle));
+                        command.push('addProperty_'+$scope.contentData.moduleName+'_type=text');
                         command.push('addElem_'+currentSubModule.subModuleName+'_'+getRectangleString(subModuleTitle));
+                        command.push('addProperty_'+currentSubModule.subModuleName+'_type=text');
                         command.push('addElem_'+currentSubModule.subModuleName+':desc_'+getRectangleString(subModuleDescription));
-
+                        command.push('addProperty_'+currentSubModule.subModuleName+':desc_type=text');
                         //Thumbnail List
                         var mediaThumbnails = $('.container div.media-list-summary div.media-image-thumbnail');
                         for(var i=0;i<mediaThumbnails.length;i++)
                         {
                             var rect = mediaThumbnails[i].getBoundingClientRect();
                             command.push('addElem_'+getUnderscoreFreeString(currentSubModule.mediaList[i].mediaImage)+':mediaThumbnail_'+getRectangleString(rect));
+                            command.push('addProperty_'+getUnderscoreFreeString(currentSubModule.mediaList[i].mediaImage)+':mediaThumbnail_type=button');
                         }
 
                         //Additional Media
@@ -207,6 +216,7 @@ function AppController($scope, $http)
                         {
                             var rect = additionalMedia[i].getBoundingClientRect();
                             command.push('addElem_'+currentMedia.additionalMedia[i]+':additionalMedia_'+getRectangleString(rect));
+                            command.push('addProperty_'+currentMedia.additionalMedia[i]+':additionalMedia_type=image');
                         }
                         
                         //bigMediaImage
@@ -218,16 +228,19 @@ function AppController($scope, $http)
                             var scaleY = rect.height / currentMedia.aoiData.height;
                             var bigMediaName = getUnderscoreFreeString(currentMedia.aoiData.imageName);
                             command.push('addElem_'+bigMediaName+'_'+getRectangleString(rect));
+                            command.push('addProperty_'+bigMediaName+'_type=image');
                             for(var i=0;i<currentMedia.aoiData.aoiItemList.length;i++)
                             {
                                 var aoi = currentMedia.aoiData.aoiItemList[i];
                                 command.push('addElem_'+bigMediaName+':'+aoi.name+'_'+((aoi.x * scaleX+bigMediaImage.left)|0)+'_'+((aoi.y*scaleY+bigMediaImage.top)|0)
                                         +'_'+((aoi.width*scaleX)|0)+'_'+((aoi.height*scaleY)|0));
+                                command.push('addProperty_'+bigMediaName+':'+aoi.name+'_type=aoi');
                             }
                         }
                         else
                         {
                             command.push('addElem_'+getUnderscoreFreeString(currentMedia.mediaImage)+'_'+getRectangleString(rect));
+                            command.push('addProperty_'+getUnderscoreFreeString(currentMedia.mediaImage)+'_type=image');
                         }
                     }
                     
