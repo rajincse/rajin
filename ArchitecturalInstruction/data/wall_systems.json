@@ -13,18 +13,20 @@
                             "mediaThumbnail": "data/media/media_thumbnail_cavity_wall.png"
                             ,
                             "mediaImage": "data/media/media_cavity_wall.png"
-                            
+                            ,"aoiData":{"imageName":"media_cavity_wall.png","width":1034,"height":1195,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1034,"height":1195},{"name":"Reinforced Concrete Floor","x":595,"y":146,"width":121,"height":105},{"name":"Steel Nut and Bolt on Steel Angle","x":504,"y":168,"width":146,"height":111},{"name":"Compressible Foam Filler","x":628,"y":244,"width":74,"height":68},{"name":"Metal Tie","x":649,"y":352,"width":42,"height":66},{"name":"Insulation","x":434,"y":418,"width":87,"height":103},{"name":"Vapor Barrier","x":428,"y":497,"width":85,"height":66},{"name":"Air Space","x":423,"y":531,"width":52,"height":68},{"name":"Mortar Joint","x":356,"y":592,"width":72,"height":61},{"name":"Brick Face","x":263,"y":622,"width":121,"height":142},{"name":"Mortar Dropping Control","x":583,"y":774,"width":45,"height":36},{"name":"Aluminum Flashing","x":557,"y":787,"width":42,"height":38},{"name":"Texts","x":567,"y":872,"width":486,"height":320},{"name":"CMU","x":587,"y":424,"width":66,"height":54}]}
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_wall_section.png"
+							,"aoiData":{"imageName":"media_wall_section.png","width":474,"height":1017,"aoiItemList":[{"name":"full","x":0,"y":0,"width":474,"height":1017},{"name":"Reinforced Concrete Floor","x":50,"y":25,"width":163,"height":82},{"name":"Steel Nut and Bolt on Steel Angle","x":196,"y":34,"width":74,"height":45},{"name":"Compressible Foam Filler","x":123,"y":101,"width":91,"height":38},{"name":"Metal Tie","x":140,"y":248,"width":143,"height":20},{"name":"Insulation","x":203,"y":76,"width":22,"height":309},{"name":"Vapor Barrier","x":221,"y":496,"width":7,"height":125},{"name":"Air Space","x":226,"y":79,"width":14,"height":289},{"name":"Mortar Joint","x":232,"y":226,"width":43,"height":28},{"name":"Brick Face","x":234,"y":79,"width":48,"height":292},{"name":"Mortar Dropping Control","x":230,"y":621,"width":42,"height":23},{"name":"Aluminum Flashing","x":198,"y":630,"width":77,"height":40},{"name":"Texts","x":33,"y":711,"width":430,"height":249},{"name":"CMU","x":149,"y":131,"width":52,"height":248},{"name":"Drywall on Furring","x":138,"y":119,"width":7,"height":266}]}
                             
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_punched_window.png"
                             ,
                             "mediaImage": "data/media/media_punched_window.png"
+							,"aoiData":{"imageName":"media_punched_window.png","width":1100,"height":1202,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1100,"height":1202},{"name":"Reinforced Concrete Floor","x":611,"y":126,"width":286,"height":190},{"name":"Rough Jamb","x":803,"y":363,"width":39,"height":260},{"name":"Rough Sill","x":673,"y":500,"width":145,"height":99},{"name":"Metal Plate","x":764,"y":538,"width":71,"height":76},{"name":"Insulation","x":482,"y":253,"width":274,"height":515},{"name":"Window Sill","x":637,"y":509,"width":196,"height":110},{"name":"Brick Face","x":416,"y":278,"width":273,"height":547},{"name":"Window Casing","x":254,"y":469,"width":237,"height":337},{"name":"Aluminum Flashing","x":625,"y":264,"width":218,"height":110},{"name":"Texts","x":551,"y":871,"width":521,"height":316},{"name":"CMU","x":636,"y":522,"width":256,"height":158},{"name":"Aluminum Window Frame","x":155,"y":536,"width":222,"height":322},{"name":"Double Glazed Window System","x":54,"y":601,"width":206,"height":325},{"name":"Gypsum Board","x":738,"y":104,"width":246,"height":537}]}
                             ,
                             "additionalMedia": ["data/media/media_punched_window_barchart.png", "data/media/media_punched_window_table.png"]
                         }
@@ -40,6 +42,7 @@
                             "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall.png"
                             ,
                             "mediaImage": "data/media/media_glass_curtain_wall.png"
+							,"aoiData":{"imageName":"media_glass_curtain_wall.png","width":1066,"height":1241,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1066,"height":1241},{"name":"Reinforced Concrete Floor","x":488,"y":66,"width":408,"height":277},{"name":"Insulation","x":393,"y":136,"width":308,"height":200},{"name":"Aluminum Window Frame","x":406,"y":226,"width":296,"height":600},{"name":"Glazing Gasket","x":267,"y":275,"width":305,"height":644},{"name":"Spandrel Glass","x":121,"y":262,"width":319,"height":290},{"name":"Double Glazed Window System","x":28,"y":395,"width":418,"height":585},{"name":"Texts","x":652,"y":1014,"width":488,"height":197}]}
                             ,
                             "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.png", "data/media/media_glass_curtain_wall_table.png"]
                         },
@@ -47,6 +50,7 @@
                             "mediaThumbnail": "data/media/media_thumbnail_glass_curtain_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_glass_curtain_wall_section.png"
+							,"aoiData":{"imageName":"media_glass_curtain_wall_section.png","width":463,"height":986,"aoiItemList":[{"name":"full","x":0,"y":0,"width":463,"height":986},{"name":"Reinforced Concrete Floor","x":49,"y":4,"width":287,"height":141},{"name":"Insulation","x":257,"y":707,"width":37,"height":129},{"name":"Aluminum Window Frame","x":240,"y":158,"width":52,"height":257},{"name":"Glazing Gasket","x":247,"y":140,"width":85,"height":31},{"name":"Spandrel Glass","x":299,"y":719,"width":7,"height":123},{"name":"Double Glazed Window System","x":291,"y":471,"width":9,"height":225},{"name":"Texts","x":24,"y":840,"width":529,"height":202}]}
                             ,
                             "additionalMedia": ["data/media/media_glass_curtain_wall_barchart.png", "data/media/media_glass_curtain_wall_table.png"]
                         }
@@ -62,18 +66,21 @@
                             "mediaThumbnail": "data/media/media_thumbnail_cmu_wall.png"
                             ,
                             "mediaImage": "data/media/media_cmu_wall.png"
+							,"aoiData":{"imageName":"media_cmu_wall.png","width":1119,"height":1280,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1119,"height":1280},{"name":"Reinforced Concrete Floor System","x":772,"y":287,"width":34,"height":69},{"name":"Insulation","x":753,"y":368,"width":39,"height":112},{"name":"Horizontal Steel Reinforcement","x":682,"y":386,"width":86,"height":74},{"name":"Vertical Steel Reinforcement","x":697,"y":362,"width":25,"height":174},{"name":"CMU Grout","x":600,"y":526,"width":105,"height":74},{"name":"CMU","x":561,"y":562,"width":80,"height":101},{"name":"Mortar","x":533,"y":636,"width":93,"height":75},{"name":"Reveal","x":391,"y":603,"width":75,"height":113},{"name":"Stucco","x":298,"y":714,"width":102,"height":175},{"name":"Texts","x":701,"y":1082,"width":301,"height":197}]}
                             
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_cmu_wall_section.png"
+							,"aoiData":{"imageName":"media_cmu_wall_section.png","width":378,"height":950,"aoiItemList":[{"name":"Reinforced Concrete Floor System","x":48,"y":5,"width":188,"height":98},{"name":"Insulation","x":121,"y":402,"width":39,"height":362},{"name":"Horizontal Steel Reinforcement","x":124,"y":185,"width":107,"height":55},{"name":"Vertical Steel Reinforcement","x":177,"y":417,"width":29,"height":280},{"name":"CMU Grout","x":158,"y":521,"width":40,"height":64},{"name":"CMU block","x":197,"y":93,"width":20,"height":289},{"name":"Mortar","x":213,"y":410,"width":9,"height":284},{"name":"Gypsum Board","x":127,"y":98,"width":26,"height":282},{"name":"Stucco","x":210,"y":249,"width":27,"height":61},{"name":"Texts","x":80,"y":771,"width":319,"height":213},{"name":"full","x":0,"y":0,"width":378,"height":950}]}
                             
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_cmu_wall_punched_window.png"
                             ,
                             "mediaImage": "data/media/media_cmu_wall_punched_window.png"
+							,"aoiData":{"imageName":"media_cmu_wall_punched_window.png","width":1161,"height":1110,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1161,"height":1110},{"name":"Reinforced Concrete Floor System","x":580,"y":156,"width":295,"height":170},{"name":"Insulation","x":701,"y":121,"width":258,"height":543},{"name":"Aluminum Flashing","x":679,"y":532,"width":134,"height":106},{"name":"Gypsum Board","x":443,"y":283,"width":245,"height":547},{"name":"Window Casing","x":273,"y":448,"width":268,"height":398},{"name":"CMU","x":550,"y":164,"width":326,"height":569},{"name":"Aluminum Window Frame","x":175,"y":524,"width":222,"height":372},{"name":"Double Glazed Window System","x":73,"y":596,"width":208,"height":360},{"name":"Stucco","x":398,"y":303,"width":232,"height":567},{"name":"Texts","x":605,"y":890,"width":350,"height":216},{"name":"Gypsum Board","x":767,"y":90,"width":244,"height":537}]}
                             ,
                             "additionalMedia": ["data/media/media_cmu_wall_punched_window_barchart.png", "data/media/media_cmu_wall_punched_window_table.png"]
                         }
@@ -89,18 +96,21 @@
                             "mediaThumbnail": "data/media/media_thumbnail_concrete_wall.png"
                             ,
                             "mediaImage": "data/media/media_concrete_wall.png"
+							,"aoiData":{"imageName":"media_concrete_wall.png","width":1170,"height":1311,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1170,"height":1311},{"name":"Reinforced Concrete Floor","x":315,"y":261,"width":422,"height":279},{"name":"Insulation","x":536,"y":209,"width":337,"height":746},{"name":"Gypsum Board","x":669,"y":132,"width":338,"height":751},{"name":"Metal Furring","x":385,"y":404,"width":310,"height":629},{"name":"Reinforced Concrete Panel","x":480,"y":591,"width":84,"height":495},{"name":"Form Tile","x":159,"y":661,"width":371,"height":363},{"name":"Cold Joint","x":547,"y":967,"width":202,"height":116},{"name":"Reveal","x":159,"y":572,"width":355,"height":216},{"name":"Texts","x":724,"y":1137,"width":245,"height":176}]}
                            
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_concrete_wall_section.png"
+							,"aoiData":{"imageName":"media_concrete_wall_section.png","width":387,"height":978,"aoiItemList":[{"name":"full","x":0,"y":0,"width":387,"height":978},{"name":"Reinforced Concrete Floor","x":35,"y":-3,"width":198,"height":107},{"name":"Insulation","x":108,"y":90,"width":32,"height":320},{"name":"Gypsum Board","x":64,"y":91,"width":49,"height":311},{"name":"Metal Furring","x":123,"y":97,"width":12,"height":308},{"name":"Concrete Panel","x":138,"y":288,"width":87,"height":130},{"name":"Form Tile","x":144,"y":512,"width":83,"height":101},{"name":"Cold Joint","x":132,"y":722,"width":74,"height":98},{"name":"Reveal","x":147,"y":460,"width":87,"height":70},{"name":"Texts","x":47,"y":820,"width":283,"height":187}]}
                            
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_concrete_wall_punched_window.png"
                             ,
                             "mediaImage": "data/media/media_concrete_wall_punched_window.png"
+							,"aoiData":{"imageName":"media_concrete_wall_punched_window.png","width":1104,"height":1137,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1104,"height":1137},{"name":"Reinforced Concrete Floor","x":420,"y":199,"width":321,"height":203},{"name":"Insulation","x":571,"y":149,"width":287,"height":555},{"name":"Gypsum Board","x":689,"y":99,"width":267,"height":580},{"name":"Metal Furring","x":667,"y":402,"width":58,"height":392},{"name":"Reinforced Concrete Panel Reveal","x":500,"y":528,"width":74,"height":132},{"name":"Form Tile","x":279,"y":640,"width":295,"height":271},{"name":"Window casing","x":439,"y":338,"width":250,"height":371},{"name":"Aluminum Window Frame","x":150,"y":489,"width":267,"height":403},{"name":"Texts","x":524,"y":933,"width":318,"height":226},{"name":"Double Glazed Window System","x":9,"y":574,"width":258,"height":397}]}
                             ,
                             "additionalMedia": ["data/media/media_concrete_wall_punched_window_barchart.png", "data/media/media_concrete_wall_punched_window_table.png"]
                         }
@@ -116,18 +126,21 @@
                             "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall.png"
                             ,
                             "mediaImage": "data/media/media_metal_veneer_wall.png"
+							,"aoiData":{"imageName":"media_metal_veneer_wall.png","width":991,"height":1305,"aoiItemList":[{"name":"full","x":0,"y":0,"width":991,"height":1305},{"name":"Reinforced Concrete Floor","x":279,"y":200,"width":403,"height":238},{"name":"Insulation","x":474,"y":160,"width":357,"height":705},{"name":"Gypsum Board","x":586,"y":99,"width":328,"height":712},{"name":"Steel Angle","x":290,"y":262,"width":329,"height":204},{"name":"Compressible Foam Filter","x":580,"y":440,"width":62,"height":62},{"name":"Lightweight Steel Framing System","x":572,"y":427,"width":52,"height":496},{"name":"Aluminum Mounting Profile","x":554,"y":609,"width":41,"height":34},{"name":"Aluminum Channel System","x":429,"y":485,"width":99,"height":546},{"name":"Texts","x":604,"y":1063,"width":319,"height":286},{"name":"Air Space","x":382,"y":668,"width":54,"height":282},{"name":"Vapor Barrier","x":735,"y":763,"width":111,"height":95},{"name":"Channel Bolted with Bolt and Washer","x":203,"y":770,"width":181,"height":158},{"name":"Corrugated Aluminum","x":214,"y":869,"width":151,"height":115},{"name":"Ventilation Screen","x":372,"y":1037,"width":72,"height":71}]}
                           
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_metal_veneer_wall_section.png"
+							,"aoiData":{"imageName":"media_metal_veneer_wall_section.png","width":422,"height":1006,"aoiItemList":[{"name":"full","x":0,"y":0,"width":422,"height":1006},{"name":"Reinforced Concrete Floor","x":29,"y":23,"width":188,"height":81},{"name":"Insulation","x":190,"y":379,"width":43,"height":266},{"name":"Gypsum Board","x":176,"y":399,"width":22,"height":246},{"name":"Steel Angle","x":226,"y":72,"width":48,"height":42},{"name":"Compressible Foam Filter","x":163,"y":90,"width":86,"height":37},{"name":"Lightweight Steel Framing System","x":224,"y":92,"width":28,"height":258},{"name":"Aluminum Mounting Profile","x":231,"y":410,"width":44,"height":220},{"name":"Aluminum Channel System","x":259,"y":64,"width":30,"height":284},{"name":"Texts","x":64,"y":737,"width":328,"height":276},{"name":"Air Space","x":238,"y":438,"width":26,"height":211},{"name":"Vapor Barrier","x":195,"y":401,"width":17,"height":244},{"name":"Channel Bolted with Bolt and Washer","x":270,"y":63,"width":12,"height":271},{"name":"Corrugated Aluminum","x":235,"y":645,"width":43,"height":30},{"name":"Ventilation Screen","x":199,"y":638,"width":40,"height":91}]}
                           
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_metal_veneer_wall_punched_window.png"
                             ,
                             "mediaImage": "data/media/media_metal_veneer_wall_punched_window.png"
+							,"aoiData":{"imageName":"media_metal_veneer_wall_punched_window.png","width":1052,"height":1082,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1052,"height":1082},{"name":"Reinforced Concrete Floor","x":469,"y":133,"width":308,"height":206},{"name":"Insulation","x":613,"y":80,"width":288,"height":579},{"name":"Gypsum Board","x":671,"y":76,"width":278,"height":542},{"name":"Window Casing","x":476,"y":272,"width":235,"height":365},{"name":"Compressible Foam Filter","x":676,"y":284,"width":48,"height":45},{"name":"Double Glazed Window System","x":58,"y":546,"width":212,"height":344},{"name":"Aluminum Window Frame","x":146,"y":448,"width":249,"height":378},{"name":"Aluminum Framing System","x":407,"y":166,"width":310,"height":238},{"name":"Texts","x":509,"y":868,"width":314,"height":221},{"name":"Vapor Barrier","x":849,"y":214,"width":36,"height":451},{"name":"Channel Bolted with Bolt and Washer","x":474,"y":557,"width":58,"height":175},{"name":"Corrugated Aluminum","x":303,"y":606,"width":265,"height":208}]}
                             ,
                             "additionalMedia": ["data/media/media_metal_veneer_wall_punched_window_barchart.png", "data/media/media_metal_veneer_wall_punched_window_table.png"]
                         }
@@ -143,18 +156,21 @@
                             "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall.png"
                             ,
                             "mediaImage": "data/media/media_precast_concrete_wall.png"
+							,"aoiData":{"imageName":"media_precast_concrete_wall.png","width":1151,"height":1298,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1151,"height":1298},{"name":"Reinforced Concrete Floor","x":417,"y":241,"width":390,"height":249},{"name":"Insulation","x":544,"y":227,"width":347,"height":682},{"name":"Gypsum Board","x":639,"y":230,"width":321,"height":641},{"name":"Steel Angle","x":415,"y":292,"width":344,"height":225},{"name":"Metal Stud","x":438,"y":355,"width":307,"height":609},{"name":"Wedge Anchor Insert","x":56,"y":516,"width":339,"height":201},{"name":"Precast Concrete Wall Panel","x":9,"y":524,"width":386,"height":668},{"name":"Fire Thermal Acoustic Stop","x":545,"y":802,"width":339,"height":213},{"name":"Texts","x":677,"y":1081,"width":297,"height":210},{"name":"Steel Nut and Bolt","x":672,"y":930,"width":87,"height":51},{"name":"Steel Angle cast into Concrete","x":689,"y":961,"width":53,"height":57}]}
                           
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_precast_concrete_wall_section.png"
+							,"aoiData":{"imageName":"media_precast_concrete_wall_section.png","width":411,"height":994,"aoiItemList":[{"name":"Reinforced Concrete Floor","x":71,"y":53,"width":140,"height":85},{"name":"Insulation","x":183,"y":446,"width":33,"height":257},{"name":"Gypsum Board","x":162,"y":137,"width":28,"height":263},{"name":"Sealant","x":213,"y":47,"width":57,"height":50},{"name":"Metal Stud","x":205,"y":135,"width":20,"height":267},{"name":"Wedge Anchor Insert","x":199,"y":123,"width":40,"height":64},{"name":"Precast Concrete Wall Panel","x":221,"y":105,"width":64,"height":326},{"name":"Fire Thermal Acoustic Stop","x":189,"y":713,"width":57,"height":90},{"name":"Texts","x":49,"y":806,"width":291,"height":198},{"name":"Steel Nut and Bolt","x":194,"y":652,"width":56,"height":63},{"name":"full","x":0,"y":0,"width":411,"height":994}]}
                             
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_precast_concrete_wall_punched_window.png"
                             ,
                             "mediaImage": "data/media/media_precast_concrete_wall_punched_window.png"
+							,"aoiData":{"imageName":"media_precast_concrete_wall_punched_window.png","width":1089,"height":1168,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1089,"height":1168},{"name":"Reinforced Concrete Floor","x":414,"y":254,"width":343,"height":178},{"name":"Insulation","x":543,"y":225,"width":302,"height":560},{"name":"Gypsum Board","x":624,"y":187,"width":273,"height":558},{"name":"Window Casing","x":443,"y":398,"width":238,"height":360},{"name":"Metal Stud","x":670,"y":440,"width":34,"height":364},{"name":"Wedge Anchor Insert","x":257,"y":385,"width":268,"height":171},{"name":"Precast Concrete Wall Panel","x":237,"y":428,"width":296,"height":528},{"name":"Fire Thermal Acoustic Stop","x":520,"y":683,"width":313,"height":196},{"name":"Texts","x":535,"y":971,"width":285,"height":199},{"name":"Aluminum Window Frame","x":92,"y":542,"width":318,"height":426}]}
                             ,
                             "additionalMedia": ["data/media/media_precast_concrete_wall_punched_window_barchart.png", "data/media/media_precast_concrete_wall_punched_window_table.png"]
                         }
@@ -170,18 +186,19 @@
                             "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall.png"
                             ,
                             "mediaImage": "data/media/media_stone_panel_wall.png"
-                            
+                            ,"aoiData":{"imageName":"media_stone_panel_wall.png","width":1091,"height":1260,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1091,"height":1260},{"name":"Reinforced Concrete Floor","x":467,"y":227,"width":356,"height":249},{"name":"Insulation","x":573,"y":231,"width":347,"height":647},{"name":"Gypsum Board","x":642,"y":192,"width":327,"height":640},{"name":"Compressible Foam Filter","x":433,"y":295,"width":347,"height":200},{"name":"Metal Ties","x":262,"y":535,"width":326,"height":220},{"name":"Lightweight Steell Framing System","x":459,"y":315,"width":321,"height":626},{"name":"Steel bolt and Nuts","x":527,"y":536,"width":62,"height":60},{"name":"Caulk","x":69,"y":636,"width":332,"height":214},{"name":"Texts","x":708,"y":1036,"width":315,"height":218},{"name":"Stone Veneer System","x":44,"y":474,"width":372,"height":714},{"name":"Fire Thermal Acoustic Stop","x":555,"y":751,"width":364,"height":230},{"name":"Steel Tubes","x":521,"y":540,"width":107,"height":563}]}
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_stone_panel_wall_section.png"
-                           
+                            ,"aoiData":{"imageName":"media_stone_panel_wall_section.png","width":380,"height":1068,"aoiItemList":[{"name":"full","x":0,"y":0,"width":380,"height":1068},{"name":"Reinforced Concrete Floor","x":49,"y":35,"width":139,"height":84},{"name":"Insulation","x":158,"y":131,"width":49,"height":139},{"name":"Gypsum Board","x":130,"y":301,"width":38,"height":220},{"name":"Compressible Foam Filter","x":209,"y":89,"width":35,"height":37},{"name":"Metal Ties","x":205,"y":717,"width":43,"height":34},{"name":"Lightweight Steell Framing System","x":198,"y":121,"width":11,"height":151},{"name":"Steel bolt and Nuts","x":160,"y":111,"width":44,"height":24},{"name":"Caulk","x":203,"y":404,"width":39,"height":32},{"name":"Texts","x":61,"y":796,"width":309,"height":277},{"name":"Stone Veneer System","x":222,"y":297,"width":23,"height":228},{"name":"Fire Thermal Acoustic Stop","x":180,"y":711,"width":27,"height":70},{"name":"Steel Tubes","x":205,"y":297,"width":17,"height":227}]}
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_punched_window.png"
                             ,
                             "mediaImage": "data/media/media_stone_panel_wall_punched_window.png"
+							,"aoiData":{"imageName":"media_stone_panel_wall_punched_window.png","width":1111,"height":1074,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1111,"height":1074},{"name":"Reinforced Concrete Floor","x":503,"y":96,"width":312,"height":228},{"name":"Insulation","x":602,"y":111,"width":280,"height":553},{"name":"Gypsum Board","x":685,"y":104,"width":241,"height":532},{"name":"Compressible Foam Filter","x":526,"y":201,"width":254,"height":144},{"name":"Window Casing","x":524,"y":288,"width":233,"height":336},{"name":"Lightweight Steell Framing System","x":737,"y":323,"width":58,"height":386},{"name":"Aluminum Window Frame","x":104,"y":494,"width":243,"height":385},{"name":"Double Glazed Window System","x":-23,"y":619,"width":243,"height":317},{"name":"Texts","x":644,"y":856,"width":335,"height":222},{"name":"Stone Veneer System","x":212,"y":348,"width":273,"height":551},{"name":"Fire Thermal Acoustic Stop","x":615,"y":546,"width":275,"height":186},{"name":"Steel Tubes","x":560,"y":366,"width":73,"height":449}]}
                             ,
                             "additionalMedia": ["data/media/media_stone_panel_wall_punched_window_barchart.png", "data/media/media_stone_panel_wall_punched_window_table.png"]
                         }
