@@ -13,17 +13,19 @@
                             "mediaThumbnail": "data/media/media_thumbnail_embodied_energy.png"
                             ,
                             "mediaImage": "data/media/media_embodied_energy.png"
+                            ,"aoiData":{"imageName":"media_embodied_energy.png","width":505,"height":378,"aoiItemList":[{"name":"Titles","x":21,"y":16,"width":155,"height":298},{"name":"full","x":0,"y":0,"width":505,"height":378},{"name":"bars","x":181,"y":24,"width":297,"height":313}]}
                             ,
                             "additionalMedia": ["data/media/media_embodied_energy_table.png"]
-							,"aoiData":{"imageName":"media_embodied_energy.png","width":505,"height":378,"aoiItemList":[{"name":"Titles","x":21,"y":16,"width":155,"height":298},{"name":"full","x":0,"y":0,"width":505,"height":378},{"name":"bars","x":181,"y":24,"width":297,"height":313}]}
+							
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_embodied_water.png"
                             ,
                             "mediaImage": "data/media/media_embodied_water.png"
+                            ,"aoiData":{"imageName":"media_embodied_water.png","width":1251,"height":1371,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1251,"height":1371},{"name":"Title","x":10,"y":51,"width":278,"height":63},{"name":"Copper","x":846,"y":161,"width":233,"height":111},{"name":"Aluminum","x":1032,"y":369,"width":157,"height":92},{"name":"Timber","x":603,"y":379,"width":226,"height":143},{"name":"Steel","x":928,"y":437,"width":167,"height":111},{"name":"Cement","x":799,"y":548,"width":255,"height":80},{"name":"Carpet","x":577,"y":528,"width":139,"height":107},{"name":"Clear Float Glass","x":388,"y":556,"width":284,"height":125},{"name":"Concrete","x":724,"y":630,"width":363,"height":125},{"name":"Vinyl Flooring","x":293,"y":635,"width":336,"height":94},{"name":"Fiberglass batts","x":299,"y":733,"width":304,"height":87},{"name":"Paint","x":335,"y":808,"width":147,"height":102},{"name":"Brick","x":571,"y":784,"width":256,"height":106},{"name":"X-axis","x":136,"y":1005,"width":1086,"height":143},{"name":"Y-axis","x":75,"y":131,"width":230,"height":1001},{"name":"Plastic","x":744,"y":276,"width":286,"height":81}]}
                             ,
                             "additionalMedia": ["data/media/media_embodied_energy_table.png"]
-							,"aoiData":{"imageName":"media_embodied_water.png","width":1251,"height":1371,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1251,"height":1371},{"name":"Title","x":10,"y":51,"width":278,"height":63},{"name":"Copper","x":846,"y":161,"width":233,"height":111},{"name":"Aluminum","x":1032,"y":369,"width":157,"height":92},{"name":"Timber","x":603,"y":379,"width":226,"height":143},{"name":"Steel","x":928,"y":437,"width":167,"height":111},{"name":"Cement","x":799,"y":548,"width":255,"height":80},{"name":"Carpet","x":577,"y":528,"width":139,"height":107},{"name":"Clear Float Glass","x":388,"y":556,"width":284,"height":125},{"name":"Concrete","x":724,"y":630,"width":363,"height":125},{"name":"Vinyl Flooring","x":293,"y":635,"width":336,"height":94},{"name":"Fiberglass batts","x":299,"y":733,"width":304,"height":87},{"name":"Paint","x":335,"y":808,"width":147,"height":102},{"name":"Brick","x":571,"y":784,"width":256,"height":106},{"name":"X-axis","x":136,"y":1005,"width":1086,"height":143},{"name":"Y-axis","x":75,"y":131,"width":230,"height":1001},{"name":"Plastic","x":744,"y":276,"width":286,"height":81}]}
+							
                         }
                     ]
                 },
