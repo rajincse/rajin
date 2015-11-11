@@ -13,7 +13,7 @@ var instrument =
             {
                 this.url = url;   
             }
-            
+            this.windowReshaped();
         },
         
         windowReshaped: function()

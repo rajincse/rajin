@@ -171,8 +171,8 @@ function AppController($scope, $http)
                  for(var i=0;i<subCategoryButtons.length;i++)
                  {
                      var rect = subCategoryButtons[i].getBoundingClientRect();
-                     command.push('addElem_subcategory:'+subCategoryKeys[i]+'_'+getRectangleString(rect));
-                     command.push('addProperty_subcategory:'+subCategoryKeys[i]+'_type=button');
+                     command.push('addElem_'+subCategoryKeys[i]+':subcategory_'+getRectangleString(rect));
+                     command.push('addProperty_'+subCategoryKeys[i]+':subcategory_type=button');
                  }
 
                 if($scope.contentData.moduleName)
@@ -195,10 +195,10 @@ function AppController($scope, $http)
                         var subModuleTitle = $('.container div.media-list-summary div.submodule-title')[0].getBoundingClientRect();
                         var subModuleDescription  = $('.container div.media-list-summary div.submodule-description')[0].getBoundingClientRect();
 
-                        command.push('addElem_'+$scope.contentData.moduleName+'_'+getRectangleString(moduleTitle));
-                        command.push('addProperty_'+$scope.contentData.moduleName+'_type=text');
-                        command.push('addElem_'+currentSubModule.subModuleName+'_'+getRectangleString(subModuleTitle));
-                        command.push('addProperty_'+currentSubModule.subModuleName+'_type=text');
+                        command.push('addElem_'+$scope.contentData.moduleName+':module_'+getRectangleString(moduleTitle));
+                        command.push('addProperty_'+$scope.contentData.moduleName+':module_type=text');
+                        command.push('addElem_'+currentSubModule.subModuleName+':submodule_'+getRectangleString(subModuleTitle));
+                        command.push('addProperty_'+currentSubModule.subModuleName+':submodule_type=text');
                         command.push('addElem_'+currentSubModule.subModuleName+':desc_'+getRectangleString(subModuleDescription));
                         command.push('addProperty_'+currentSubModule.subModuleName+':desc_type=text');
                         //Thumbnail List
@@ -206,8 +206,9 @@ function AppController($scope, $http)
                         for(var i=0;i<mediaThumbnails.length;i++)
                         {
                             var rect = mediaThumbnails[i].getBoundingClientRect();
-                            command.push('addElem_'+getUnderscoreFreeString(currentSubModule.mediaList[i].mediaImage)+':mediaThumbnail_'+getRectangleString(rect));
-                            command.push('addProperty_'+getUnderscoreFreeString(currentSubModule.mediaList[i].mediaImage)+':mediaThumbnail_type=button');
+                            var imageName =getCleanString(currentSubModule.mediaList[i].mediaImage);
+                            command.push('addElem_'+imageName+':thumbnail_'+getRectangleString(rect));
+                            command.push('addProperty_'+imageName+':thumbnail_type=button');
                         }
 
                         //Additional Media
@@ -215,8 +216,9 @@ function AppController($scope, $http)
                         for(var i=0;i<additionalMedia.length;i++)
                         {
                             var rect = additionalMedia[i].getBoundingClientRect();
-                            command.push('addElem_'+currentMedia.additionalMedia[i]+':additionalMedia_'+getRectangleString(rect));
-                            command.push('addProperty_'+currentMedia.additionalMedia[i]+':additionalMedia_type=image');
+                            var imageName = getCleanString(currentMedia.additionalMedia[i]);
+                            command.push('addElem_'+imageName+':additionalMedia_'+getRectangleString(rect));
+                            command.push('addProperty_'+imageName+':additionalMedia_type=image');
                         }
                         
                         //bigMediaImage
@@ -226,21 +228,23 @@ function AppController($scope, $http)
                         {
                             var scaleX = rect.width/ currentMedia.aoiData.width;
                             var scaleY = rect.height / currentMedia.aoiData.height;
-                            var bigMediaName = getUnderscoreFreeString(currentMedia.aoiData.imageName);
-                            command.push('addElem_'+bigMediaName+'_'+getRectangleString(rect));
-                            command.push('addProperty_'+bigMediaName+'_type=image');
+                            var bigMediaName = getCleanString(currentMedia.aoiData.imageName);
+                            
+                            command.push('addElem_'+bigMediaName+':media_'+getRectangleString(rect));
+                            command.push('addProperty_'+bigMediaName+':media_type=image');
                             for(var i=0;i<currentMedia.aoiData.aoiItemList.length;i++)
                             {
                                 var aoi = currentMedia.aoiData.aoiItemList[i];
-                                command.push('addElem_'+bigMediaName+':'+aoi.name+'_'+((aoi.x * scaleX+bigMediaImage.left)|0)+'_'+((aoi.y*scaleY+bigMediaImage.top)|0)
+                                command.push('addElem_'+aoi.name+':'+bigMediaName+'_'+((aoi.x * scaleX+bigMediaImage.left)|0)+'_'+((aoi.y*scaleY+bigMediaImage.top)|0)
                                         +'_'+((aoi.width*scaleX)|0)+'_'+((aoi.height*scaleY)|0));
-                                command.push('addProperty_'+bigMediaName+':'+aoi.name+'_type=aoi');
+                                command.push('addProperty_'+aoi.name+':'+bigMediaName+'_type=aoi');
                             }
                         }
                         else
                         {
-                            command.push('addElem_'+getUnderscoreFreeString(currentMedia.mediaImage)+'_'+getRectangleString(rect));
-                            command.push('addProperty_'+getUnderscoreFreeString(currentMedia.mediaImage)+'_type=image');
+                            var imageName = getCleanString(currentMedia.mediaImage);
+                            command.push('addElem_'+imageName+':media_'+getRectangleString(rect));
+                            command.push('addProperty_'+imageName+':media_type=image');
                         }
                     }
                     
@@ -269,6 +273,39 @@ function AppController($scope, $http)
     
     function getUnderscoreFreeString(str)
     {
-        return str.replace(new RegExp('_','g'),'');
+        return str.replace(new RegExp('_','g'),' ');
+    }
+    
+    function getSlashFreeString(str)
+    {
+        var slashIndex = str.lastIndexOf('/');
+        if(slashIndex> -1)
+        {
+            return str.substring(slashIndex+1, str.length);
+        }
+        else
+        {
+            return str;
+        }
+    }
+    
+    function getExtensionFreeString(str)
+    {
+        var extensionString = str.lastIndexOf('.');
+         if(extensionString> -1)
+        {
+            return str.substring(0, extensionString);
+        }
+        else
+        {
+            return str;
+        }
+    }
+    function getCleanString(str)
+    {
+        str = getUnderscoreFreeString(str);
+        str = getSlashFreeString(str);
+        str = getExtensionFreeString(str);
+        return str;
     }
 }
