@@ -146,7 +146,9 @@ function AppController($scope, $http)
             {
                
                  var command =['removeAllElem'];
-                 
+                 //reset scroll
+                 var windowScroll = $(window);
+                 command.push('translate_-'+windowScroll.scrollLeft()+'_-'+windowScroll.scrollTop());
                  //homelogo
                  var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
                  var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
