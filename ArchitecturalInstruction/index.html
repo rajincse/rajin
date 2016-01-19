@@ -40,7 +40,9 @@
                     <div class="cell media-list-summary" ng-show="controllerData.submoduleIndex >=0">
                         <div class="row module-title">{{contentData.moduleName | uppercase}}</div>
                         <div class="row submodule-title">{{contentData.submodule[controllerData.submoduleIndex].subModuleName | uppercase}}</div>
-                        <div class="row submodule-description">{{contentData.submodule[controllerData.submoduleIndex].description }}</div>                        
+                        <div class="row submodule-description">
+                            <span id='{{$index}}'ng-repeat="word in contentData.submodule[controllerData.submoduleIndex].description.split(' ') track by $index">{{word+' ' }}</span>
+                        </div>                      
                         <div class="row bottom-margin">
                             <div class="cell media-image-thumbnail"  ng-repeat="media in contentData.submodule[controllerData.submoduleIndex].mediaList" media="setMediaIndex({{$index}})">
                                 <img ng-Src="{{media.mediaThumbnail}}" class="{{$index===controllerData.mediaIndex?'image-selected':'image-unselected'}}"/> 

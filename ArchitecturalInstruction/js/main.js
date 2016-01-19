@@ -195,14 +195,23 @@ function AppController($scope, $http)
                         //Texts
                         var moduleTitle = $('.container div.media-list-summary div.module-title')[0].getBoundingClientRect();
                         var subModuleTitle = $('.container div.media-list-summary div.submodule-title')[0].getBoundingClientRect();
-                        var subModuleDescription  = $('.container div.media-list-summary div.submodule-description')[0].getBoundingClientRect();
+                        
 
                         command.push('addElem_'+$scope.contentData.moduleName+':module_'+getRectangleString(moduleTitle));
                         command.push('addProperty_'+$scope.contentData.moduleName+':module_type=text');
                         command.push('addElem_'+currentSubModule.subModuleName+':submodule_'+getRectangleString(subModuleTitle));
                         command.push('addProperty_'+currentSubModule.subModuleName+':submodule_type=text');
-                        command.push('addElem_'+currentSubModule.subModuleName+':desc_'+getRectangleString(subModuleDescription));
-                        command.push('addProperty_'+currentSubModule.subModuleName+':desc_type=text');
+                        
+                        var subModuleDescriptionTexts  = $('.container div.media-list-summary div.submodule-description span');
+                        
+                        for(var i=0;i<subModuleDescriptionTexts.length;i++)
+                        {
+                            var word = $(subModuleDescriptionTexts[i]).text().trim();
+                            var rect =getRectangleString(subModuleDescriptionTexts[i].getBoundingClientRect());
+                            command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(subModuleDescriptionTexts[i].getBoundingClientRect()));
+                            command.push('addProperty_'+word+':desc'+i+'_type=text');
+                        }
+                        
                         //Thumbnail List
                         var mediaThumbnails = $('.container div.media-list-summary div.media-image-thumbnail');
                         for(var i=0;i<mediaThumbnails.length;i++)
@@ -230,7 +239,7 @@ function AppController($scope, $http)
                         {
                             var scaleX = rect.width/ currentMedia.aoiData.width;
                             var scaleY = rect.height / currentMedia.aoiData.height;
-                            var bigMediaName = getCleanString(currentMedia.aoiData.imageName);
+                            var bigMediaName = getCleanString(currentMedia.aoiData.imageName).trim();
                             
                             command.push('addElem_'+bigMediaName+':media_'+getRectangleString(rect));
                             command.push('addProperty_'+bigMediaName+':media_type=image');
