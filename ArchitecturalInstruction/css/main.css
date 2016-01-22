@@ -43,6 +43,10 @@ body
     
     font-size: 15px;
 }
+.bold-text
+{
+    font-weight: bold;
+}
 .cell
 {
     float: left;

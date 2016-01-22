@@ -202,7 +202,7 @@ function AppController($scope, $http)
                         command.push('addElem_'+currentSubModule.subModuleName+':submodule_'+getRectangleString(subModuleTitle));
                         command.push('addProperty_'+currentSubModule.subModuleName+':submodule_type=text');
                         
-                        var subModuleDescriptionTexts  = $('.container div.media-list-summary div.submodule-description span');
+                        var subModuleDescriptionTexts  = $('.container div.media-list-summary div.submodule-description div span');
                         
                         for(var i=0;i<subModuleDescriptionTexts.length;i++)
                         {
