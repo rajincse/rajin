@@ -41,8 +41,9 @@
                         <div class="row module-title">{{contentData.moduleName | uppercase}}</div>
                         <div class="row submodule-title">{{contentData.submodule[controllerData.submoduleIndex].subModuleName | uppercase}}</div>
                         <div class="row submodule-description">                           
-                            <div>
-                                <span id='{{$index}}'ng-repeat="word in contentData.submodule[controllerData.submoduleIndex].description.split(' ') track by $index">{{word+' ' }}</span>
+                            <div ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].description">
+                                <span class="bold-text">{{paragraph.title}}</span>
+                                <span id='{{$index}}'ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
                             </div>
                             <div ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].description">
                                 <span class="bold-text">{{paragraph.title}}</span>

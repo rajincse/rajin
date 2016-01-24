@@ -6,7 +6,11 @@
                 {
                     "subModuleName": "Environmental Impact",
                     "thumbnail": "data/media/thumbnail_environmental_impact.png",
-                    "description": "The use of materials for building construction causes major impacts on the environment, including significant water consumption and resource and energy usage as well as greenhouse gas emissions. These materials consume energy and water in their removal, manufacturing, transportation, maintenance and recycling and produce hazardous emissions during these processes. Approximate indicators of a material's environmental impact are embodied energy, embodied water and carbon footprint. Designing buildings with improved environmental performance should go beyond decreasing the operational energy and aim at reducing embodied energy, embodied water and carbon footprint during the life cycle of building materials."						
+                    "description": [
+						{ 	"title":"",
+							"text":"The use of materials for building construction causes major impacts on the environment, including significant water consumption and resource and energy usage as well as greenhouse gas emissions. These materials consume energy and water in their removal, manufacturing, transportation, maintenance and recycling and produce hazardous emissions during these processes. Approximate indicators of a material's environmental impact are embodied energy, embodied water and carbon footprint. Designing buildings with improved environmental performance should go beyond decreasing the operational energy and aim at reducing embodied energy, embodied water and carbon footprint during the life cycle of building materials."
+						}
+					]
                     ,
                     "mediaList": [
                         {
@@ -38,8 +42,15 @@
                 {
                     "subModuleName": "Material Thermal Properties",
                     "thumbnail": "data/media/thumbnail_material_thermal_properties.png",
-                    "description": "Designing efficient building envelopes requires an understanding of the thermal performance of utilized materials. Reducing the envelope energy loss is critical, particularly where significant heating or cooling is required to provide thermal comfort. In general, thermal transmittance and thermal resistance are the two most important properties for understanding the conductive performance of building materials."
-					
+					"description": [
+						{ 	"title":"",
+							"text":"Designing efficient building envelopes requires an understanding of the thermal performance of utilized materials. Reducing the envelope energy loss is critical, particularly where significant heating or cooling is required to provide thermal comfort. In general, thermal transmittance and thermal resistance are the two most important properties for understanding the conductive performance of building materials."
+						},
+						{
+							"title":"SOLAR HEAT GAIN COEFFICIENT & SHADING COEFFICIENT",
+							"text":" Glazed open- ings on buildings can be a major source of heat gain by solar  radiation. Solar heat gain is a function of glazing material proper- ties and is measured by the shading coefficient (SC). SC is the  ratio between the solar heat gain for a particular type of glass and  that of a single clear float glass. SC is expressed as a number  between 0.0 and 1.0. A lower SC indicates a lower heat gain value  and a better capacity to block solar radiation. Clear glass has a  SC of 1.0.   Shading coefficient is being replaced by the solar heat gain coef- ficient (SHGC). The SHGC is a measure of how well glass blocks  heat from sunlight. The SHGC is the fraction of solar radiation that  is admitted through glass and is expressed as a number between  0.0 and 0.87. Typical values range from 0.25 to 0.80."
+						}
+					]
                     ,
                     "mediaList": [
                         {
@@ -48,11 +59,7 @@
                             "mediaImage": "data/media/media_solar_heat_gain.png"
 							,"aoiData":{"imageName":"media_solar_heat_gain.png","width":1317,"height":1286,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1317,"height":1286},{"name":"Title","x":2,"y":27,"width":917,"height":100},{"name":"Solar heatgain coeff 86","x":11,"y":160,"width":696,"height":1120},{"name":"Solar heatgain coeff 29","x":683,"y":154,"width":657,"height":1130}]}
 							,"description":
-							[						
-								{
-									"title":"SOLAR HEAT GAIN COEFFICIENT & SHADING COEFFICIENT",
-									"text":" Glazed open- ings on buildings can be a major source of heat gain by solar  radiation. Solar heat gain is a function of glazing material proper- ties and is measured by the shading coefficient (SC). SC is the  ratio between the solar heat gain for a particular type of glass and  that of a single clear float glass. SC is expressed as a number  between 0.0 and 1.0. A lower SC indicates a lower heat gain value  and a better capacity to block solar radiation. Clear glass has a  SC of 1.0.   Shading coefficient is being replaced by the solar heat gain coef- ficient (SHGC). The SHGC is a measure of how well glass blocks  heat from sunlight. The SHGC is the fraction of solar radiation that  is admitted through glass and is expressed as a number between  0.0 and 0.87. Typical values range from 0.25 to 0.80."
-								}
+							[	
 							]
                         },
                         {
@@ -61,11 +68,7 @@
                             "mediaImage": "data/media/media_low_e_glass.png"
 							,"aoiData":{"imageName":"media_low_e_glass.png","width":498,"height":893,"aoiItemList":[{"name":"full","x":0,"y":0,"width":498,"height":893},{"name":"Thick Clear Window Glass Text","x":25,"y":751,"width":271,"height":20},{"name":"Air Gap Text","x":28,"y":767,"width":175,"height":18},{"name":"Low Emissivity Coating layer text","x":21,"y":789,"width":210,"height":12},{"name":"Thick Clear Window Glass Text","x":31,"y":801,"width":194,"height":15},{"name":"Spectrally Selectic Tint Film Text","x":26,"y":818,"width":274,"height":15},{"name":"Solar heat gain coefficient","x":275,"y":526,"width":149,"height":46},{"name":"Visual Light Transmitted","x":278,"y":582,"width":159,"height":43},{"name":"Thick Clear Window Glass","x":91,"y":23,"width":202,"height":119},{"name":"Air Gap","x":82,"y":57,"width":147,"height":89},{"name":"Low Emissivity Coating layer","x":194,"y":127,"width":72,"height":53},{"name":"Spectrally Selectic Tint Film","x":160,"y":153,"width":99,"height":75},{"name":"Thick Clear Window Glass","x":106,"y":204,"width":107,"height":58}]}
 							,"description":
-							[						
-								{
-									"title":"SOLAR HEAT GAIN COEFFICIENT & SHADING COEFFICIENT",
-									"text":" Glazed open- ings on buildings can be a major source of heat gain by solar  radiation. Solar heat gain is a function of glazing material proper- ties and is measured by the shading coefficient (SC). SC is the  ratio between the solar heat gain for a particular type of glass and  that of a single clear float glass. SC is expressed as a number  between 0.0 and 1.0. A lower SC indicates a lower heat gain value  and a better capacity to block solar radiation. Clear glass has a  SC of 1.0.   Shading coefficient is being replaced by the solar heat gain coef- ficient (SHGC). The SHGC is a measure of how well glass blocks  heat from sunlight. The SHGC is the fraction of solar radiation that  is admitted through glass and is expressed as a number between  0.0 and 0.87. Typical values range from 0.25 to 0.80."
-								}
+							[	
 							]
                         }
                     ]
@@ -73,7 +76,11 @@
                 {
                     "subModuleName": "Enclosure Materials",
                     "thumbnail": "data/media/thumbnail_enclosure_materials.png",
-                    "description":"Building enclosures serve a multitude of critical functions by providing thermal comfort, natural lighting, air movement, humidity and moisture control, views, sound insulation, pollution and fire resistance. In addition, building enclosures can function as loadbearing walls or roof systems that provide lateral resistance to wind and seismic loads. Selecting enclosure materials that can best integrate these functions is a substantial step to reducing resource and energy demand and the carbon footprint of buildings throughout their life cycle."				
+					"description": [
+						{ 	"title":"",
+							"text":"Building enclosures serve a multitude of critical functions by providing thermal comfort, natural lighting, air movement, humidity and moisture control, views, sound insulation, pollution and fire resistance. In addition, building enclosures can function as loadbearing walls or roof systems that provide lateral resistance to wind and seismic loads. Selecting enclosure materials that can best integrate these functions is a substantial step to reducing resource and energy demand and the carbon footprint of buildings throughout their life cycle."		
+						}
+					]
                     ,
                     "mediaList": [
                         {
@@ -237,7 +244,11 @@
                 {
                     "subModuleName": "Insulation Materials",
                     "thumbnail": "data/media/thumbnail_insulation_materials.png",
-                    "description": "The insulation of a building envelope consists of many layers of materials that are critical in meeting thermal, acoustical and fireresistant requirements. Insulation materials can be either organic, which refers to raw materials such as cork, mineral fiber, cotton, etc., or inorganic, which refers to synthetic materials such as polyurethane rigid foam or polystyrene. Thermal insulation is used to reduce the rate of heat transfer through the building enclosure and protects against moisturerelated damage. Thermal insulation plays a critical role in the energy efficiency of buildings because it mitigates energy exchange between the interior of the building and the exterior environment. The thermal energy transfer through a material is dependent on its thermal conductivity. A material with less conductivity will have smaller energy exchange with the external environment, therefore creating a better insulation. In addition, materials with less density have a better insulation quality because they have higher air content. Air and some inert gases such as xenon, krypton and argon are good insulators and are often used as insulation between glass panels."
+					"description": [
+						{ 	"title":"",
+							"text":"The insulation of a building envelope consists of many layers of materials that are critical in meeting thermal, acoustical and fireresistant requirements. Insulation materials can be either organic, which refers to raw materials such as cork, mineral fiber, cotton, etc., or inorganic, which refers to synthetic materials such as polyurethane rigid foam or polystyrene. Thermal insulation is used to reduce the rate of heat transfer through the building enclosure and protects against moisturerelated damage. Thermal insulation plays a critical role in the energy efficiency of buildings because it mitigates energy exchange between the interior of the building and the exterior environment. The thermal energy transfer through a material is dependent on its thermal conductivity. A material with less conductivity will have smaller energy exchange with the external environment, therefore creating a better insulation. In addition, materials with less density have a better insulation quality because they have higher air content. Air and some inert gases such as xenon, krypton and argon are good insulators and are often used as insulation between glass panels."	
+						}
+					]
                     ,
                     "mediaList": [
                         {
@@ -310,7 +321,11 @@
                 {
                     "subModuleName": "Thermal Materials",
                     "thumbnail": "data/media/thumbnail_thermal_materials.png",
-                    "description": "Building materials with significant mass such as concrete can act as a thermal storage areas in climates where there is a significant difference between the day and nighttime temperatures. A number of newly developed materials can store energy without requiring a great mass. Because these materials are being further developed, tested and improved, their use in building construction is becoming more prevalent."
+					"description": [
+						{ 	"title":"",
+							"text":"Building materials with significant mass such as concrete can act as a thermal storage areas in climates where there is a significant difference between the day and nighttime temperatures. A number of newly developed materials can store energy without requiring a great mass. Because these materials are being further developed, tested and improved, their use in building construction is becoming more prevalent."
+						}
+					]
                     ,
                     "mediaList": [
                         {
