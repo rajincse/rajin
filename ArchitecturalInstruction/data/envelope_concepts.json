@@ -1,6 +1,11 @@
 {
     "moduleName": "Envelope Concepts",
     "welcomeMessageImage": "images/envelope_concepts_message.jpg",
+    "description":
+    {
+        "title":"Building Envelope Concepts",
+        "text":"An informed process of selecting materials utilized in building en- velopes can lead to significant improvements and reduce the en- vironmental impact of buildings. An investigation of a material in  terms of natural resource extraction and properties such as ther- mal resistance, thermal transmittance and insulation capabilities  can be a useful vehicle for gauging various enclosure alternatives.  The following sections describe some of the critical concepts re- quired for understanding building enclosure materials, function,  performance and sustainability"
+    },    
     "submodule":
             [
                 {

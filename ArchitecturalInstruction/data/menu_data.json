@@ -4,6 +4,7 @@
                 "Building Envelopes":
                         {
                             "name": "Building Envelopes",
+                            "description":"The building envelope is the primary interface of a building with  the exterior surroundings. As a result, the building envelope plays  a critical role in the energy management and sustainability of the  built environment. The proper selection of walls, roof and floor  systems, construction materials and a rigorous, detailed de- velopment of connections and structural joinery are important  components of energy saving strategies. In addition, thermal and  moisture control, sound and fire insulation, and natural lighting  strategies can significantly reduce dependence on mechanical  climate control systems. The following sections will introduce  concepts, principles, and strategies for the selection and evalu- ation of building enclosures with respect to their environmental  performance.",
                             "unSelectedLogo": "images/building_envelopes_logo.jpg",
                             "selectedLogo": "images/building_envelope_activated.png",
                             "welcomeMessageImage":"images/building_envelopes_message.jpg",

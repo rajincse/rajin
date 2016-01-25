@@ -86,6 +86,18 @@ body
     
     margin-right: 5px;
 }
+.category-title{
+    color: #85BED2;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.category-text{
+    font-size: 12px;
+    text-align: left;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 20px;
+}
 .module-title
 {
     background-color: #358FA9;

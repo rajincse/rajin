@@ -1,6 +1,11 @@
 {
     "moduleName": "Climate Responsive Facades",
     "welcomeMessageImage":"images/climate_responsive_facades_message.jpg",
+     "description":
+    {
+        "title":"Climate-Responsive Facades",
+        "text":"Beyond the functions of providing shelter, form, views, and image,  the building façade plays a critical role in the thermal behavior and  the overall building’s energy consumption. Advanced technolo- gies in façade construction are enabling buildings to respond to  the environment effectively and take advantage of the site forces  to develop passive strategies. These façade systems have the  potential to capture, filter, and redirect daylight, provide natural  ventilation and control solar radiation and glare, and to signifi- cantly improve the buildings’ energy performance. Some of these  systems include double-skin façades for thermal comfort, shad- ing devices for solar control, and façade-integrated photovoltaics  for electricity generation."
+    }, 
     "submodule":
             [
                 {

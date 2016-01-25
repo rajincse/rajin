@@ -61,7 +61,13 @@
                         </div>
                     </div>
                     <div class="cell module-welcome-message" ng-show="controllerData.submoduleIndex <0">
-                        <img ng-Src="{{contentData.welcomeMessageImage}}"/>
+                        <div class="category-title">
+                            <span>{{contentData.description.title| uppercase}}</span>
+                        </div>
+                        <div class="category-text">
+                            <span id='{{$index}}'ng-repeat="word in contentData.description.text.split(' ') track by $index">{{word+' ' }}</span>
+                        </div>
+                        <!--<img ng-Src="{{contentData.welcomeMessageImage}}"/>-->
                     </div>
                     <div class="cell submodule-list">
                         <div class="row bottom-margin"  ng-repeat="subModule in contentData.submodule" submodule="setSubModuleIndex({{$index}})">
@@ -71,7 +77,13 @@
             </div>
               <div class="container" ng-if="!contentData.moduleName && menuData.categories[menuControllerData.selectedCategoryName] && menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage">
                 <div class="welcome-message">
-                    <img ng-Src="{{menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage}}" alt=""/>
+                    <div class="category-title">
+                        <span>{{menuData.categories[menuControllerData.selectedCategoryName].name| uppercase}}</span>
+                    </div>
+                    <div class="category-text">
+                        <span id='{{$index}}'ng-repeat="word in menuData.categories[menuControllerData.selectedCategoryName].description.split(' ') track by $index">{{word+' ' }}</span>
+                    </div>
+                    <!--<img ng-Src="{{menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage}}" alt=""/>-->
                 </div>
             </div>
             <div class="container" ng-if="!contentData.moduleName &&! menuData.categories[menuControllerData.selectedCategoryName] && !menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage">

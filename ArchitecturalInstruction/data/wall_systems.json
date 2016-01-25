@@ -1,6 +1,11 @@
 {
     "moduleName": "Wall Systems",
     "welcomeMessageImage": "images/wall_systems_message.jpg",
+    "description":
+    {
+        "title":"Wall Systems",
+        "text":"The design and the technology used in exterior walls entail the use  of diverse materials. In general, wall systems can be designed as  a monolithic construction or a multi-layered system. In monolithic  wall construction, the protective insulation and the structural sys- tem are all integrated into the same layer. Multilayer walls carry  these functions in separate layers. The capacity of walls to func- tion as structural systems is dependent on the material and con- struction type. Walls can serve as the primary or secondary load- bearing structure, or not perform any structural function at all. The following sections will introduce a number of commonly  used wall types, their components, construction and assembly  methods, and their sustainability properties. Each wall will be ac- companied by tabulated property values for standard construc- tion as well as for green construction. The values listed for green construction are based on the use of alternative materials with  improved environmental performance"
+    },    
     "submodule":
             [
                 {

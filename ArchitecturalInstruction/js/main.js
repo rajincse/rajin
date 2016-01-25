@@ -78,7 +78,8 @@ function AppController($scope, $http)
     $scope.selectSubCategory = function(subCategoryName)
     {
         $scope.menuControllerData.selectedSubCategoryName = subCategoryName;
-         $scope.loadContent();
+        $scope.loadContent();
+        $scope.reInstrument('selectSubCategory');
     };
     
     //Content
@@ -142,60 +143,83 @@ function AppController($scope, $http)
         console.log('re-instrument :'+param);
         if(param)
         {
+             var command =['removeAllElem'];
+            //reset scroll
+            var windowScroll = $(window);
+            command.push('translate_-'+windowScroll.scrollLeft()+'_-'+windowScroll.scrollTop());
+            //homelogo
+            var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
+            var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
+            command.push('addElem_homelogoText_'+getRectangleString(homeLogoText));
+            command.push('addProperty_homelogoText_type=text');
+            command.push('addElem_homelogo_'+getRectangleString(homeLogo));
+            command.push('addProperty_homelogo_type=image');
+             //categories
+            var categoryButtons = $('div.menubar div.button-list-main a img');
+            var keys = Object.keys($scope.menuData.categories);
+            for(var i=0;i<categoryButtons.length;i++)
+            {
+                var rect = categoryButtons[i].getBoundingClientRect();
+                command.push('addElem_'+$scope.menuData.categories[keys[i]].name+'_'+getRectangleString(rect));
+                command.push('addProperty_'+$scope.menuData.categories[keys[i]].name+'_type=button');
+            }
+
+            
+            if($scope.menuControllerData.selectedCategoryName)
+            {
+                //subcategories
+                var subCategoryButtons = $('div.menubar div.button-list-small a img');
+                var subCategoryKeys = Object.keys($scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory);
+                for(var i=0;i<subCategoryButtons.length;i++)
+                {
+                    var rect = subCategoryButtons[i].getBoundingClientRect();
+                    command.push('addElem_'+subCategoryKeys[i]+':subcategory_'+getRectangleString(rect));
+                    command.push('addProperty_'+subCategoryKeys[i]+':subcategory_type=button');
+                }
+                //category text
+                var categoryText = $('.container .welcome-message div span');
+                for(var i=0;i<categoryText.length;i++)
+                {
+                    var word = $(categoryText[i]).text().trim();
+                    var rect =getRectangleString(categoryText[i].getBoundingClientRect());
+                    command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(categoryText[i].getBoundingClientRect()));
+                    command.push('addProperty_'+word+':desc'+i+'_type=text');
+                }
+            }
+            
             if($scope.contentData.moduleName)
             {
-               
-                 var command =['removeAllElem'];
-                 //reset scroll
-                 var windowScroll = $(window);
-                 command.push('translate_-'+windowScroll.scrollLeft()+'_-'+windowScroll.scrollTop());
-                 //homelogo
-                 var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
-                 var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
-                 command.push('addElem_homelogoText_'+getRectangleString(homeLogoText));
-                 command.push('addProperty_homelogoText_type=text');
-                 command.push('addElem_homelogo_'+getRectangleString(homeLogo));
-                 command.push('addProperty_homelogo_type=image');
-
-                 //categories
-                 var categoryButtons = $('div.menubar div.button-list-main a img');
-                 var keys = Object.keys($scope.menuData.categories);
-                 for(var i=0;i<categoryButtons.length;i++)
-                 {
-                     var rect = categoryButtons[i].getBoundingClientRect();
-                     command.push('addElem_'+$scope.menuData.categories[keys[i]].name+'_'+getRectangleString(rect));
-                     command.push('addProperty_'+$scope.menuData.categories[keys[i]].name+'_type=button');
-                 }
-                 
-                 //subcategories
-                 var subCategoryButtons = $('div.menubar div.button-list-small a img');
-                 var subCategoryKeys = Object.keys($scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory);
-                 for(var i=0;i<subCategoryButtons.length;i++)
-                 {
-                     var rect = subCategoryButtons[i].getBoundingClientRect();
-                     command.push('addElem_'+subCategoryKeys[i]+':subcategory_'+getRectangleString(rect));
-                     command.push('addProperty_'+subCategoryKeys[i]+':subcategory_type=button');
-                 }
-
-                if($scope.contentData.moduleName)
+                
+                //Submodule Images
+                   var submodules = $('.container div.submodule-list div img'); 
+                   for(var i=0;i<submodules.length;i++)
+                   {
+                       var rect = submodules[i].getBoundingClientRect();
+                       command.push('addElem_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_'+getRectangleString(rect));
+                       command.push('addProperty_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_type=button');
+                   }
+                if($scope.controllerData.submoduleIndex <0)
+                {
+                    var moduleDescription = $('.container .module-welcome-message div span');
+                    for(var i=0;i<moduleDescription.length;i++)
+                    {
+                        var word = $(moduleDescription[i]).text().trim();
+                        var rect =getRectangleString(moduleDescription[i].getBoundingClientRect());
+                        command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(moduleDescription[i].getBoundingClientRect()));
+                        command.push('addProperty_'+word+':desc'+i+'_type=text');
+                    }
+                }
+                else
                 {
                     var currentSubModule = $scope.contentData.submodule[ $scope.controllerData.submoduleIndex];
                     var currentMedia = currentSubModule.mediaList[ $scope.controllerData.mediaIndex];
-
-                    //Submodule Images
-                    var submodules = $('.container div.submodule-list div img'); 
-                    for(var i=0;i<submodules.length;i++)
-                    {
-                        var rect = submodules[i].getBoundingClientRect();
-                        command.push('addElem_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_'+getRectangleString(rect));
-                        command.push('addProperty_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_type=button');
-                    }
+                    
+                   
                     if(currentSubModule)
                     {
                         //Texts
                         var moduleTitle = $('.container div.media-list-summary div.module-title')[0].getBoundingClientRect();
                         var subModuleTitle = $('.container div.media-list-summary div.submodule-title')[0].getBoundingClientRect();
-                        
 
                         command.push('addElem_'+$scope.contentData.moduleName+':module_'+getRectangleString(moduleTitle));
                         command.push('addProperty_'+$scope.contentData.moduleName+':module_type=text');
@@ -258,11 +282,12 @@ function AppController($scope, $http)
                             command.push('addProperty_'+imageName+':media_type=image');
                         }
                     }
-                    
-
                 }
-                instrument.sendCommands(command);
-            }
+                
+            }       
+
+                
+            instrument.sendCommands(command);
             
         }
         else
