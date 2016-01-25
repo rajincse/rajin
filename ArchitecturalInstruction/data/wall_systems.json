@@ -397,18 +397,6 @@
 						{
 							"title":"CONSTRUCTION SUSTAINABILITY",
 							"text":"Stone cladding is expensive relative  to many other materials. The detailing of stone cladding and its  highly specialized fixings is typically done by the stone subcon- tractor, who provides shop drawings for approval by the design  team. Fabrication and installation are carried out by highly skilled  labor. Each piece of stone is prefabricated in a shop and marked  with a code to identify its precise location in the building envelope.  Because stone is robust and durable, it typically requires minimal  protective measures, such as wrapping, either in the shop or on  the building site. Stone has low levels of embodied energy in its manufacture.  Large blocks of stone are quarried and transported to workshops  where the stone is cut and finished. Although water is required  continuously during cutting and finishing to cool the equipment,  the amount of this water is minimal relative to other materials such  as concrete. However, stone quarries disfigure the landscape.  The embodied energy in stone, related to transportation, is signifi- cant because stone is transported globally. In some cases, inter- national shipping and foreign labor add up to less than domestic  labor and transportation by truck. Well-detailed stone cladding is  a long-life material that requires little maintenance."
-						},
-						{
-							"title":"",
-							"text":""
-						},
-						{
-							"title":"",
-							"text":""
-						},
-						{
-							"title":"",
-							"text":""
 						}
 					]
                     ,
@@ -418,12 +406,14 @@
                             ,
                             "mediaImage": "data/media/media_stone_panel_wall.png"
                             ,"aoiData":{"imageName":"media_stone_panel_wall.png","width":1091,"height":1260,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1091,"height":1260},{"name":"Reinforced Concrete Floor","x":467,"y":227,"width":356,"height":249},{"name":"Insulation","x":573,"y":231,"width":347,"height":647},{"name":"Gypsum Board","x":642,"y":192,"width":327,"height":640},{"name":"Compressible Foam Filter","x":433,"y":295,"width":347,"height":200},{"name":"Metal Ties","x":262,"y":535,"width":326,"height":220},{"name":"Lightweight Steell Framing System","x":459,"y":315,"width":321,"height":626},{"name":"Steel bolt and Nuts","x":527,"y":536,"width":62,"height":60},{"name":"Caulk","x":69,"y":636,"width":332,"height":214},{"name":"Texts","x":708,"y":1036,"width":315,"height":218},{"name":"Stone Veneer System","x":44,"y":474,"width":372,"height":714},{"name":"Fire Thermal Acoustic Stop","x":555,"y":751,"width":364,"height":230},{"name":"Steel Tubes","x":521,"y":540,"width":107,"height":563}]}
+							,"description":[]
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_section.png"
                             ,
                             "mediaImage": "data/media/media_stone_panel_wall_section.png"
                             ,"aoiData":{"imageName":"media_stone_panel_wall_section.png","width":380,"height":1068,"aoiItemList":[{"name":"full","x":0,"y":0,"width":380,"height":1068},{"name":"Reinforced Concrete Floor","x":49,"y":35,"width":139,"height":84},{"name":"Insulation","x":158,"y":131,"width":49,"height":139},{"name":"Gypsum Board","x":130,"y":301,"width":38,"height":220},{"name":"Compressible Foam Filter","x":209,"y":89,"width":35,"height":37},{"name":"Metal Ties","x":205,"y":717,"width":43,"height":34},{"name":"Lightweight Steell Framing System","x":198,"y":121,"width":11,"height":151},{"name":"Steel bolt and Nuts","x":160,"y":111,"width":44,"height":24},{"name":"Caulk","x":203,"y":404,"width":39,"height":32},{"name":"Texts","x":61,"y":796,"width":309,"height":277},{"name":"Stone Veneer System","x":222,"y":297,"width":23,"height":228},{"name":"Fire Thermal Acoustic Stop","x":180,"y":711,"width":27,"height":70},{"name":"Steel Tubes","x":205,"y":297,"width":17,"height":227}]}
+							,"description":[]
                         },
                         {
                             "mediaThumbnail": "data/media/media_thumbnail_stone_panel_wall_punched_window.png"
@@ -432,6 +422,7 @@
 							,"aoiData":{"imageName":"media_stone_panel_wall_punched_window.png","width":1111,"height":1074,"aoiItemList":[{"name":"full","x":0,"y":0,"width":1111,"height":1074},{"name":"Reinforced Concrete Floor","x":503,"y":96,"width":312,"height":228},{"name":"Insulation","x":602,"y":111,"width":280,"height":553},{"name":"Gypsum Board","x":685,"y":104,"width":241,"height":532},{"name":"Compressible Foam Filter","x":526,"y":201,"width":254,"height":144},{"name":"Window Casing","x":524,"y":288,"width":233,"height":336},{"name":"Lightweight Steell Framing System","x":737,"y":323,"width":58,"height":386},{"name":"Aluminum Window Frame","x":104,"y":494,"width":243,"height":385},{"name":"Double Glazed Window System","x":-23,"y":619,"width":243,"height":317},{"name":"Texts","x":644,"y":856,"width":335,"height":222},{"name":"Stone Veneer System","x":212,"y":348,"width":273,"height":551},{"name":"Fire Thermal Acoustic Stop","x":615,"y":546,"width":275,"height":186},{"name":"Steel Tubes","x":560,"y":366,"width":73,"height":449}]}
                             ,
                             "additionalMedia": ["data/media/media_stone_panel_wall_punched_window_barchart.png", "data/media/media_stone_panel_wall_punched_window_table.png"]
+							,"description":[]
                         }
                     ]
                 }

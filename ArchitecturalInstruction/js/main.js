@@ -36,7 +36,13 @@ homeApp.directive("media", function ()
     }
   };
 });
-    
+homeApp.directive("scroll", function () {
+        return function(scope, element, attrs) {
+            angular.element(element).bind("scroll", function() {
+                scope.$apply(attrs.scroll);
+            });
+        };
+    });
 function AppController($scope, $http)
 {
     
@@ -65,6 +71,7 @@ function AppController($scope, $http)
         $scope.reInstrument('selectCategory');
         $scope.menuControllerData.selectedCategoryName = categoryName;
         $scope.loadContent();
+        $scope.setScrollToTop();
     };
     $scope.hoverInSubCategory = function(subCategoryName)
     {
@@ -80,6 +87,7 @@ function AppController($scope, $http)
         $scope.menuControllerData.selectedSubCategoryName = subCategoryName;
         $scope.loadContent();
         $scope.reInstrument('selectSubCategory');
+        $scope.setScrollToTop();
     };
     
     //Content
@@ -129,6 +137,7 @@ function AppController($scope, $http)
     {
         $scope.controllerData.submoduleIndex = submoduleIndex;
         $scope.controllerData.mediaIndex = 0;
+        $scope.setScrollToTop();
     }
     $scope.setMediaIndex = function(mediaIndex)
     {
@@ -138,6 +147,22 @@ function AppController($scope, $http)
     {
         instrument.enabled =val;
     }
+    $scope.scrollEvent= function ()
+    {
+        this.reInstrument('scroll');
+    }
+    $scope.setScrollToTop = function()
+    {
+        window.scrollTo(0,0);
+        var subModuleDescriptionContainer =$('.container div.media-list-summary div.submodule-description')[0];
+        if(subModuleDescriptionContainer)
+        {
+            subModuleDescriptionContainer.scrollTop=0;
+        }
+        
+        
+    }
+    
     $scope.reInstrument = function(param)
     {
         console.log('re-instrument :'+param);
@@ -226,14 +251,21 @@ function AppController($scope, $http)
                         command.push('addElem_'+currentSubModule.subModuleName+':submodule_'+getRectangleString(subModuleTitle));
                         command.push('addProperty_'+currentSubModule.subModuleName+':submodule_type=text');
                         
+                        var subModuleDescriptionContainer =$('.container div.media-list-summary div.submodule-description')[0];
+                        var containerRect = subModuleDescriptionContainer.getBoundingClientRect();
                         var subModuleDescriptionTexts  = $('.container div.media-list-summary div.submodule-description div span');
                         
                         for(var i=0;i<subModuleDescriptionTexts.length;i++)
                         {
                             var word = $(subModuleDescriptionTexts[i]).text().trim();
-                            var rect =getRectangleString(subModuleDescriptionTexts[i].getBoundingClientRect());
-                            command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(subModuleDescriptionTexts[i].getBoundingClientRect()));
-                            command.push('addProperty_'+word+':desc'+i+'_type=text');
+                            var wordRect = subModuleDescriptionTexts[i].getBoundingClientRect();
+                            if(isInside(containerRect, wordRect))
+                            {
+                                var rect =getRectangleString(wordRect);
+                                command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(subModuleDescriptionTexts[i].getBoundingClientRect()));
+                                command.push('addProperty_'+word+':desc'+i+'_type=text');     
+                            }
+                            
                         }
                         
                         //Thumbnail List
@@ -343,5 +375,18 @@ function AppController($scope, $http)
         str = getSlashFreeString(str);
         str = getExtensionFreeString(str);
         return str;
+    }
+    function isInside(containerRect, componentRect)
+    {
+        if(componentRect.height > 0 
+                && componentRect.bottom >= containerRect.top 
+                && componentRect.top <= containerRect.bottom)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

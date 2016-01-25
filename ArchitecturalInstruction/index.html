@@ -40,7 +40,7 @@
                     <div class="cell media-list-summary" ng-show="controllerData.submoduleIndex >=0">
                         <div class="row module-title">{{contentData.moduleName | uppercase}}</div>
                         <div class="row submodule-title">{{contentData.submodule[controllerData.submoduleIndex].subModuleName | uppercase}}</div>
-                        <div class="row submodule-description">                           
+                        <div class="row submodule-description" scroll="scrollEvent()">                           
                             <div ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].description">
                                 <span class="bold-text">{{paragraph.title}}</span>
                                 <span id='{{$index}}'ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
@@ -52,8 +52,8 @@
                             
                         </div>                      
                         <div class="row bottom-margin">
-                            <div class="cell media-image-thumbnail"  ng-repeat="media in contentData.submodule[controllerData.submoduleIndex].mediaList" media="setMediaIndex({{$index}})">
-                                <img ng-Src="{{media.mediaThumbnail}}" class="{{$index===controllerData.mediaIndex?'image-selected':'image-unselected'}}"/> 
+                            <div class="cell media-image-thumbnail {{$index===controllerData.mediaIndex?'image-selected':'image-unselected'}}"  ng-repeat="media in contentData.submodule[controllerData.submoduleIndex].mediaList" media="setMediaIndex({{$index}})">
+                                <img ng-Src="{{media.mediaThumbnail}}" class=""/> 
                             </div>
                         </div>
                         <div class="row bottom-margin media-additional" ng-repeat="additionalMedia in contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].additionalMedia">
