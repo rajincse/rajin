@@ -42,12 +42,12 @@
                         <div class="row submodule-title">{{contentData.submodule[controllerData.submoduleIndex].subModuleName | uppercase}}</div>
                         <div class="row submodule-description" scroll="scrollEvent()">                           
                             <div ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].description">
-                                <span class="bold-text">{{paragraph.title}}</span>
-                                <span id='{{$index}}'ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
+                                <span id='{{"p"+$index+"h0"}}'class="bold-text">{{paragraph.title}}</span>
+                                <span id='{{"p"+$parent.$index+"w"+$index}}'ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
                             </div>
                             <div ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].description">
-                                <span class="bold-text">{{paragraph.title}}</span>
-                                <span id='{{$index}}'ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
+                                <span id='{{"p"+$index+"h0"}}'class="bold-text">{{paragraph.title}}</span>
+                                <span id='{{"p"+$parent.$index+"w"+$index}}'ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
                             </div>
                             
                         </div>                      
@@ -62,10 +62,10 @@
                     </div>
                     <div class="cell module-welcome-message" ng-show="controllerData.submoduleIndex <0">
                         <div class="category-title">
-                            <span>{{contentData.description.title| uppercase}}</span>
+                            <span id='p0h0'>{{contentData.description.title| uppercase}}</span>
                         </div>
                         <div class="category-text">
-                            <span id='{{$index}}'ng-repeat="word in contentData.description.text.split(' ') track by $index">{{word+' ' }}</span>
+                            <span id='{{"p0w"+$index}}'ng-repeat="word in contentData.description.text.split(' ') track by $index">{{word+' ' }}</span>
                         </div>
                         <!--<img ng-Src="{{contentData.welcomeMessageImage}}"/>-->
                     </div>
@@ -78,10 +78,10 @@
               <div class="container" ng-if="!contentData.moduleName && menuData.categories[menuControllerData.selectedCategoryName] && menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage">
                 <div class="welcome-message">
                     <div class="category-title">
-                        <span>{{menuData.categories[menuControllerData.selectedCategoryName].name| uppercase}}</span>
+                        <span id='p0h0'>{{menuData.categories[menuControllerData.selectedCategoryName].name| uppercase}}</span>
                     </div>
                     <div class="category-text">
-                        <span id='{{$index}}'ng-repeat="word in menuData.categories[menuControllerData.selectedCategoryName].description.split(' ') track by $index">{{word+' ' }}</span>
+                        <span id='{{"p0w"+$index}}'ng-repeat="word in menuData.categories[menuControllerData.selectedCategoryName].description.split(' ') track by $index">{{word+' ' }}</span>
                     </div>
                     <!--<img ng-Src="{{menuData.categories[menuControllerData.selectedCategoryName].welcomeMessageImage}}" alt=""/>-->
                 </div>

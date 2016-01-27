@@ -175,40 +175,45 @@ function AppController($scope, $http)
             //homelogo
             var homeLogoText = $('div.menubar div.home-logo div.large-text')[0].getBoundingClientRect();
             var homeLogo = $('div.menubar div.home-logo div a img')[0].getBoundingClientRect();
-            command.push('addElem_homelogoText_'+getRectangleString(homeLogoText));
-            command.push('addProperty_homelogoText_type=text');
-            command.push('addElem_homelogo_'+getRectangleString(homeLogo));
-            command.push('addProperty_homelogo_type=image');
-             //categories
-            var categoryButtons = $('div.menubar div.button-list-main a img');
-            var keys = Object.keys($scope.menuData.categories);
-            for(var i=0;i<categoryButtons.length;i++)
-            {
-                var rect = categoryButtons[i].getBoundingClientRect();
-                command.push('addElem_'+$scope.menuData.categories[keys[i]].name+'_'+getRectangleString(rect));
-                command.push('addProperty_'+$scope.menuData.categories[keys[i]].name+'_type=button');
-            }
+            command.push('addElem_homelogo:text@g0h0_'+getRectangleString(homeLogoText));
+            command.push('addProperty_homelogo:text@g0h0_type=text');
+            command.push('addElem_homelogo:image@g0i0_'+getRectangleString(homeLogo));
+            command.push('addProperty_homelogo:image@g0i0_type=image');
+            
 
             
             if($scope.menuControllerData.selectedCategoryName)
             {
-                //subcategories
-                var subCategoryButtons = $('div.menubar div.button-list-small a img');
-                var subCategoryKeys = Object.keys($scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory);
-                for(var i=0;i<subCategoryButtons.length;i++)
+                 //categories
+                var categoryButtons = $('div.menubar div.button-list-main a img');
+                var keys = Object.keys($scope.menuData.categories);
+                for(var i=0;i<categoryButtons.length;i++)
                 {
-                    var rect = subCategoryButtons[i].getBoundingClientRect();
-                    command.push('addElem_'+subCategoryKeys[i]+':subcategory_'+getRectangleString(rect));
-                    command.push('addProperty_'+subCategoryKeys[i]+':subcategory_type=button');
+                    var rect = categoryButtons[i].getBoundingClientRect();
+                    var module =$scope.menuData.categories[keys[i]];
+                    var id =module.name+':button@'+module.id;
+                    command.push('addElem_'+id+'_'+getRectangleString(rect));
+                    command.push('addProperty_'+id+'_type=button');
+                }
+                //subcategories
+                var moduleButtons = $('div.menubar div.button-list-small a img');
+                var moduleKeys = Object.keys($scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory);
+                for(var i=0;i<moduleButtons.length;i++)
+                {
+                    var rect = moduleButtons[i].getBoundingClientRect();
+                    var id = moduleKeys[i]+':button@'+$scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[moduleKeys[i]].id;
+                    command.push('addElem_'+id+'_'+getRectangleString(rect));
+                    command.push('addProperty_'+id+'_type=button');
                 }
                 //category text
                 var categoryText = $('.container .welcome-message div span');
                 for(var i=0;i<categoryText.length;i++)
                 {
                     var word = $(categoryText[i]).text().trim();
+                    var id = word+':text@'+$scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].id+$(categoryText[i]).attr('id');
                     var rect =getRectangleString(categoryText[i].getBoundingClientRect());
-                    command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(categoryText[i].getBoundingClientRect()));
-                    command.push('addProperty_'+word+':desc'+i+'_type=text');
+                    command.push('addElem_'+id+'_'+getRectangleString(categoryText[i].getBoundingClientRect()));
+                    command.push('addProperty_'+id+'_type=text');
                 }
             }
             
@@ -220,8 +225,9 @@ function AppController($scope, $http)
                    for(var i=0;i<submodules.length;i++)
                    {
                        var rect = submodules[i].getBoundingClientRect();
-                       command.push('addElem_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_'+getRectangleString(rect));
-                       command.push('addProperty_'+$scope.contentData.submodule[i].subModuleName+':submoduleThumbnail_type=button');
+                       var id = $scope.contentData.submodule[i].subModuleName+':button@'+$scope.contentData.id+'s'+i+'t0';
+                       command.push('addElem_'+id+'_'+getRectangleString(rect));
+                       command.push('addProperty_'+id+'_type=button');
                    }
                 if($scope.controllerData.submoduleIndex <0)
                 {
@@ -229,9 +235,10 @@ function AppController($scope, $http)
                     for(var i=0;i<moduleDescription.length;i++)
                     {
                         var word = $(moduleDescription[i]).text().trim();
+                        var id = word+':text@'+$scope.contentData.id+$(moduleDescription[i]).attr('id');
                         var rect =getRectangleString(moduleDescription[i].getBoundingClientRect());
-                        command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(moduleDescription[i].getBoundingClientRect()));
-                        command.push('addProperty_'+word+':desc'+i+'_type=text');
+                        command.push('addElem_'+id+'_'+getRectangleString(moduleDescription[i].getBoundingClientRect()));
+                        command.push('addProperty_'+id+'_type=text');
                     }
                 }
                 else
@@ -245,11 +252,12 @@ function AppController($scope, $http)
                         //Texts
                         var moduleTitle = $('.container div.media-list-summary div.module-title')[0].getBoundingClientRect();
                         var subModuleTitle = $('.container div.media-list-summary div.submodule-title')[0].getBoundingClientRect();
-
-                        command.push('addElem_'+$scope.contentData.moduleName+':module_'+getRectangleString(moduleTitle));
-                        command.push('addProperty_'+$scope.contentData.moduleName+':module_type=text');
-                        command.push('addElem_'+currentSubModule.subModuleName+':submodule_'+getRectangleString(subModuleTitle));
-                        command.push('addProperty_'+currentSubModule.subModuleName+':submodule_type=text');
+                        var submoduleId = $scope.contentData.id+'s'+$scope.controllerData.submoduleIndex;
+                        
+                        command.push('addElem_'+$scope.contentData.moduleName+':text@'+$scope.contentData.id+'h0_'+getRectangleString(moduleTitle));
+                        command.push('addProperty_'+$scope.contentData.moduleName+':text@'+$scope.contentData.id+'h0_type=text');
+                        command.push('addElem_'+currentSubModule.subModuleName+':text@'+submoduleId+'h0_'+getRectangleString(subModuleTitle));
+                        command.push('addProperty_'+currentSubModule.subModuleName+':text@'+submoduleId+'h0_type=text');
                         
                         var subModuleDescriptionContainer =$('.container div.media-list-summary div.submodule-description')[0];
                         var containerRect = subModuleDescriptionContainer.getBoundingClientRect();
@@ -262,8 +270,9 @@ function AppController($scope, $http)
                             if(isInside(containerRect, wordRect))
                             {
                                 var rect =getRectangleString(wordRect);
-                                command.push('addElem_'+word+':desc'+i+'_'+getRectangleString(subModuleDescriptionTexts[i].getBoundingClientRect()));
-                                command.push('addProperty_'+word+':desc'+i+'_type=text');     
+                                var id = word+':text@'+submoduleId+$(subModuleDescriptionTexts[i]).attr('id');
+                                command.push('addElem_'+id+'_'+getRectangleString(subModuleDescriptionTexts[i].getBoundingClientRect()));
+                                command.push('addProperty_'+id+'_type=text');     
                             }
                             
                         }
@@ -274,8 +283,9 @@ function AppController($scope, $http)
                         {
                             var rect = mediaThumbnails[i].getBoundingClientRect();
                             var imageName =getCleanString(currentSubModule.mediaList[i].mediaImage);
-                            command.push('addElem_'+imageName+':thumbnail_'+getRectangleString(rect));
-                            command.push('addProperty_'+imageName+':thumbnail_type=button');
+                            var id = imageName+':button@'+submoduleId+'t'+i;
+                            command.push('addElem_'+id+'_'+getRectangleString(rect));
+                            command.push('addProperty_'+id+'_type=button');
                         }
 
                         //Additional Media
@@ -284,34 +294,39 @@ function AppController($scope, $http)
                         {
                             var rect = additionalMedia[i].getBoundingClientRect();
                             var imageName = getCleanString(currentMedia.additionalMedia[i]);
-                            command.push('addElem_'+imageName+':additionalMedia_'+getRectangleString(rect));
-                            command.push('addProperty_'+imageName+':additionalMedia_type=image');
+                            var id = imageName+':image@'+submoduleId+'ai'+i;
+                            command.push('addElem_'+id+'_'+getRectangleString(rect));
+                            command.push('addProperty_'+id+'_type=image');
                         }
                         
                         //bigMediaImage
                         var bigMediaImage = $('.container div.media-image-big img')[0].getBoundingClientRect();
                         var rect={left:bigMediaImage.left|0, top:bigMediaImage.top|0, width:bigMediaImage.width|0, height:bigMediaImage.height|0}
+                        var bigMediaId = submoduleId+'i'+$scope.controllerData.mediaIndex;
                         if(currentMedia.aoiData)
                         {
                             var scaleX = rect.width/ currentMedia.aoiData.width;
                             var scaleY = rect.height / currentMedia.aoiData.height;
                             var bigMediaName = getCleanString(currentMedia.aoiData.imageName).trim();
                             
-                            command.push('addElem_'+bigMediaName+':media_'+getRectangleString(rect));
-                            command.push('addProperty_'+bigMediaName+':media_type=image');
+                            var id = bigMediaName+':image@'+bigMediaId;
+                            command.push('addElem_'+id+'_'+getRectangleString(rect));
+                            command.push('addProperty_'+id+'_type=image');
                             for(var i=0;i<currentMedia.aoiData.aoiItemList.length;i++)
                             {
                                 var aoi = currentMedia.aoiData.aoiItemList[i];
-                                command.push('addElem_'+aoi.name+':'+bigMediaName+'_'+((aoi.x * scaleX+bigMediaImage.left)|0)+'_'+((aoi.y*scaleY+bigMediaImage.top)|0)
+                                var aoiId = aoi.name+':aoi@'+bigMediaId+'a'+i;
+                                command.push('addElem_'+aoiId+'_'+((aoi.x * scaleX+bigMediaImage.left)|0)+'_'+((aoi.y*scaleY+bigMediaImage.top)|0)
                                         +'_'+((aoi.width*scaleX)|0)+'_'+((aoi.height*scaleY)|0));
-                                command.push('addProperty_'+aoi.name+':'+bigMediaName+'_type=aoi');
+                                command.push('addProperty_'+aoiId+'_type=aoi');
                             }
                         }
                         else
                         {
                             var imageName = getCleanString(currentMedia.mediaImage);
-                            command.push('addElem_'+imageName+':media_'+getRectangleString(rect));
-                            command.push('addProperty_'+imageName+':media_type=image');
+                            var id = imageName+':image@'+bigMediaId;
+                            command.push('addElem_'+id+'_'+getRectangleString(rect));
+                            command.push('addProperty_'+id+'_type=image');
                         }
                     }
                 }
