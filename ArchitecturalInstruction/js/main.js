@@ -68,10 +68,13 @@ function AppController($scope, $http)
     
     $scope.selectCategory = function(categoryName)
     {
-        $scope.reInstrument('selectCategory');
+       console.log('select category');
         $scope.menuControllerData.selectedCategoryName = categoryName;
-        $scope.loadContent();
-        $scope.setScrollToTop();
+        $scope.loadContent( function()
+        {
+             $scope.reInstrument('selectCategory');
+             $scope.setScrollToTop();
+        });
     };
     $scope.hoverInSubCategory = function(subCategoryName)
     {
@@ -85,14 +88,19 @@ function AppController($scope, $http)
     $scope.selectSubCategory = function(subCategoryName)
     {
         $scope.menuControllerData.selectedSubCategoryName = subCategoryName;
-        $scope.loadContent();
-        $scope.reInstrument('selectSubCategory');
-        $scope.setScrollToTop();
+        $scope.loadContent( function()
+        {
+            $scope.reInstrument('selectSubCategory');
+             
+        });
+            
+        
+       
     };
     
     //Content
      $scope.contentData={};
-     $scope.loadContent = function ()
+     $scope.loadContent = function (callback)
     {
         if ($scope.menuControllerData.selectedCategoryName !== ""
                 && $scope.menuControllerData.selectedSubCategoryName !== ""
@@ -112,6 +120,7 @@ function AppController($scope, $http)
                 $http({method: 'GET', url: dataFile}).
                         success(function (data, status) {
                             $scope.contentData = data;
+                            callback();
                         }).
                         error(function (data, status) {
                             console.log('Error '+status );
@@ -121,11 +130,13 @@ function AppController($scope, $http)
             else
             {
                 $scope.contentData={};
+                callback();
             }
         }
         else
         {
            $scope.contentData={};
+           callback();
         }
     };
     
@@ -191,7 +202,7 @@ function AppController($scope, $http)
                 {
                     var rect = categoryButtons[i].getBoundingClientRect();
                     var module =$scope.menuData.categories[keys[i]];
-                    var id =module.name+':button@'+module.id;
+                    var id =module.name+':button@'+module.id+'t0';
                     command.push('addElem_'+id+'_'+getRectangleString(rect));
                     command.push('addProperty_'+id+'_type=button');
                 }
@@ -201,7 +212,7 @@ function AppController($scope, $http)
                 for(var i=0;i<moduleButtons.length;i++)
                 {
                     var rect = moduleButtons[i].getBoundingClientRect();
-                    var id = moduleKeys[i]+':button@'+$scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[moduleKeys[i]].id;
+                    var id = moduleKeys[i]+':button@'+$scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory[moduleKeys[i]].id+'t0';
                     command.push('addElem_'+id+'_'+getRectangleString(rect));
                     command.push('addProperty_'+id+'_type=button');
                 }
