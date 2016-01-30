@@ -14,8 +14,7 @@ homeApp.directive("submodule", function ()
     link: function(scope, element, attrs) {
       element.bind('click', function()
       {
-           scope.$apply(attrs.submodule);
-           scope.reInstrument('submodule index');
+           scope.$apply(attrs.submodule);           
       });
           
     },
@@ -29,8 +28,7 @@ homeApp.directive("media", function ()
     link: function(scope, element, attrs) {
       element.bind('click', function()
       {     
-          scope.$apply(attrs.media);          
-          scope.reInstrument('media');  
+          scope.$apply(attrs.media);
       });
           
     }
@@ -43,6 +41,21 @@ homeApp.directive("scroll", function () {
             });
         };
     });
+
+homeApp.directive('dataloadingdelay', ['$timeout', function ($timeout) {
+    return {
+        restrict: 'A',
+        link: function ($scope, element, attrs) {
+            $scope.$on('dataloaded', function () {
+                $timeout(function () { 
+                    
+                    $scope.postRender();
+                    
+                }, attrs.dataloadingdelay, false);
+            })
+        }
+    };
+}]);
 function AppController($scope, $http)
 {
     
@@ -70,11 +83,7 @@ function AppController($scope, $http)
     {
        console.log('select category');
         $scope.menuControllerData.selectedCategoryName = categoryName;
-        $scope.loadContent( function()
-        {
-             $scope.reInstrument('selectCategory');
-             $scope.setScrollToTop();
-        });
+        $scope.loadContent();
     };
     $scope.hoverInSubCategory = function(subCategoryName)
     {
@@ -88,19 +97,12 @@ function AppController($scope, $http)
     $scope.selectSubCategory = function(subCategoryName)
     {
         $scope.menuControllerData.selectedSubCategoryName = subCategoryName;
-        $scope.loadContent( function()
-        {
-            $scope.reInstrument('selectSubCategory');
-             
-        });
-            
-        
-       
+        $scope.loadContent();
     };
     
     //Content
      $scope.contentData={};
-     $scope.loadContent = function (callback)
+     $scope.loadContent = function ()
     {
         if ($scope.menuControllerData.selectedCategoryName !== ""
                 && $scope.menuControllerData.selectedSubCategoryName !== ""
@@ -120,7 +122,6 @@ function AppController($scope, $http)
                 $http({method: 'GET', url: dataFile}).
                         success(function (data, status) {
                             $scope.contentData = data;
-                            callback();
                         }).
                         error(function (data, status) {
                             console.log('Error '+status );
@@ -130,17 +131,23 @@ function AppController($scope, $http)
             else
             {
                 $scope.contentData={};
-                callback();
             }
         }
         else
         {
            $scope.contentData={};
-           callback();
         }
     };
-    
-    
+   
+    $scope.$watch("contentData", function(newValue, oldValue) {
+       $scope.$broadcast('dataloaded');
+
+    });
+    $scope.postRender = function(newValue, oldValue)
+    {
+        $scope.reInstrument('post render');
+        $scope.setScrollToTop();
+    };
     $scope.controllerData={
         submoduleIndex:-1,
         mediaIndex:0} ;
@@ -148,11 +155,12 @@ function AppController($scope, $http)
     {
         $scope.controllerData.submoduleIndex = submoduleIndex;
         $scope.controllerData.mediaIndex = 0;
-        $scope.setScrollToTop();
+        $scope.$broadcast('dataloaded');
     }
     $scope.setMediaIndex = function(mediaIndex)
     {
         $scope.controllerData.mediaIndex = mediaIndex;
+        $scope.$broadcast('dataloaded');
     }
     $scope.instrumentationCheckChanged = function(val)
     {
@@ -170,8 +178,6 @@ function AppController($scope, $http)
         {
             subModuleDescriptionContainer.scrollTop=0;
         }
-        
-        
     }
     
     $scope.reInstrument = function(param)
