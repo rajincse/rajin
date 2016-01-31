@@ -41,12 +41,14 @@ var instrument =
     
 window.onmousemove = function(e){
 
-
-        var newscreenx = e.screenX - e.clientX - document.getElementsByTagName('body')[0].getBoundingClientRect().left ;
-        var newscreeny = e.screenY - e.clientY - document.getElementsByTagName('body')[0].getBoundingClientRect().top ;;
-        if (newscreenx != screenX || newscreeny != screenY){
-                screenX = newscreenx; screenY = newscreeny;
-                instrument.windowReshaped();
+        if(e.screenX != 0 || e.screenY !=0)
+        {
+                var newscreenx = e.screenX - e.clientX - document.getElementsByTagName('body')[0].getBoundingClientRect().left ;
+                var newscreeny = e.screenY - e.clientY - document.getElementsByTagName('body')[0].getBoundingClientRect().top ;;
+                if (newscreenx != screenX || newscreeny != screenY){
+                        screenX = newscreenx; screenY = newscreeny;
+                        instrument.windowReshaped();                        
+                }
         }
 }
 	

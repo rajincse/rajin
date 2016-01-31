@@ -145,8 +145,8 @@ function AppController($scope, $http)
     });
     $scope.postRender = function(newValue, oldValue)
     {
-        $scope.reInstrument('post render');
         $scope.setScrollToTop();
+        $scope.reInstrument('post render');
     };
     $scope.controllerData={
         submoduleIndex:-1,
@@ -165,6 +165,12 @@ function AppController($scope, $http)
     $scope.instrumentationCheckChanged = function(val)
     {
         instrument.enabled =val;
+        instrument.windowReshaped();
+        if(val)
+        {
+            this.reInstrument('instrumentation on');
+        }
+        
     }
     $scope.scrollEvent= function ()
     {
@@ -198,20 +204,20 @@ function AppController($scope, $http)
             command.push('addProperty_homelogo:image@g0i0_type=image');
             
 
-            
+             //categories
+            var categoryButtons = $('div.menubar div.button-list-main a img');
+            var keys = Object.keys($scope.menuData.categories);
+            for(var i=0;i<categoryButtons.length;i++)
+            {
+                var rect = categoryButtons[i].getBoundingClientRect();
+                var module =$scope.menuData.categories[keys[i]];
+                var id =module.name+':button@'+module.id+'t0';
+                command.push('addElem_'+id+'_'+getRectangleString(rect));
+                command.push('addProperty_'+id+'_type=button');
+            }
             if($scope.menuControllerData.selectedCategoryName)
             {
-                 //categories
-                var categoryButtons = $('div.menubar div.button-list-main a img');
-                var keys = Object.keys($scope.menuData.categories);
-                for(var i=0;i<categoryButtons.length;i++)
-                {
-                    var rect = categoryButtons[i].getBoundingClientRect();
-                    var module =$scope.menuData.categories[keys[i]];
-                    var id =module.name+':button@'+module.id+'t0';
-                    command.push('addElem_'+id+'_'+getRectangleString(rect));
-                    command.push('addProperty_'+id+'_type=button');
-                }
+                
                 //subcategories
                 var moduleButtons = $('div.menubar div.button-list-small a img');
                 var moduleKeys = Object.keys($scope.menuData.categories[$scope.menuControllerData.selectedCategoryName].subCategory);
@@ -232,6 +238,14 @@ function AppController($scope, $http)
                     command.push('addElem_'+id+'_'+getRectangleString(categoryText[i].getBoundingClientRect()));
                     command.push('addProperty_'+id+'_type=text');
                 }
+            }
+            else
+            {
+                var welcomeLogo = $('.container .welcome-message img')[0];
+                var id = 'welcomeLogo:image@g0i1';
+                var rect =getRectangleString(welcomeLogo.getBoundingClientRect());
+                command.push('addElem_'+id+'_'+rect);
+                command.push('addProperty_'+id+'_type=image');
             }
             
             if($scope.contentData.moduleName)
