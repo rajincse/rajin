@@ -43,7 +43,7 @@
                         <div class="row submodule-description" scroll="scrollEvent()">                           
                             <d-expand-collapse ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].description">
                                         <div ng-if="paragraph.title && paragraph.title.length >0">                                            
-                                            <span id='{{"p"+$index+"h0"}}' class="clickable-header expandable">{{paragraph.title}}</span>
+                                            <span id='{{"p"+$index+"h0"}}' class="clickable-header expandable">{{paragraph.title| uppercase}}</span>
                                         </div>
                                         <div class="collapsible-content" ng-if="paragraph.title.length > 0"> 
                                             <span id='{{"p"+$parent.$index+"w"+$index}}' ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
