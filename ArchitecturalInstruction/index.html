@@ -41,10 +41,17 @@
                         <div class="row module-title">{{contentData.moduleName | uppercase}}</div>
                         <div class="row submodule-title">{{contentData.submodule[controllerData.submoduleIndex].subModuleName | uppercase}}</div>
                         <div class="row submodule-description" scroll="scrollEvent()">                           
-                            <div ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].description">
-                                <span id='{{"p"+$index+"h0"}}' class="bold-text">{{paragraph.title}}</span>
-                                <span id='{{"p"+$parent.$index+"w"+$index}}' ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
-                            </div>
+                            <d-expand-collapse ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].description">
+                                        <div ng-if="paragraph.title && paragraph.title.length >0">                                            
+                                            <span id='{{"p"+$index+"h0"}}' class="clickable-header expandable">{{paragraph.title}}</span>
+                                        </div>
+                                        <div class="collapsible-content" ng-if="paragraph.title.length > 0"> 
+                                            <span id='{{"p"+$parent.$index+"w"+$index}}' ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
+                                        </div>
+                                        <div ng-if="!paragraph.title || paragraph.title.length===0">                                            
+                                            <span id='{{"p"+$parent.$index+"w"+$index}}' ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>
+                                        </div>
+                                </d-expand-collapse>
                             <div ng-repeat="paragraph in contentData.submodule[controllerData.submoduleIndex].mediaList[controllerData.mediaIndex].description">
                                 <span id='{{"p"+$index+"h0"}}' class="bold-text">{{paragraph.title}}</span>
                                 <span id='{{"p"+$parent.$index+"w"+$index}}' ng-repeat="word in paragraph.text.split(' ') track by $index">{{word+' ' }}</span>

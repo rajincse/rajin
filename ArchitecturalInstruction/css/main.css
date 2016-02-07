@@ -180,3 +180,13 @@ body
 .bottom-margin{
     margin-bottom: 10px;
 }
+.collapsible-content
+{
+    display: none;
+}
+.clickable-header
+{
+    font-weight: bold;
+    cursor: hand;
+    text-decoration: underline;
+}

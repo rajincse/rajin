@@ -56,6 +56,29 @@ homeApp.directive('dataloadingdelay', ['$timeout', function ($timeout) {
         }
     };
 }]);
+
+homeApp.directive('dExpandCollapse', function () {
+
+    return {
+        restrict: 'EA',
+        link: function (scope, element, attrs) {
+
+            $(element).click(function () {
+
+                $(element).find(".collapsible-content").slideToggle(0, function () {
+                    $(element).find("span").toggleClass('expandable collapsible');
+                });
+
+
+                if ($("div.collapsible-content:visible").length > 1) {                    
+                    $(this).siblings().find(".collapsible-content").slideUp(0);
+                }
+                
+                scope.reInstrument('collapse');
+            });
+        }
+    }
+});
 function AppController($scope, $http)
 {
     
@@ -292,7 +315,7 @@ function AppController($scope, $http)
                         
                         var subModuleDescriptionContainer =$('.container div.media-list-summary div.submodule-description')[0];
                         var containerRect = subModuleDescriptionContainer.getBoundingClientRect();
-                        var subModuleDescriptionTexts  = $('.container div.media-list-summary div.submodule-description div span');
+                        var subModuleDescriptionTexts  = $('.container div.media-list-summary div.submodule-description d-expand-collapse div span');
                         
                         for(var i=0;i<subModuleDescriptionTexts.length;i++)
                         {
