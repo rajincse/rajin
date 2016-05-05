@@ -17,13 +17,31 @@ namespace VizLabEyeTrackMiddleware.VizLab.FIU.Eye
         public static readonly string HOST = "127.0.0.1";
         public static readonly int PORT = 9876;
 
+
         private StreamWriter swSender;
         private TcpClient tcpServer;
         private EyeXHost eyeXHost;
-        private GazePointDataStream dataStream;
+        private GazePointDataStream gazeDataStream;
+        private FixationDataStream fixationDataStream;
 
         private string host;
         private int port;
+
+        private bool isGazeDataActive;
+
+        public bool IsGazeDataActive
+        {
+            get { return isGazeDataActive; }
+            set { isGazeDataActive = value; }
+        }
+        private bool isFixationDataActive;
+
+        public bool IsFixationDataActive
+        {
+            get { return isFixationDataActive; }
+            set { isFixationDataActive = value; }
+        }
+
         public TobiiGazeHandler()
             : this(TobiiGazeHandler.HOST, TobiiGazeHandler.PORT)
         { }
@@ -36,8 +54,12 @@ namespace VizLabEyeTrackMiddleware.VizLab.FIU.Eye
         {
             this.eyeXHost = new EyeXHost();
             this.eyeXHost.Start();
-            this.dataStream = eyeXHost.CreateGazePointDataStream(GazePointDataMode.LightlyFiltered);
-            this.dataStream.Next += new System.EventHandler<EyeXFramework.GazePointEventArgs>(this.HandleEyeGazeEvent);
+            this.gazeDataStream = eyeXHost.CreateGazePointDataStream(GazePointDataMode.LightlyFiltered);
+            this.gazeDataStream.Next += new System.EventHandler<EyeXFramework.GazePointEventArgs>(this.HandleEyeGazeEvent);
+
+            this.fixationDataStream = eyeXHost.CreateFixationDataStream(FixationDataMode.Slow);
+            this.fixationDataStream.Next += new System.EventHandler<EyeXFramework.FixationEventArgs>(this.HandleEyeFixationEvent);
+
             try
             {
                 IPAddress ipAddr = IPAddress.Parse(host);
@@ -54,12 +76,24 @@ namespace VizLabEyeTrackMiddleware.VizLab.FIU.Eye
         public  void HandleEyeGazeEvent(object sender, GazePointEventArgs e)
         {
             //Console.WriteLine("Gaze point at\t{0:0.0}\t{1:0.0}\t\t{2:0}", e.X, e.Y, e.Timestamp);
-            if (this.tcpServer.Connected)
+            
+            if (this.tcpServer.Connected && this.isGazeDataActive)
             {
                 SendGaze((int)e.X, (int)e.Y, 0);
             }
             
         }
+        public void HandleEyeFixationEvent(object sender, FixationEventArgs e)
+        {
+            //Console.WriteLine("Fixation ({3})point at\t{0:0.0}\t{1:0}\t\t{2}", e.X, e.Y, e.Timestamp, e.EventType);
+            
+            if (this.tcpServer.Connected && this.isFixationDataActive )
+            {
+
+                SendGaze((int)e.X, (int)e.Y, 0, IGazeHandler.METHOD_FIXATION, new string[]{""+e.EventType});
+            }
+        }
+
         public void SendGaze(int x, int y, double pupilSize)
         {
             try
@@ -83,7 +117,7 @@ namespace VizLabEyeTrackMiddleware.VizLab.FIU.Eye
         {
             // Do nothing
         }
-
+        
 
         public void StopServer()
         {
@@ -93,9 +127,36 @@ namespace VizLabEyeTrackMiddleware.VizLab.FIU.Eye
             }
             
             this.tcpServer.Close();
-            this.dataStream.Dispose();
+            this.gazeDataStream.Dispose();
+            this.fixationDataStream.Dispose();
             this.eyeXHost.Dispose();
-            MessageBox.Show("Server stopped");
+            MessageBox.Show("Server stopped");            
+        }
+
+
+        public void SendGaze(int x, int y, double pupilSize, string method, string[] args)
+        {
+            try
+            {
+                string s = x + "," + y + "," + pupilSize + "," + x + "," + y + "," + pupilSize+","+method;
+                if(args != null)
+                {
+                    foreach(String arg in args)
+                    {
+                        s += "," + arg;
+                    }
+                }
+
+                Byte[] sendBytes = Encoding.ASCII.GetBytes(s);
+
+                swSender.WriteLine(s);
+                swSender.Flush();
+            }
+            catch
+            {
+                this.StopServer();
+
+            }
         }
     }
 }

@@ -32,6 +32,8 @@
             this.cbxDeviceSelection = new System.Windows.Forms.ComboBox();
             this.lblDeviceSelection = new System.Windows.Forms.Label();
             this.pnlTobii = new System.Windows.Forms.Panel();
+            this.checkBoxFixationsTobii = new System.Windows.Forms.CheckBox();
+            this.checkBoxSamplesTobii = new System.Windows.Forms.CheckBox();
             this.pbxTobii = new System.Windows.Forms.PictureBox();
             this.btnStopTobii = new System.Windows.Forms.Button();
             this.btnStartTobii = new System.Windows.Forms.Button();
@@ -66,6 +68,8 @@
             // 
             // pnlTobii
             // 
+            this.pnlTobii.Controls.Add(this.checkBoxFixationsTobii);
+            this.pnlTobii.Controls.Add(this.checkBoxSamplesTobii);
             this.pnlTobii.Controls.Add(this.pbxTobii);
             this.pnlTobii.Controls.Add(this.btnStopTobii);
             this.pnlTobii.Controls.Add(this.btnStartTobii);
@@ -73,6 +77,28 @@
             this.pnlTobii.Name = "pnlTobii";
             this.pnlTobii.Size = new System.Drawing.Size(256, 100);
             this.pnlTobii.TabIndex = 2;
+            // 
+            // checkBoxFixationsTobii
+            // 
+            this.checkBoxFixationsTobii.AutoSize = true;
+            this.checkBoxFixationsTobii.Location = new System.Drawing.Point(96, 80);
+            this.checkBoxFixationsTobii.Name = "checkBoxFixationsTobii";
+            this.checkBoxFixationsTobii.Size = new System.Drawing.Size(67, 17);
+            this.checkBoxFixationsTobii.TabIndex = 5;
+            this.checkBoxFixationsTobii.Text = "Fixations";
+            this.checkBoxFixationsTobii.UseVisualStyleBackColor = true;
+            this.checkBoxFixationsTobii.CheckedChanged += new System.EventHandler(this.checkBoxFixationsTobii_CheckedChanged);
+            // 
+            // checkBoxSamplesTobii
+            // 
+            this.checkBoxSamplesTobii.AutoSize = true;
+            this.checkBoxSamplesTobii.Location = new System.Drawing.Point(15, 80);
+            this.checkBoxSamplesTobii.Name = "checkBoxSamplesTobii";
+            this.checkBoxSamplesTobii.Size = new System.Drawing.Size(66, 17);
+            this.checkBoxSamplesTobii.TabIndex = 4;
+            this.checkBoxSamplesTobii.Text = "Samples";
+            this.checkBoxSamplesTobii.UseVisualStyleBackColor = true;
+            this.checkBoxSamplesTobii.CheckedChanged += new System.EventHandler(this.checkBoxSamplesTobii_CheckedChanged);
             // 
             // pbxTobii
             // 
@@ -86,7 +112,7 @@
             // 
             // btnStopTobii
             // 
-            this.btnStopTobii.Location = new System.Drawing.Point(158, 57);
+            this.btnStopTobii.Location = new System.Drawing.Point(165, 37);
             this.btnStopTobii.Name = "btnStopTobii";
             this.btnStopTobii.Size = new System.Drawing.Size(75, 23);
             this.btnStopTobii.TabIndex = 1;
@@ -96,7 +122,7 @@
             // 
             // btnStartTobii
             // 
-            this.btnStartTobii.Location = new System.Drawing.Point(15, 57);
+            this.btnStartTobii.Location = new System.Drawing.Point(15, 38);
             this.btnStartTobii.Name = "btnStartTobii";
             this.btnStartTobii.Size = new System.Drawing.Size(75, 23);
             this.btnStartTobii.TabIndex = 0;
@@ -106,7 +132,7 @@
             // 
             // btnStopSMI
             // 
-            this.btnStopSMI.Location = new System.Drawing.Point(158, 38);
+            this.btnStopSMI.Location = new System.Drawing.Point(155, 37);
             this.btnStopSMI.Name = "btnStopSMI";
             this.btnStopSMI.Size = new System.Drawing.Size(75, 23);
             this.btnStopSMI.TabIndex = 1;
@@ -116,7 +142,7 @@
             // 
             // btnStartSMI
             // 
-            this.btnStartSMI.Location = new System.Drawing.Point(15, 38);
+            this.btnStartSMI.Location = new System.Drawing.Point(12, 37);
             this.btnStartSMI.Name = "btnStartSMI";
             this.btnStartSMI.Size = new System.Drawing.Size(75, 23);
             this.btnStartSMI.TabIndex = 0;
@@ -130,7 +156,7 @@
             this.pnlSMI.Controls.Add(this.btnCalibrate);
             this.pnlSMI.Controls.Add(this.btnStopSMI);
             this.pnlSMI.Controls.Add(this.btnStartSMI);
-            this.pnlSMI.Location = new System.Drawing.Point(22, 36);
+            this.pnlSMI.Location = new System.Drawing.Point(19, 39);
             this.pnlSMI.Name = "pnlSMI";
             this.pnlSMI.Size = new System.Drawing.Size(256, 100);
             this.pnlSMI.TabIndex = 3;
@@ -160,14 +186,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 144);
-            this.Controls.Add(this.pnlSMI);
             this.Controls.Add(this.pnlTobii);
+            this.Controls.Add(this.pnlSMI);
             this.Controls.Add(this.lblDeviceSelection);
             this.Controls.Add(this.cbxDeviceSelection);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "VizLab EyeTracker";
             this.pnlTobii.ResumeLayout(false);
+            this.pnlTobii.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTobii)).EndInit();
             this.pnlSMI.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSMI)).EndInit();
@@ -189,6 +216,8 @@
         private System.Windows.Forms.Button btnCalibrate;
         private System.Windows.Forms.PictureBox pbxTobii;
         private System.Windows.Forms.PictureBox pbxSMI;
+        private System.Windows.Forms.CheckBox checkBoxFixationsTobii;
+        private System.Windows.Forms.CheckBox checkBoxSamplesTobii;
     }
 }
 

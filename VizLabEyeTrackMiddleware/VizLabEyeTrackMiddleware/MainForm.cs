@@ -33,7 +33,8 @@ namespace VizLabEyeTrackMiddleware
             HideAll();
 
             this.tobiiClient = new TobiiGazeHandler();
-
+            this.checkBoxSamplesTobii.Checked = true;
+            this.checkBoxFixationsTobii.Checked = false;
         }
         private void HideAll()
         {
@@ -77,5 +78,17 @@ namespace VizLabEyeTrackMiddleware
         {
 
         }
+
+        private void checkBoxSamplesTobii_CheckedChanged(object sender, EventArgs e)
+        {
+            this.tobiiClient.IsGazeDataActive = this.checkBoxSamplesTobii.Checked;
+            Console.WriteLine(" Check box changed:" + e.ToString());
+        }
+
+        private void checkBoxFixationsTobii_CheckedChanged(object sender, EventArgs e)
+        {
+            this.tobiiClient.IsFixationDataActive = this.checkBoxFixationsTobii.Checked;
+        }
+
     }
 }
