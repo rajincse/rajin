@@ -17,6 +17,8 @@ namespace VizLabEyeTrackMiddleware.VizLab.FIU.Eye
         public static readonly string HOST = "127.0.0.1";
         public static readonly int PORT = 9876;
 
+        public static readonly string METHOD_GAZE = "Gaze";
+        public static readonly string METHOD_FIXATION = "Fixation";
 
         private StreamWriter swSender;
         private TcpClient tcpServer;
@@ -90,7 +92,7 @@ namespace VizLabEyeTrackMiddleware.VizLab.FIU.Eye
             if (this.tcpServer.Connected && this.isFixationDataActive )
             {
 
-                SendGaze((int)e.X, (int)e.Y, 0, IGazeHandler.METHOD_FIXATION, new string[]{""+e.EventType});
+                SendGaze((int)e.X, (int)e.Y, 0, TobiiGazeHandler.METHOD_FIXATION, new string[]{""+e.EventType});
             }
         }
 
