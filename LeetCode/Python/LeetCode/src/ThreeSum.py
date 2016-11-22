@@ -1,59 +1,35 @@
-class Solution(object):
-    def getSortedList(self, n1,n2, n3):
-        list =[];
-        
-        if n1 <= n2 and n1 <= n3:
-            list.append(n1);
-            list.append(min(n2,n3));
-            list.append(max(n2,n3));
-        elif n2 <= n3 and n2 <= n1:
-            list.append(n2);
-            list.append(min(n3,n1));
-            list.append(max(n3,n1));
-        else:
-            list.append(n3);
-            list.append(min(n1,n2));
-            list.append(max(n1,n2));
-        
-        #print 'sorting %d, %d, %d => %s'%(n1,n2,n3, list);
-        return list;
-    def twoSum(self, source, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        map= {};
-        mapIndex ={};
-        for i in range(len(nums)):
-            n = nums[i];
-            map[target-n]= n;
-            mapIndex[target-n] = i;
-        result =[];
-        for i in range(len(nums)):
-            n = nums[i];
-            if n in map and i != mapIndex[n]:
-                candidate = self.getSortedList(source, n, map[n]);
-                
-                result.append(candidate);
-        
-        return result;
+class Solution(object):    
     def threeSum(self, nums):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        nums.sort();
         result =[];
-        for i in range(len(nums)):
-            n = nums[i];
-            target = -n;
-            preList = nums[0:i];
-            postList = nums[i+1:len(nums)];
-            twoSum = self.twoSum(n,preList+postList, target);
-            for l in twoSum:
-                candidate =  l;              
-                if candidate not in result:                
-                    result.append(candidate);
+        for i in range(len(nums)-2):
+            if i==0 or nums[i] != nums[i-1]:
+                left = i+1;
+                right = len(nums)-1;
+                while left < right:
+                    if nums[left]+nums[right] == -nums[i]:
+                        result.append([nums[i], nums[left], nums[right]]);
+                        left+=1;
+                        right-=1;
+                        while left < right and nums[left] == nums[left-1]:
+                            left+=1;
+                        
+                        while left < right and nums[right] == nums[right+1]:
+                            right-=1;
+                    elif nums[left]+nums[right] < -nums[i]:
+                        if left < right:
+                            left+=1;
+                        while left < right and nums[left] == nums[left-1]:
+                            left+=1;
+                    else:
+                        if left < right:
+                            right-=1;
+                        while left < right and nums[right] == nums[right+1]:
+                            right-=1;
         
         return result;
     
