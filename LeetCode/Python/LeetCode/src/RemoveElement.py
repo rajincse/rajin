@@ -5,27 +5,13 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
-        if len(nums) ==0:
-            return 0;
-        elif len(nums) ==1:
-            if nums[0] == val:
-                return 0;
-            else:
-                return 1;
-        else:
-            length =0;
-            for i in range(len(nums)):
-                if nums[i]== val:
-                    for j in range(i+1, len(nums)):
-                        if nums[j] != val:
-                            nums[i] = nums[j];
-                            nums[j] = val;
-                            length+=1;
-                            break;
-                else:
-                    length+=1;
-            return length;    
-            
+       
+        i =0;
+        for j in range(len(nums)):
+            if nums[j] != val:
+                nums[i] = nums[j];
+                i+=1; 
+        return i;
         
 nums =[3,2,2,3];
 val =3;
