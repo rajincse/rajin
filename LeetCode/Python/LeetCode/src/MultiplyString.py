@@ -55,7 +55,7 @@ class Solution(object):
         else:
             return result; 
         
-num1 = "140";
-num2 = "721"; #"100940"
+num1 = "2389021830982109380938092183091830918309";
+num2 = "382109381209380183081209382183013801"; #"100940"
 result = Solution().multiply(num1, num2);
 print '%s X %s = %s'%(num1, num2, result);
