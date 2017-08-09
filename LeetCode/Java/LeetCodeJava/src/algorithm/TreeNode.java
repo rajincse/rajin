@@ -122,185 +122,91 @@ public class TreeNode {
 	}
 	private char[][] getCharArrayPrint(TreeNode node)
 	{
-		if(node.left != null && node.right != null)
+		if(node ==null)
 		{
-			char[][] left = getCharArrayPrint(node.left);
-			int m1=0;
-			int n1 =0;
-			if(left.length != 0)
-			{
-				m1 = left.length;
-				n1 = left[0].length;
-			}
-			char[][] right = getCharArrayPrint(node.right);
-			int m2 =0;
-			int n2 =0;
-			if(right.length != 0)
-			{
-				m2 = right.length;
-				n2 = right[0].length;
-			}
+			return null;
+		}
 
-			char[] valueArray = (node.val+"").toCharArray();
-			int m = Math.max(m1, m2)+2;
-			int n = Math.max(n1+n2+1,valueArray.length);
-			char[][] result = new char[m][n];
+		char[][] left = getCharArrayPrint(node.left);
+		int m1=0;
+		int n1 =0;
+		if(left != null && left.length != 0)
+		{
+			m1 = left.length;
+			n1 = left[0].length;
+		}
+		char[][] right = getCharArrayPrint(node.right);
+		int m2 =0;
+		int n2 =0;
+		if(right != null && right.length != 0)
+		{
+			m2 = right.length;
+			n2 = right[0].length;
+		}
 
+		char[] valueArray = (node.val+"").toCharArray();
+		int d = 1*n1*n2>0?1:0; // if both children exist then atleast a single dash to separate them
+		int v = (n1 | n2) > 0? 1:0; // if any leaf exist then a vertical dash
+		int m = Math.max(m1, m2)+1+v;
+		int n = Math.max(n1+n2+d,valueArray.length);
+		char[][] result = new char[m][n];
+		int rootOffset = valueArray.length> (n1+n2+d)?0: (n1+n2+d-valueArray.length)/2;
+		int childrenOffset = valueArray.length> (n1+n2+d)? (valueArray.length-n1-n2-d)/2:0;
 
-			int leftRootIndex =-1;
-			//left
-			for(int i=0;i<m1;i++)
+		int leftRootIndex =-1;
+		//left
+		for(int i=0;i<m1;i++)
+		{
+			for(int j=0;j<n1;j++)
 			{
-				for(int j=0;j<n1;j++)
+				result[1+v+i][childrenOffset+j] = left[i][j];
+				if(i==0 && left[i][j] != '\0') // get left subtree root
 				{
-					result[2+i][j] = left[i][j];
-					if(i==0 && left[i][j] != '\0')
-					{
-						leftRootIndex = j;
-					}
+					leftRootIndex = childrenOffset+j;
 				}
 			}
+		}
 
 
-			int rightRootIndex =-1;
-			//right
-			for(int i=0;i<m2;i++)
+		int rightRootIndex =n1;
+		//right
+		for(int i=0;i<m2;i++)
+		{
+			for(int j=0;j<n2;j++)
 			{
-				for(int j=0;j<n2;j++)
+				result[1+v+i][childrenOffset+n1+d+j] = right[i][j];
+				if(i==0 && rightRootIndex<= n1 && right[i][j] != '\0') // get right sub tree root
 				{
-					result[2+i][n1+1+j] = right[i][j];
-					if(i==0 && right[i][j] != '\0')
-					{
-						rightRootIndex = n1+1+j;
-					}
-
+					rightRootIndex = childrenOffset+n1+d+j;
 				}
-			}
-			for(int j=leftRootIndex+1;j<rightRootIndex;j++)
-			{
-				result[2][j]='-';
-			}
 
-			int offset = valueArray.length> (n1+n2+1)?0: (n1+n2+1-valueArray.length)/2;
-			//root
-			for(int i=0;i<valueArray.length;i++)
-			{
-				result[0][offset+i] = valueArray[i];
 			}
+		}
+		for(int j=leftRootIndex+1;j<rightRootIndex;j++)
+		{
+			result[1+v][j]='-';
+		}
+
+
+		//root
+		for(int i=0;i<valueArray.length;i++)
+		{
+			result[0][rootOffset+i] = valueArray[i];
+		}
+		if(v >0)
+		{
 			result[1][n/2] ='|';
-
-			return result;
 		}
-		else if(node.left != null && node.right ==null)
-		{
-			char[][] left = getCharArrayPrint(node.left);
-			int m1=0;
-			int n1 =0;
-			if(left.length != 0)
-			{
-				m1 = left.length;
-				n1 = left[0].length;
-			}
 
 
-			char[] valueArray = (node.val+"").toCharArray();
-			int m = m1+2;
-			int n = Math.max(n1,valueArray.length);
-			char[][] result = new char[m][n];
-
-
-			int leftRootIndex =-1;
-			//left
-			for(int i=0;i<m1;i++)
-			{
-				for(int j=0;j<n1;j++)
-				{
-					result[2+i][j] = left[i][j];
-					if(i==0 && left[i][j] != '\0')
-					{
-						leftRootIndex = j;
-					}
-				}
-			}
-
-
-
-			for(int j=leftRootIndex+1;j<n1;j++)
-			{
-				result[2][j]='-';
-			}
-
-			int offset = valueArray.length> (n1)?0: (n1-valueArray.length)/2;
-			//root
-			for(int i=0;i<valueArray.length;i++)
-			{
-				result[0][offset+i] = valueArray[i];
-			}
-			result[1][n/2] ='|';
-
-			return result;
-		}
-		else if(node.left == null && node.right !=null)
-		{
-			char[][] right = getCharArrayPrint(node.right);
-			int m2 =0;
-			int n2 =0;
-			if(right.length != 0)
-			{
-				m2 = right.length;
-				n2 = right[0].length;
-			}
-
-			char[] valueArray = (node.val+"").toCharArray();
-			int m = m2+2;
-			int n = Math.max(n2,valueArray.length);
-			char[][] result = new char[m][n];
-
-
-
-
-
-			int rightRootIndex =-1;
-			//right
-			for(int i=0;i<m2;i++)
-			{
-				for(int j=0;j<n2;j++)
-				{
-					result[2+i][j] = right[i][j];
-					if(i==0 && right[i][j] != '\0')
-					{
-						rightRootIndex = j;
-					}
-
-				}
-			}
-			for(int j=0;j<rightRootIndex;j++)
-			{
-				result[2][j]='-';
-			}
-
-			int offset = valueArray.length> (n2)?0: (n2-valueArray.length)/2;
-			//root
-			for(int i=0;i<valueArray.length;i++)
-			{
-				result[0][offset+i] = valueArray[i];
-			}
-			result[1][n/2] ='|';
-
-			return result;
-		}
-		else
-		{
-			char[][] result = new char[][]{(node.val+"").toCharArray()};
-			return result;
-		}
+		return result;
 
 	}
 
 
 	public static  void main(String[] args)
 	{
-		String arrayString = "[11111111,2,3,null,8,4,6,null,5,null,null,7]";
+		String arrayString = "[1,22222,3,null,null,6,7]";
 		TreeNode node = TreeNode.getTreeNode(arrayString);
 		System.out.println(node.getPrintString());
 	}
