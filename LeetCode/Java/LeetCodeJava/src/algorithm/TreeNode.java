@@ -145,7 +145,7 @@ public class TreeNode {
 		}
 
 		char[] valueArray = (node.val+"").toCharArray();
-		int d = 1*n1*n2>0?1:0; // if both children exist then atleast a single dash to separate them
+		int d = (n1 | n2) > 0? 1:0; // if both children exist then atleast a single dash to separate them
 		int v = (n1 | n2) > 0? 1:0; // if any leaf exist then a vertical dash
 		int m = Math.max(m1, m2)+1+v;
 		int n = Math.max(n1+n2+d,valueArray.length);
@@ -206,7 +206,7 @@ public class TreeNode {
 
 	public static  void main(String[] args)
 	{
-		String arrayString = "[1,22222,3,null,null,6,7]";
+		String arrayString = "[1,null,3333,4,5]";
 		TreeNode node = TreeNode.getTreeNode(arrayString);
 		System.out.println(node.getPrintString());
 	}
