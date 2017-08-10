@@ -1,6 +1,7 @@
 package algorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TreeNode {
     int val;
@@ -109,6 +110,7 @@ public class TreeNode {
 	{
 		StringBuilder printString = new StringBuilder();
 		char[][] charArray = getCharArrayPrint(this);
+		
 		for(int i=0;i<charArray.length;i++)
 		{
 			for(int j=0;j<charArray[i].length;j++)
@@ -145,22 +147,35 @@ public class TreeNode {
 		}
 
 		char[] valueArray = (node.val+"").toCharArray();
-		int d = (n1 | n2) > 0? 1:0; // if both children exist then atleast a single dash to separate them
+		int r = valueArray.length;
+		int d = (n1 | n2) > 0? 1:0; // if any leaf exist then atleast a single dash to separate them
 		int v = (n1 | n2) > 0? 1:0; // if any leaf exist then a vertical dash
-		int m = Math.max(m1, m2)+1+v;
-		int n = Math.max(n1+n2+d,valueArray.length);
-		char[][] result = new char[m][n];
-		int rootOffset = valueArray.length> (n1+n2+d)?0: (n1+n2+d-valueArray.length)/2;
-		int childrenOffset = valueArray.length> (n1+n2+d)? (valueArray.length-n1-n2-d)/2:0;
 
-		int leftRootIndex =-1;
+		int m = Math.max(m1, m2)+1+v;
+		int n = r;
+		if(v > 0)
+		{
+			int leftSize = n1>(r-1)/2? n1: (r-1)/2;
+			int rightSize = n2>(r-1)/2? n2: (r-1)/2;
+
+			n= leftSize+1+rightSize;
+
+		}
+
+
+		char[][] result = new char[m][n];
+		int rootOffset = (r-1)/2> n1?0: Math.abs((r-1)/2-n1);
+		int childrenOffset = (r-1)/2> n1?Math.abs((r-1)/2-n1):0;
+
+
+		int leftRootIndex =rootOffset+r/2-d;
 		//left
 		for(int i=0;i<m1;i++)
 		{
 			for(int j=0;j<n1;j++)
 			{
 				result[1+v+i][childrenOffset+j] = left[i][j];
-				if(i==0 && left[i][j] != '\0') // get left subtree root
+				if(i==0 && left[i][j] != '\0' && v >0) // get left subtree root
 				{
 					leftRootIndex = childrenOffset+j;
 				}
@@ -168,20 +183,21 @@ public class TreeNode {
 		}
 
 
-		int rightRootIndex =n1;
+		int rightRootIndex =rootOffset+(r-d)/2+1;
 		//right
 		for(int i=0;i<m2;i++)
 		{
 			for(int j=0;j<n2;j++)
 			{
-				result[1+v+i][childrenOffset+n1+d+j] = right[i][j];
-				if(i==0 && rightRootIndex<= n1 && right[i][j] != '\0') // get right sub tree root
+				result[1+v+i][rootOffset+(r-1)/2+d+j] = right[i][j];
+				if(i==0 && rightRootIndex<= rootOffset+r/2-d && right[i][j] != '\0' && v >0) // get right sub tree root
 				{
-					rightRootIndex = childrenOffset+n1+d+j;
+					rightRootIndex = rootOffset+(r-1)/2+d+j;
 				}
 
 			}
 		}
+
 		for(int j=leftRootIndex+1;j<rightRootIndex;j++)
 		{
 			result[1+v][j]='-';
@@ -195,9 +211,8 @@ public class TreeNode {
 		}
 		if(v >0)
 		{
-			result[1][n/2] ='|';
+			result[1][rootOffset+r/2] ='|';
 		}
-
 
 		return result;
 
@@ -206,7 +221,7 @@ public class TreeNode {
 
 	public static  void main(String[] args)
 	{
-		String arrayString = "[1,null,3333,4,5]";
+		String arrayString = "[111,222,33,4,5,null,666,788,99,null,1]";
 		TreeNode node = TreeNode.getTreeNode(arrayString);
 		System.out.println(node.getPrintString());
 	}
