@@ -110,7 +110,7 @@ public class TreeNode {
 	{
 		StringBuilder printString = new StringBuilder();
 		char[][] charArray = getCharArrayPrint(this);
-		
+
 		for(int i=0;i<charArray.length;i++)
 		{
 			for(int j=0;j<charArray[i].length;j++)
