@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Created by rajin on 8/17/2017.
- * Leetcode #90. Subsets II 
+ * Leetcode #90. Subsets II
  */
 public class Subsets2 {
     public static  void main(String[] args)
