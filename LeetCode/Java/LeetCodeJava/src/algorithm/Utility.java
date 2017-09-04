@@ -16,4 +16,16 @@ public class Utility {
         }
         return result;
     }
+    public static <T> String getListPrintString(List<List<T>> list){
+        StringBuilder msg =new StringBuilder();
+        msg.append("[");
+        for(List<T> subList: list)
+        {
+            msg.append("\r\n");
+            msg.append(subList.toString());
+
+        }
+        msg.append("\r\n]");
+        return msg.toString();
+    }
 }
