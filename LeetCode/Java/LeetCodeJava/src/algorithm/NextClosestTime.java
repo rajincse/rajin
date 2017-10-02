@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Created by rajin on 9/23/2017.
- * 681. Next Closest Time 
+ * 681. Next Closest Time
  */
 public class NextClosestTime {
     class ValArray
