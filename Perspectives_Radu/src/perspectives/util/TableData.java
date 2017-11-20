@@ -40,23 +40,6 @@ public class TableData extends DataSource {
         
     }
     
-    public DistanceMatrix2 toDistanceMatrix2()
-    {
-    	DistanceMatrix2 m = new DistanceMatrix2(table.getCount());
-    	if (table.getCount() != table.getColumnCount())
-    		return null;
-    	
-    	for (int i=0; i<table.getCount()-1; i++)
-    	{
-    		for (int j=i+1; j<table.getCount(); j++)
-    		{
-    			double v = (Double)table.getValueAt(i, j);
-    			m.setDistance(i, j, (float)v);
-    		}
-    	}
-    	return m;
-    	
-    }
     
     public void setTable(TableDistances t)
     {
@@ -67,7 +50,23 @@ public class TableData extends DataSource {
     {
 
         try {
-            Property<PBoolean> p0 = new Property<PBoolean>("JSON File", new PBoolean(false));          
+            Property<PBoolean> p0 = new Property<PBoolean>("JSON File", new PBoolean(false))
+            		{          
+            				@Override
+            				protected boolean updating(PBoolean newvalue) {
+            					// TODO Auto-generated method stub
+            					 boolean js = false;
+            					 js = ((PBoolean) getProperty("JSON File").getValue()).boolValue();
+            					 if (js) {
+            				            //se;
+            				            removeProperty("Col Headers");
+            				            removeProperty("Row Headers");
+            				            removeProperty("Delimiter");
+
+            				        }
+            					return super.updating(newvalue);
+            				}
+            		};
             addProperty(p0);
 
 
@@ -83,7 +82,60 @@ public class TableData extends DataSource {
             PFileInput f = new PFileInput();
             f.dialogTitle = "Open Data File";
             f.extensions = new String[]{"*", "txt", "xml"};
-            Property<PFileInput> p1 = new Property<PFileInput>("Tabular File",f);
+            Property<PFileInput> p1 = new Property<PFileInput>("Tabular File",f)
+            		{
+            			@Override
+            			protected boolean updating(PFileInput newvalue) {
+            				// TODO Auto-generated method stub
+            				boolean js = false;
+            				js = ((PBoolean) getProperty("JSON File").getValue()).boolValue();
+            				 if(!js){
+            		                boolean ch = ((PBoolean) getProperty("Col Headers").getValue()).boolValue();
+            		                boolean rh = ((PBoolean) getProperty("Row Headers").getValue()).boolValue();
+
+            		              //hide the others if it is a json file
+
+            		             int delim = ((POptions) (getProperty("Delimiter").getValue())).selectedIndex;
+            		             PFileInput f = ((PFileInput) newvalue);
+            		             String d = "\t";   //default selection
+            		             if (delim == 1) {
+            		                d = " ";
+            		              } else if (delim == 2) {
+            		                d = ",";
+            		              }
+
+            		              table.fromFile(f.path, d, ch, rh);  //Function to Get the Data from File
+            		           }
+            		           else{   //get the data from a JSON format
+            		               
+            		           } 
+            		            //Determine the properties of the file such as number of rows and columns and print them on the screen
+            		            if (table.getColumnCount() != 0) {
+            		                setLoaded(true);
+
+            		                removeProperty("Tabular File");
+            		                removeProperty("Delimiter");
+            		                removeProperty("Col Headers");
+            		                removeProperty("Row Headers");
+            		                removeProperty("JSON File");
+
+            		                try {
+            		                    Property<PInteger> p1 = new Property<PInteger>("# Columns", new PInteger(table.getColumnCount()));                   
+            		                    p1.setReadOnly(true);
+            		                    addProperty(p1);
+
+            		                    Property<PInteger> p2 = new Property<PInteger>("# Rows",new PInteger(table.getRowCount()));                  
+            		                    p2.setReadOnly(true);
+            		                    addProperty(p2);
+
+            		                } catch (Exception e) {
+            		                    // TODO Auto-generated catch block
+            		                    e.printStackTrace();
+            		                }
+            		            }
+            				return super.updating(newvalue);
+            			}
+            		};
             addProperty(p1);
 
         } catch (Exception e) {

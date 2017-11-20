@@ -55,4 +55,16 @@ public class TableDistances extends Table implements DistancedPoints {
 		return (float) Math.sqrt(d);
 	}
 
+	@Override
+	public int getPointIndex(String id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void normalize() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
