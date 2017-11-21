@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a49525-0822-4256-b4d5-9aa1b7a40e1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeetCodeJava.iml" afterPath="$PROJECT_DIR$/LeetCodeJava.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/main.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/ClusterNode.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/ClusterNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/Gradient.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/Gradient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/HeatMapDrawer.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/HeatMapDrawer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/HeatMapViewer.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/HeatMapViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/HeatMapViewerFactory.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/HeatMapViewerFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/Heatmap.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/Heatmap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/Rectangles.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/heatmap/Rectangles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/util/TableData.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/util/TableData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/util/TableDistances.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/util/TableDistances.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/web/Downloads.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/web/Downloads.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/web/SessionListener.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/web/SessionListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/web/Uploads.java" afterPath="$PROJECT_DIR$/../../../Perspectives_Radu/src/perspectives/web/Uploads.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,31 +29,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CopyListRandomPointer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/CopyListRandomPointer.java">
+      <file leaf-file-name="BattleShips.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithm/BattleShips.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SelfDividingNumbers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/SelfDividingNumbers.java">
+      <file leaf-file-name="IntegerToEnglish.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithm/IntegerToEnglish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="68">
+              <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyCalendarI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/MyCalendarI.java">
+      <file leaf-file-name="ExcelSheetColumn.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/algorithm/ExcelSheetColumn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -116,11 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/algorithm/ValidParenthesesString.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/ValidPalindrome2.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/PathSum.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/TreeNodeTest.groovy" />
-        <option value="$PROJECT_DIR$/src/algorithm/TreeNodeTest.java" />
         <option value="$PROJECT_DIR$/src/algorithm/BaseBallGame.java" />
         <option value="$PROJECT_DIR$/src/algorithm/test/TreeNodeTest.java" />
         <option value="$PROJECT_DIR$/src/algorithm/TreeNode.java" />
@@ -167,6 +144,11 @@
         <option value="$PROJECT_DIR$/src/algorithm/CopyListRandomPointer.java" />
         <option value="$PROJECT_DIR$/src/algorithm/SelfDividingNumbers.java" />
         <option value="$PROJECT_DIR$/src/algorithm/MyCalendarI.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/TicTacToe.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/ReverseLL.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/BattleShips.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/IntegerToEnglish.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/ExcelSheetColumn.java" />
       </list>
     </option>
   </component>
@@ -194,8 +176,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,7 +268,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,15 +301,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MyCalendarI">
-    <configuration default="false" name="SplitLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.ExcelSheetColumn">
+    <configuration default="false" name="TicTacToe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.SplitLinkedList" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.TicTacToe" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -340,14 +322,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="NumberOfAtoms" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ReverseLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.NumberOfAtoms" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.ReverseLL" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -360,14 +342,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="CopyListRandomPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BattleShips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.CopyListRandomPointer" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.BattleShips" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -380,14 +362,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="SelfDividingNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="IntegerToEnglish" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.SelfDividingNumbers" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.IntegerToEnglish" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -400,14 +382,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="MyCalendarI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ExcelSheetColumn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.MyCalendarI" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.ExcelSheetColumn" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -652,19 +634,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TreeNodeTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.SplitLinkedList" />
-      <item index="2" class="java.lang.String" itemvalue="Application.NumberOfAtoms" />
-      <item index="3" class="java.lang.String" itemvalue="Application.CopyListRandomPointer" />
-      <item index="4" class="java.lang.String" itemvalue="Application.SelfDividingNumbers" />
-      <item index="5" class="java.lang.String" itemvalue="Application.MyCalendarI" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TicTacToe" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ReverseLL" />
+      <item index="3" class="java.lang.String" itemvalue="Application.BattleShips" />
+      <item index="4" class="java.lang.String" itemvalue="Application.IntegerToEnglish" />
+      <item index="5" class="java.lang.String" itemvalue="Application.ExcelSheetColumn" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MyCalendarI" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SelfDividingNumbers" />
-        <item index="2" class="java.lang.String" itemvalue="Application.CopyListRandomPointer" />
-        <item index="3" class="java.lang.String" itemvalue="Application.NumberOfAtoms" />
-        <item index="4" class="java.lang.String" itemvalue="Application.SplitLinkedList" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ExcelSheetColumn" />
+        <item index="1" class="java.lang.String" itemvalue="Application.IntegerToEnglish" />
+        <item index="2" class="java.lang.String" itemvalue="Application.BattleShips" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ReverseLL" />
+        <item index="4" class="java.lang.String" itemvalue="Application.TicTacToe" />
       </list>
     </recent_temporary>
   </component>
@@ -724,13 +706,14 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66771656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66771656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -740,13 +723,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1039,8 +1021,14 @@
           <properties />
           <option name="timeStamp" value="239" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/BattleShips.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="240" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="240" />
+      <option name="time" value="241" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1049,42 +1037,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/algorithm/MaxSwap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/test/TreeNodeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/PathSum2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/PathSum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/FlattenBTtoLL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm/NextClosestTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2499">
@@ -1417,7 +1369,50 @@
     <entry file="file://$PROJECT_DIR$/src/algorithm/MyCalendarI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/TicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="64" column="37" lean-forward="false" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
+          <folding>
+            <element signature="e#214#215#0" expanded="false" />
+            <element signature="e#257#258#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/ReverseLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/BattleShips.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/IntegerToEnglish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/ExcelSheetColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding />
         </state>
       </provider>
