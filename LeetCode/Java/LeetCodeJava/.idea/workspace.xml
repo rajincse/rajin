@@ -16,6 +16,9 @@
     <SUITE FILE_PATH="coverage/LeetCodeJava$NumberOfAtoms.coverage" NAME="NumberOfAtoms Coverage Results" MODIFIED="1510636334717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>algorithm.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/LeetCodeJava$NetWorkDelay.coverage" NAME="NetWorkDelay Coverage Results" MODIFIED="1512876083388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>algorithm.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/LeetCodeJava$CanPartition.coverage" NAME="CanPartition Coverage Results" MODIFIED="1508176364074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>algorithm.*</FILTER>
     </SUITE>
@@ -31,7 +34,37 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SkyLine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithm/SkyLine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="129" selection-end-column="5" />
+              <folding>
+                <element signature="e#827#841#0" expanded="true" />
+                <element signature="e#1170#1184#0" expanded="true" />
+                <element signature="e#2009#2010#0" expanded="true" />
+                <element signature="e#2048#2049#0" expanded="true" />
+                <element signature="e#2114#2115#0" expanded="true" />
+                <element signature="e#2167#2168#0" expanded="true" />
+                <element signature="e#2494#2495#0" expanded="true" />
+                <element signature="e#2531#2532#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IntersectionLL.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/algorithm/IntersectionLL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-340">
+              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,17 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/algorithm/TicTacToe.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/ReverseLL.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/BattleShips.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/IntegerToEnglish.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/ExcelSheetColumn.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/LongestAbsolutePath.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/TinyURL.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/RotateArray.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/LicenseKeyFormatting.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/MovingAverage.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/LongestConsecutiveBT.java" />
         <option value="$PROJECT_DIR$/src/algorithm/SentenceScreenFitting.java" />
         <option value="$PROJECT_DIR$/src/algorithm/AddTwoNumbersII.java" />
         <option value="$PROJECT_DIR$/src/algorithm/ZigZagIterator.java" />
@@ -122,6 +144,17 @@
         <option value="$PROJECT_DIR$/src/algorithm/LRUCacheTest.java" />
         <option value="$PROJECT_DIR$/src/algorithm/MissingNumber.java" />
         <option value="$PROJECT_DIR$/src/algorithm/LinkedListCycle.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/ExcelColumnTitle.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/FindSmallestLetterGreaterThanTarget.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/NetWorkDelay.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/ClosestLeafBT.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/FindMinRotatedSortedArray.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/DeleteNodeLL.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/ImplementQueueWithStacks.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/ImplementQueueAndStack.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/ImplementTrie.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/SkyLine.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/IntersectionLL.java" />
       </list>
     </option>
   </component>
@@ -149,6 +182,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,8 +231,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,15 +263,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LRUCacheTest">
-    <configuration default="false" name="TopKFreqWords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.IntersectionLL">
+    <configuration default="false" name="FindSmallestLetterGreaterThanTarget" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.TopKFreqWords" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.FindSmallestLetterGreaterThanTarget" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -251,14 +284,14 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="GroupShiftedString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NetWorkDelay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.GroupShiftedString" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.NetWorkDelay" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -271,54 +304,54 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="MinSubSequenceVideoLabel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="google.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="google.MinSubSequenceVideoLabel" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LeetCodeJava" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="QuadTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="google.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="google.QuadTree" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LeetCodeJava" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="LRUCacheTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ClosestLeafBT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm.LRUCacheTest" />
+      <option name="MAIN_CLASS_NAME" value="algorithm.ClosestLeafBT" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LeetCodeJava" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SkyLine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="algorithm.SkyLine" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LeetCodeJava" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="IntersectionLL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="algorithm.IntersectionLL" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -563,19 +596,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TreeNodeTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.TopKFreqWords" />
-      <item index="2" class="java.lang.String" itemvalue="Application.GroupShiftedString" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MinSubSequenceVideoLabel" />
-      <item index="4" class="java.lang.String" itemvalue="Application.QuadTree" />
-      <item index="5" class="java.lang.String" itemvalue="Application.LRUCacheTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.FindSmallestLetterGreaterThanTarget" />
+      <item index="2" class="java.lang.String" itemvalue="Application.NetWorkDelay" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ClosestLeafBT" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SkyLine" />
+      <item index="5" class="java.lang.String" itemvalue="Application.IntersectionLL" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.LRUCacheTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.QuadTree" />
-        <item index="2" class="java.lang.String" itemvalue="Application.MinSubSequenceVideoLabel" />
-        <item index="3" class="java.lang.String" itemvalue="Application.GroupShiftedString" />
-        <item index="4" class="java.lang.String" itemvalue="Application.TopKFreqWords" />
+        <item index="0" class="java.lang.String" itemvalue="Application.IntersectionLL" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SkyLine" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ClosestLeafBT" />
+        <item index="3" class="java.lang.String" itemvalue="Application.NetWorkDelay" />
+        <item index="4" class="java.lang.String" itemvalue="Application.FindSmallestLetterGreaterThanTarget" />
       </list>
     </recent_temporary>
   </component>
@@ -630,10 +663,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -645,7 +680,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29648608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29648608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -656,7 +691,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1045,8 +1079,38 @@
           <properties />
           <option name="timeStamp" value="299" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/ExcelColumnTitle.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="300" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/FindSmallestLetterGreaterThanTarget.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/NetWorkDelay.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/NetWorkDelay.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm/SkyLine.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="314" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="300" />
+      <option name="time" value="315" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1055,85 +1119,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/algorithm/ReverseLL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/BattleShips.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/IntegerToEnglish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/ExcelSheetColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/LongestAbsolutePath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/RotateArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/TinyURL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="77" column="1" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="77" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/LicenseKeyFormatting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/LongestConsecutiveBT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/SentenceScreenFitting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="37" column="41" lean-forward="false" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/MovingAverage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm/ZigzagIterator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1422,7 +1407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1430,6 +1414,110 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/ExcelColumnTitle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/ExcelSheetColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/FindMinRotatedSortedArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/ClosestLeafBT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/NetWorkDelay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="105" column="38" lean-forward="false" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/FindSmallestLetterGreaterThanTarget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/DeleteNodeLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/ImplementQueueAndStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#1974#1975#0" expanded="true" />
+            <element signature="e#2875#2876#0" expanded="true" />
+            <element signature="e#2922#2923#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/ImplementTrie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/SkyLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="129" selection-end-column="5" />
+          <folding>
+            <element signature="e#827#841#0" expanded="true" />
+            <element signature="e#1170#1184#0" expanded="true" />
+            <element signature="e#2009#2010#0" expanded="true" />
+            <element signature="e#2048#2049#0" expanded="true" />
+            <element signature="e#2114#2115#0" expanded="true" />
+            <element signature="e#2167#2168#0" expanded="true" />
+            <element signature="e#2494#2495#0" expanded="true" />
+            <element signature="e#2531#2532#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/IntersectionLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding />
         </state>
       </provider>
