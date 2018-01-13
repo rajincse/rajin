@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.Random;
 
 /**
- * Created by rajin on 12/7/2017.
+ * @author Dr. Sayeed S. Alam
  */
 public class MyDrawable implements Drawable {
     int x =0;
